@@ -1,32 +1,117 @@
 
 
-
-p.cus-name{
-    color: black;
+.radio{
+    color: red;
+    margin: 0;
+    padding: 0;
+    
     position: relative;
-    top: -80px;
-    left: 90px;
-    text-align: left;
-    font-weight: bold ;
+    top: -5rem;
 }
 
+.input-qty{
+    color: white;!important;
+    background-color: unset;
+    border-radius: 5px;
+    border: solid 1px white;
+    padding: 2px;
+    margin: 2px;
+    width: 30%;
+}
+.table-order{
+    text-align: left;
+    color: white!important;
+}
+.loai-the{
+    text-align: center;
+}
+.loai-the img{
+    width: 100px;
+    opacity: .7;
+    text-align: center;
+}
+.loai-the ul p{
+    font-size: .6rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.loai-the ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline-flex;
+    text-align: center;
+    
+}
+.loai-the ul li{
+    
+    margin: 5px;
+    padding: 1px;
+    text-align: center;
+    
+}
+h3.card-back-1{
+    color: white;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    top: -100px;
+    display: none;
+}
+h3.card-front-1{
+    color: white;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+    top: -100px;
+}
+.card-back{
+    display: none;
+}
 h3 del{
     color: red;
     font-size: 1rem;
     font-style: italic;
+    text-align: center;
+    float: right;
 }
 
 h3 span{
     color: #989898;
     font-size: 1rem;
     float: right;
+    
 
 }
+p.cus-name{
+    color: white;
+    position: relative;
+    top: -5rem;
+   /* left: 8rem;*/
+    text-align: center;
+    font-weight: bold ;
+    font-size: 1.5rem;
+
+
+}
+
 img.card-shop{
-    width: 25rem;
+    width: 20rem;
     height: auto;
     text-align: center;
+    opacity: .8;
 }
+img.card-shop:hover{
+    width: 22rem;
+    height: auto;
+    opacity: 1;
+    transition: .9s;  
+}
+
 .accordion-body{
     color: #FAA137;
 }
@@ -310,7 +395,7 @@ input:checked+.slider-1:before {
 
 
 /*qr code*/
-h3 img {
+#qr_code img {
     width: 100px;
 }
 
@@ -855,7 +940,15 @@ ul #qr-none-li,
 @media screen and (max-width: 600px) {
 
     /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 480px;*/
- 
+    p.cus-name{
+    color: white;
+    position: relative;
+    top: -5rem;
+   
+    text-align: center;
+    font-weight: bold ;
+    font-size: 1.5rem;
+    }
 
 
 }
@@ -873,6 +966,16 @@ ul #qr-none-li,
         position: relative;
         margin: auto;
     }
+    p.cus-name{
+    color: white;
+    position: relative;
+    top: -5rem;
+    
+    text-align: center;
+    font-weight: bold ;
+    font-size: 1.5rem;
+    }
+
 
 }
 
@@ -888,6 +991,15 @@ ul #qr-none-li,
     .inner-addon {
         position: relative;
         margin: auto;
+    }
+    p.cus-name{
+    color: white;
+    position: relative;
+    top: -5rem;
+    
+    text-align: center;
+    font-weight: bold ;
+    font-size: 1.5rem;
     }
 
 }

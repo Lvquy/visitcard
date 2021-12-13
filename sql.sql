@@ -92,5 +92,6 @@ CREATE TABLE sale_order (
     order_date date,
     saler varchar(30),
     state int DEFAULT 0,
+    text_color varchar(10),
     PRIMARY KEY (so)
 )AUTO_INCREMENT = 1;

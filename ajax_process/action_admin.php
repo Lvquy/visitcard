@@ -108,6 +108,7 @@ if (isset($_POST["id_so"])) {
                 $order_date = $row["order_date"];
                 $saler = $row["saler"];
                 $state = $row["state"];
+                $text_color = $row["text_color"];
                 $total = $qty*$price;
 
             }
@@ -241,6 +242,12 @@ if (isset($_POST["id_so"])) {
                 <td><input readonly  class='form-control' type='number' min='1' max='100' onchange='onchange_total()' id='so_qty' value='$qty'></td>
                 <td><input readonly class='form-control' type='number' min='0' id='so_price' onchange='onchange_total()' value='$price'></td>
                 <td><span id='so_total'>$total</span></td>
+            </tr>
+            <tr>
+                <td colspan='2'>Color</td>
+                
+                <td>$text_color
+                </td>
             </tr>
             <tr>
                 <td>Note</td>
