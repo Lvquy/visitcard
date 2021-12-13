@@ -1,35 +1,30 @@
 
-var curent_page = 1
+
 // phan trang
 function loadmore() {
-	console.log('loadmore')
-	
+	var curent_page = 1
 	curent_page = curent_page +1
-	console.log(curent_page)
 	$.post("ajax_process/action_admin.php",{curent_page:curent_page},function(data){
-		$("#load_so").append(data)
-		
-	})
-	
+		$("#load_so").append(data)	
+	})	
 }
-
 
 function onchange_state(value) {
 	
 	if (value ==0 &  document.getElementById("0").disabled == false){
-		console.log('truong hop 0')
+		
 		$(".0").css({"background-color":"red"})
 		$(".1").css({"background-color":"unset"})
 		$(".2").css({"background-color":"unset"})
 	};
 	if (value ==1 & document.getElementById("1").disabled == false){
-		console.log('truong hop 1')
+		
 		$(".0").css({"background-color":"unset"})
 		$(".1").css({"background-color":"red"})
 		$(".2").css({"background-color":"unset"})
 	};
 	if (value ==2 & document.getElementById("2").disabled == false){
-		console.log('truong hop 2')
+		
 		$(".0").css({"background-color":"unset"})
 		$(".1").css({"background-color":"unset"})
 		$(".2").css({"background-color":"red"})
@@ -132,7 +127,7 @@ function create_newso() {
 
 //check user unique
 function check_user(new_username) {
-	console.log(new_username)
+	
 	$.post("ajax_process/action_admin.php",{new_username:new_username},function(data){
 		if (data == 0) {
 			$("#adduser_alert").html("Trùng slug!").css({'color':'red'})
@@ -205,7 +200,7 @@ function update_code() {
 
 //update user
 function update_user() {
-	console.log('update user')
+	
 	var e_id = $("#e_id").val()
 	var e_fullname = $("#e_fullname").val()
 	var e_mobile = $("#e_mobile").val()
@@ -293,7 +288,7 @@ function adduser() {
 	$.post("ajax_process/action_admin.php",
 		{username:username,fullname:fullname,active:active,password:password,password_admin:password_admin},
 		function(data){
-			console.log('add user...')
+			
 			if (data ==1) {
 				//them thanh cong
 				document.getElementById("form_adduser").reset();
@@ -340,7 +335,7 @@ function get_list_code() {
 function addcode() {
 	var count = $("#num_code").val()
 	$.post("ajax_process/action_admin.php",{count:count},function(data) {
-		console.log('add code')
+		
 		get_list_code()
 	})
 }
@@ -351,18 +346,18 @@ function onchange_total() {
 function onchange_type() {
 	var value = $("#card_type").val()
 	if (value == '4'){
-		console.log('loai 4')
+		
 		$("#so_price").val(160000)
 		onchange_total()
 	}else{
-		console.log('loai 1,2,3')
+		
 		$("#so_price").val(150000)
 		onchange_total()
 	}
 }
 
 $(document).ready(function(){
-	console.log("auto load")
+	
 	get_list_user()
 	get_list_code()
 	get_so()

@@ -194,34 +194,164 @@
         <div class="col-12 mb-3">
           <h2>ĐẶT MUA THẺ</h2>
         </div>
-        <div class="col-12 col-lg-6 text-center">
-          <img class="card-shop" src="static/images/card.png" alt="hình minh họa" >
+        
+        <div class="col-12 col-lg-6 text-center img-card">
+          <div id="img-card">
+            <img class="card-shop card-front"
+            src="static/images/cardtype/cardtype-1-f.png" alt="hình minh họa" >
+            <img class="card-shop card-back" onmouseout="show_front()" onmouseover="show_back()"
+            src="static/images/cardtype/cardtype-1-b.png" alt="hình minh họa" >
+            
+          </div>
           <p class="cus-name">Tên của bạn...</p>
+          <div class="radio mt-0">
+            <label for="back">Mặt trước</label>
+            <input  onclick="show_front()" type="radio" checked name="card" id="back" value="back">
+            <label for="front">Mặt sau</label>
+            <input  onclick="show_back()" type="radio" name="card" id="front" value="front">
+          </div>
+          
+          
         </div>
+          
+
         <div class="col-12 col-lg-6 mt-1">
-          <h3>Loại thẻ: 
-            <button class="btn btn-success">Loại 1</button>
-            <button class="btn btn-success">Loại 2</button>
-            <button class="btn btn-success">Loại 3</button>
-            <button class="btn btn-success">Nhờ thiết kế theo yêu cầu</button>
+          <h3>Loại thẻ</h3>
+          <div class="loai-the"> 
+            <ul>
+              <li><img onclick="type('type1')" id="type1" src="static/images/cardtype/cardtype-1-f.png" alt=""><p>Loại 1</p> </li>
+              <li><img onclick="type('type2')" id="type2" src="static/images/cardtype/cardtype-2-f.png" alt=""> <p>Loại 2</p></li>
+
+            </ul>
+            <ul>
+              <li><img onclick="type('type3')" id="type3" src="static/images/cardtype/cardtype-3-f.png" alt=""> <p>Loại 3</p></li>
+              <li><img onclick="type('type4')" id="type4" src="static/images/cardtype/cardtype-4-f.png" alt=""> <p>Thiết kế theo yêu cầu</p></li>
+            </ul>
+          </div>
+          <h3 class="mt-3">Tên in trên thẻ <span> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text" value="Tên của bạn" placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
+          <h3 class="mt-3">Số lượng: <input class="input-qty" id="input-qty" value="1" min="1" max="1000" type="number">x
+            <input class="input-qty" readonly id="price-card" type="number" value="150000"> đ
           </h3>
-          <h3>Tên của bạn <span>(30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"></h3>
-          <h3 class="mt-1">150.000đ <del>199.000đ</del><span>(Free ship toàn quốc)</span></h3>
-          <h3><button class="btn btn-success">Đặt mua</button></h3>
+          <h3 class="mt-3">
+            <span>&#160;&#160; (Free ship toàn quốc)</span>
+             <del>199.000 đ </del>
+          </h3>
+          <h3 class="mt-3">
+            <button 
+              class="btn btn-success" 
+              data-bs-toggle="modal"
+              data-bs-target="#modal_order">Đặt mua
+            </button>
+          </h3>    
         </div>
+        
       </div>
   </div>
 </div>
-</body>
-<script>
-  function change_cusname(name){
-    $(".cus-name").html(name)
-  }
-</script>
 
-  <div id="hoidap" class="our-services section">
-    <div class="container">
-      <div class="row">
+<!-- Modal -->
+<div class="modal fade" id="modal_order" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table class="table  table-order">
+          <tr>
+            <td>Điện thoại *</td>
+            <td><input class="form-control" id="modal-mobile" type="text"></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ nhận hàng *</td>
+            <td>
+              <textarea class="form-control" id="modal-add" rows="4"></textarea>
+          </tr>
+          <tr>
+            <td>Ghi chú</td>
+            <td>
+              <textarea class="form-control" id="modal-note" rows="3"></textarea>
+              <!-- <input class="form-control" id="modal-note" type="text"> -->
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr></td>
+          </tr>
+          <tr>
+            <td colspan="2"><h2>Thông tin đặt hàng</h2></td>
+          </tr>
+          <tr>
+            <td>Tên in trên thẻ</td>
+            <td>
+              <input id="modal-cus-name" class="form-control" type="text">
+            </td>
+          </tr>
+
+          <tr>
+            <td>Loại thẻ</td>
+            <td>
+              <input id="modal-card-type"  readonly class="form-control" type="text">
+            </td>
+          </tr>
+          <tr>
+            <td>Số lượng</td>
+            <td>
+              <input id="modal-qty" min="1" max="1000" onchange="change_qty(this.value)" class="form-control" type="number">
+            </td>
+          </tr>
+          <tr>
+          <td>Màu chữ(Mã màu)</td>
+            <td>
+              <input id="modal-textcolor" readonly class="form-control" type="text">
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Tổng tiền</strong></td>
+            <td><strong><input id="modal-price" readonly class="form-control" type="text" value="150.000 vnđ &#160; &#160;&#160; (Free ship)"></strong></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button 
+        type="button" 
+        onclick="order()" 
+        data-bs-dismiss="modal"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modal_confirm_so"
+         >Xác nhận</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal_confirm_so" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mt-5">
+              <h1>ĐẶT HÀNG THÀNH CÔNG</h1>
+            </div>
+            <div class="col-12 mt-3">
+              <h3>Cảm ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ lại với bạn để xác nhận đơn hàng ngay!
+              </h3>
+            </div>
+            <br>
+            <div class="col-12 mt-5">
+              <a href="" class="btn btn-success text-center">Quay lại trang chủ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<div id="hoidap" class="our-services section">
+
         <div class="col-lg-12 offset-lg-12">
           <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
             <h6>HỎI ĐÁP MỘT SỐ THẮC MẮC</h6>
@@ -275,23 +405,25 @@
                 </div>
               </div>
             </div>
-
           </div>
-
-        </div>
-      </div>
-    </div>
+        </div>  
   </div>
 
-  
 
-  
 
-<!--   footer start -->
-<?php include('includes/footer.html'); ?>
-<!--   footer end -->
+    <!--   footer start -->
+    <?php include('includes/footer.html'); ?>
+    <!--   footer end -->
 
-<?php include('includes/script.html');?>
-
+    <?php include('includes/script.html');?>
+    <script src="static/js/script.js"></script>
+    <script>
+  $(document).ready(function(){
+  var a = $("#price-card").val()
+  var b = formatNumber(a)
+  $("#price-card").val(b)
+  active_boder("type1")
+})
+</script>
 </body>
 </html>
