@@ -1,0 +1,88 @@
+
+#state_header label{
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 2px;
+	margin: 2px;
+}
+
+#state_header{
+	float: right;
+}
+.form-state{
+	
+	background-color: unset;
+
+}
+.btn-state{
+	background-color: #939393;
+	padding: 2px;
+	margin: 2px;
+}
+.state_active{
+	background-color: green;
+}
+#done_btn{display: none;}
+.form-so{
+	background-color: unset;
+	border: unset;
+	font-size: 40px;
+	color: white;
+	text-align: left;
+}
+.btn-cus{
+	background-color: #8E7BFF;
+	padding: 2px;
+	margin: 2px;
+
+}
+.btn-cus:hover{
+	background-color: #0CFD12;
+}
+.left{
+	float: left;
+}
+.rights{
+	float: right;
+}
+
+/*#header-so{
+	background-color: #969696!important;
+}*/
+.h4{
+	color: blue!important;
+}
+
+.so-modal label{
+	text-align: left;
+}
+
+
+#btn-show,#btn-show-code, #btn-show-so{
+	display: none;
+}
+table{
+	color: white!important;
+
+}
+table td{
+	text-align: center;
+}
+.table > thead{
+	background-color: #714B03!important;
+}
+.table  th{
+	border: none!important;
+	background-color: #714B03!important;
+}
+
+.table-hover > tbody > tr:hover {
+    --bs-table-accent-bg: rgb(12 20 255 / 8%);
+    color: #10EC05;
+}
+.right{
+	color: #DCC006;
+	cursor: pointer;
+}
+
+

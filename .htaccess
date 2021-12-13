@@ -1,0 +1,16 @@
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+#vietcoding.com/user.php?username=xyz —> vietcoding.com/xyz
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9]+)$ public_profile.php?id=$1
+RewriteRule ^([a-zA-Z0-9]+)/$ public_profile.php?id=$1
+
+
+
+#RewriteRule ^index.php/([a-zA-Z0-9_-]+)$ public_profile.php?id=$1
+#RewriteRule ^index.php/([a-zA-Z0-9_-]+)/$ public_profile.php?id=$1

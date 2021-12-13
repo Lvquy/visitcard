@@ -1,0 +1,206 @@
+
+<?php
+require('includes/db.php');
+
+?>
+<?php
+    if(isset($_GET["id"])){
+        $id = $_GET["id"];
+        $query_user = "SELECT * FROM `users` WHERE slug = '$id'";
+        $result = mysqli_query($con, $query_user);
+        $row = mysqli_fetch_array($result);
+        $count = mysqli_num_rows($result);
+        if ($count > 0){
+			$random = rand(100,9000);
+			$avata = $row["avata"]."?".$random;
+			$domain = "localhost/code/smartcard/";
+			$slug = $row["slug"];
+			$url = $domain.$slug;
+			$address = $row["address"];
+			$email = $row["email"];
+			$intro = $row["intro"];
+			$mobile = $row["mobile"];
+			$fullname = $row["fullname"];
+			$top_bg_color = $row["top_bg_color"];
+			$top_bg_img = $row["top_bg_img"];
+			$dir_cover = "../images/theme/";
+			$top_bg_img_full = $dir_cover.$top_bg_img;
+			$top_text_color = $row["top_text_color"];
+			$active = $row["active"];
+			$id = $row["id"];
+			$bank_name = $row["bank_name"];
+			$bank_num = $row["bank_num"];
+			$bank_sub = $row["bank_sub"];
+			$bank_user = $row["bank_user"];
+        }
+        else{
+        	header("Location: index.php");
+        exit;}
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel='icon' href='static/images/logo.png' type='image/x-icon'>
+	<title><?php echo $fullname ?> | VisitCard.info</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/public_style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+	<div class="input-hide">
+		<input type="hidden" value="<?php echo $active?>" id="active_status">
+		<input type="hidden" value="<?php echo $id?>" id="id_user">
+		<input type="hidden" value="<?php echo $address ?>" id="address">
+		<input type="hidden" value="<?php echo $email ?>" id="email">
+		<input type="hidden" value="<?php echo $bank_name ?>" id="bank_name">
+		<input type="hidden" value="<?php echo $bank_num ?>" id="bank_num">
+		<input type="hidden" value="<?php echo $intro ?>" id="i_intro">
+		<input type="hidden" value="<?php echo $mobile ?>" id="mobile">
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 top" style="--top-bg-color:<?php echo $top_bg_color?>;
+			 --top-bg-img:url(<?php echo $top_bg_img_full ?>)">
+				<div class="avata">
+					<img src="static/images/avata/<?php echo $avata?>" alt="" class="img-avata">
+				</div>
+				<div class="name">
+					<h6 style="--top-text-color:<?php echo $top_text_color?>"><?php echo $fullname?></h6>
+					<i class="bi bi-check" style="display: none;color:blue" id='tichxanh' title="Tài khoản chính thức"></i>
+				</div>
+				<div class="slug" style="--top-text-color:<?php echo $top_text_color?>">
+					<i class="bi bi-person-bounding-box" id="url">
+						 <?php echo $url ;?>
+					</i>
+					&emsp;<i title="coppy link" class="bi bi-clipboard" onClick="coppy('url','cped_url','cp_url','copped_url')" id="cp_url"></i>
+					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_url"></i>
+					
+					
+				</div>
+			</div>
+			<div class="col-12 intro" id="intro">
+				<p id='p_address'>
+					<i class="bi bi-pin-map"></i> <?php echo $address;?>
+					<a href="https://maps.google.com/?q=<?php echo $address;?>" target="_blank">
+						<i class="bi bi-geo-alt" title="Mở google map"></i>
+					</a>
+				</p>
+				<p id="p_email">
+					<i class="bi bi-envelope">
+						<a href="mailto:<?php echo $email?>" id="cp_mail"><?php echo $email?></a>
+					</i>
+					&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('cp_mail','cped_mail','icon_cp_mail','copped_mail')"id="icon_cp_mail"></i>
+					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mail"></i>
+					<span id="copped_mail"></span>
+				</p>
+				<div id="p_bank_name">
+					<p>
+					<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span id="bank_num"><?php echo $bank_num ?></span>
+					&emsp;<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank','copped_bank_num')">
+					</i>
+					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
+					<span id="copped_bank_num"></span>
+					</p>
+					<i> &emsp;&emsp;&emsp;- Chủ tài khoản: <?php echo $bank_user ?></i><br/>
+					<i> &emsp;&emsp;&emsp;- Chi nhánh: <?php echo $bank_sub ?></i><br/>
+				</div>
+			
+				<p id="p_intro">
+					<q><?php echo $intro?></q>
+				</p>
+				
+			</div>
+
+			<div class="col-12 phone text-center">
+				<div class="col-12" id="show_intro" >
+					<img src="static/images/down.gif" alt="down" onclick="show_intro()" title="Xổ ra" width="20px">
+					
+				</div>
+				<div class="col-12" id="hide_intro">
+					<img src="static/images/up.gif" onclick="hide_intro()" title="Thu gọn" width="20px" alt="up">
+					
+				</div>
+				<div class="call-button" id="phone">
+					<i class="bi bi-phone-vibrate"></i>
+					<a class="link-danger" href="tel:<?php echo $mobile?>" id="cp_mobile"> <?php echo $mobile?></a>
+					<i title="coppy số điện thoại" class="bi bi-clipboard cped-mobile" onClick="coppy('cp_mobile','cped_mobile','icon_cp_mobile','')"id="icon_cp_mobile"></i>
+					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mobile"></i>
+					
+				</div>
+				<div class="call-button1">
+					<i class="bi bi-telephone-forward"></i>
+					<span id="copped_mobile">Gọi điện</span>
+					<i class="bi bi-person-lines-fill" title="Lưu danh bạ"></i>
+					<span id="copped_mobile">Lưu danh bạ</span>
+				</div>
+				<hr>
+			</div>
+			<div class="col-12 main-box">
+				<div class="container mt-2">
+					<div class="social">
+						<h4 class="text-success">Social Link</h4>
+						<span id="load_social"></span>
+						<hr>
+					</div>
+					
+					<div class="coins">
+						<h4 class="text-success">Coins</h4>
+						
+						<span id="load_coins">
+						</span>
+						<hr>
+					</div>
+					
+					<div class="skill">
+						<h4 class="text-success">My Skill</h4>
+						<div class="row skill-list">
+							<table>
+								<tr>
+									<td class="skill_name" width="40%"></td>
+									<td></td>
+									<td width="10%"></td>
+								</tr>
+								<tbody id="load_skill">
+								
+								</tbody>
+								</div>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container pb-0">
+			<div class="row">
+				<div class="col-6 col-md-4 footer-1">
+					<p>Coppyright @ visitcard.info</p>
+					<p>Home</p>
+					<p>Edit Profile</p>
+					<hr>
+				</div>
+				<div class="col-6 col-md-4 footer-2">
+					<p>Đặt làm thẻ ngay</p>
+					<p>Dùng thử miễn phí</p>
+					<p>Tự tay thiết kế thẻ</p>
+					<hr>
+				</div>
+				<div class="col-6 col-md-4 footer-3">
+					<p>Contact Us</p>
+					<p>Facebook</p>
+					<p>Zalo</p>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="static/js/public_profile.js"></script>
+</body>
+</html>
