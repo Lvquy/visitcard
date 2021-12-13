@@ -201,8 +201,9 @@
             src="static/images/cardtype/cardtype-1-f.png" alt="hình minh họa" >
             <img class="card-shop card-back" onmouseout="show_front()" onmouseover="show_back()"
             src="static/images/cardtype/cardtype-1-b.png" alt="hình minh họa" >
-            <p class="cus-name">Tên của bạn...</p>
+            
           </div>
+          <p class="cus-name">Tên của bạn...</p>
           <div class="radio mt-0">
             <label for="back">Mặt trước</label>
             <input  onclick="show_front()" type="radio" checked name="card" id="back" value="back">
@@ -228,12 +229,12 @@
             </ul>
           </div>
           <h3 class="mt-3">Tên in trên thẻ <span> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text" value="Tên của bạn" placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
-          <h3 class="mt-3">Số lượng: <input class="input-qty" id="input-qty" value="1" min="1" max="1000" type="number">
+          <h3 class="mt-3">Số lượng: <input class="input-qty" id="input-qty" value="1" min="1" max="1000" type="number">x
             <input class="input-qty" readonly id="price-card" type="number" value="150000"> đ
           </h3>
           <h3 class="mt-3">
             <span>&#160;&#160; (Free ship toàn quốc)</span>
-             <del>199.000đ </del>
+             <del>199.000 đ </del>
           </h3>
           <h3 class="mt-3">
             <button 
@@ -294,7 +295,7 @@
           <tr>
             <td>Số lượng</td>
             <td>
-              <input id="modal-qty"  class="form-control" type="number">
+              <input id="modal-qty" min="1" max="1000" onchange="change_qty(this.value)" class="form-control" type="number">
             </td>
           </tr>
           <tr>
@@ -409,14 +410,22 @@
           </div>
         </div>  
   </div>
-</body>
 
-<!--   footer start -->
-<?php include('includes/footer.html'); ?>
-<!--   footer end -->
 
-<?php include('includes/script.html');?>
-<script src="static/js/script.js"></script>
 
+    <!--   footer start -->
+    <?php include('includes/footer.html'); ?>
+    <!--   footer end -->
+
+    <?php include('includes/script.html');?>
+    <script src="static/js/script.js"></script>
+    <script>
+  $(document).ready(function(){
+  var a = $("#price-card").val()
+  var b = formatNumber(a)
+  $("#price-card").val(b)
+  active_boder("type1")
+})
+</script>
 </body>
 </html>
