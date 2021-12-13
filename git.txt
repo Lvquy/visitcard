@@ -1,0 +1,8 @@
+https://github.com/Lvquy/visitcard.git
+khởi tạo dự án:
+vào thư mục code > git init
+	> git status //**xem code thay đổi gì
+	> git add -A //** chọn tất cả thêm vào commit
+	> git commit -m 'mô tả commit'
+	> git remote add origin https://github.com/Lvquy/visitcard.git  
+	> git push -f origin master // push lên nhánh master
