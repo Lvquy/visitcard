@@ -8,4 +8,15 @@ vào thư mục code > git init
 	> git push -f origin master // push lên nhánh master
 	> git pull origin master
 
-test co cai dong nay
+ở nhánh test sau khi làm xong:
+	git add .
+	git commit -m 'mô tả'
+	git checkout master
+	git pull origin master
+	git checkout test
+	git rebase master
+	git push -f origin test
+	lên github.com chọn nhánh test mới push lên rồi gộp vào nhánh master sau đó về máy local gõ
+	git checkout master
+	git pull origin master
+	để update code mới từ server
