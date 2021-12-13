@@ -6,3 +6,5 @@ vào thư mục code > git init
 	> git commit -m 'mô tả commit'
 	> git remote add origin https://github.com/Lvquy/visitcard.git  
 	> git push -f origin master // push lên nhánh master
+
+test co cai dong nay
