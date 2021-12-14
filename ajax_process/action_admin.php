@@ -110,6 +110,7 @@ if (isset($_POST["id_so"])) {
                 $state = $row["state"];
                 $text_color = $row["text_color"];
                 $total = $row["total"];
+                $username = $row["username"];
 
 
             }
@@ -248,16 +249,21 @@ if (isset($_POST["id_so"])) {
                 </td>
             </tr>
             <tr>
-                <td colspan='2'>Color</td>
+                <td colspan='4'><hr></td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>$text_color</td>
+                <td>Username</td>
+                <td>$username</td>
                 
-                <td>$text_color
-                </td>
             </tr>
             <tr>
                 <td>Note</td>
                 <td colspan='3'>
-                <textarea readonly class='form-control mt-2' 
+                    <textarea readonly class='form-control mt-2' 
                     id='note' cols='2' rows='4'>$note</textarea>
+                <td
             </tr>
         </table>
         <div class='modal-footer'>
