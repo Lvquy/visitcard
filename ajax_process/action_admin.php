@@ -109,7 +109,8 @@ if (isset($_POST["id_so"])) {
                 $saler = $row["saler"];
                 $state = $row["state"];
                 $text_color = $row["text_color"];
-                $total = $qty*$price;
+                $total = $row["total"];
+
 
             }
         }
@@ -234,6 +235,7 @@ if (isset($_POST["id_so"])) {
                 <td>Qty</td>
                 <td>Price</td>
                 <td>Total</td>
+                
             </thead>
             <tr>
                 <td>
@@ -241,7 +243,9 @@ if (isset($_POST["id_so"])) {
                 </td>
                 <td><input readonly  class='form-control' type='number' min='1' max='100' onchange='onchange_total()' id='so_qty' value='$qty'></td>
                 <td><input readonly class='form-control' type='number' min='0' id='so_price' onchange='onchange_total()' value='$price'></td>
-                <td><span id='so_total'>$total</span></td>
+                <td>
+                    <span id='so_total'>$total</span>
+                </td>
             </tr>
             <tr>
                 <td colspan='2'>Color</td>

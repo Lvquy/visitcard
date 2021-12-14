@@ -1,12 +1,23 @@
 
 
+
+
+#username{
+    color: green;
+    font-size: 1.8rem;
+}
+
+#alert-price{
+    color: green;
+}
 .radio{
-    color: red;
     margin: 0;
     padding: 0;
-    
     position: relative;
     top: -5rem;
+}
+.radio label, .radio input{
+    cursor: pointer;
 }
 
 .input-qty{
@@ -77,13 +88,13 @@ h3 del{
     font-size: 1rem;
     font-style: italic;
     text-align: center;
-    float: right;
+    
 }
 
 h3 span{
     color: #989898;
     font-size: 1rem;
-    float: right;
+    text-align: center;
     
 
 }
@@ -91,10 +102,10 @@ p.cus-name{
     color: white;
     position: relative;
     top: -5rem;
-   /* left: 8rem;*/
-    text-align: center;
+    text-align: left;
+    margin-left: 10px;
     font-weight: bold ;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
 
 }
@@ -109,7 +120,7 @@ img.card-shop:hover{
     width: 22rem;
     height: auto;
     opacity: 1;
-    transition: .9s;  
+    transition: .4s;  
 }
 
 .accordion-body{
@@ -218,7 +229,7 @@ textarea {
 .btn-success {
     background-color: #18191a !important;
     border-radius: 20px;
-    border: none;
+    border: 1px solid white;
 }
 
 .btn-success:hover {
@@ -940,7 +951,7 @@ ul #qr-none-li,
 @media screen and (max-width: 600px) {
 
     /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 480px;*/
-    p.cus-name{
+   /* p.cus-name{
     color: white;
     position: relative;
     top: -5rem;
@@ -948,7 +959,7 @@ ul #qr-none-li,
     text-align: center;
     font-weight: bold ;
     font-size: 1.5rem;
-    }
+    }*/
 
 
 }
@@ -966,7 +977,7 @@ ul #qr-none-li,
         position: relative;
         margin: auto;
     }
-    p.cus-name{
+   /* p.cus-name{
     color: white;
     position: relative;
     top: -5rem;
@@ -974,7 +985,7 @@ ul #qr-none-li,
     text-align: center;
     font-weight: bold ;
     font-size: 1.5rem;
-    }
+    }*/
 
 
 }
@@ -992,7 +1003,7 @@ ul #qr-none-li,
         position: relative;
         margin: auto;
     }
-    p.cus-name{
+ /*   p.cus-name{
     color: white;
     position: relative;
     top: -5rem;
@@ -1001,7 +1012,7 @@ ul #qr-none-li,
     font-weight: bold ;
     font-size: 1.5rem;
     }
-
+*/
 }
 
 footer {
