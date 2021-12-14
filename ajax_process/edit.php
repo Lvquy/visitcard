@@ -96,27 +96,36 @@ require_once("../includes/db.php");
         }
         else{
             //đúng cho phép chạy tiếp
-            
-            $id_user = $_POST["id_user"];
-            $query_check_unique_slug = "SELECT slug FROM users WHERE slug= '$slug'AND id != '$id_user' ";
-            $result_check_unique_slug = mysqli_query($con,$query_check_unique_slug);
-            $row = mysqli_num_rows($result_check_unique_slug);
-            if ($row >0){
-                //trung
-                echo 0;
-            }
-            elseif ($row == 0) {
-                $query = "UPDATE users SET slug='$slug' WHERE id = '$id_user'";
-                $result = mysqli_query($con, $query);
-
-                echo 1;
-                //ok
-
+            if (isset($_POST["id_user"])) {
+                $id_user = $_POST["id_user"];
+                $query_check_unique_slug = "SELECT slug FROM users WHERE slug= '$slug'AND id != '$id_user' ";
+                $result_check_unique_slug = mysqli_query($con,$query_check_unique_slug);
+                $row = mysqli_num_rows($result_check_unique_slug);
+                if ($row >0){
+                    //trung
+                    echo 0;
+                }
+                else{
+                    $query = "UPDATE users SET slug='$slug' WHERE id = '$id_user'";
+                    $result = mysqli_query($con, $query);
+                    echo 1;
+                    //ok
+                }  
             }
             else{
-                echo 0;
-                //lỗi
-            }     
+                $query_check_unique_slug = "SELECT slug FROM users WHERE slug= '$slug' ";
+                $result_check_unique_slug = mysqli_query($con,$query_check_unique_slug);
+                $row = mysqli_num_rows($result_check_unique_slug);
+                if ($row >0){
+                    //trung
+                    echo 0;
+                }
+                else{
+                
+                    echo 1;
+                    //ok
+                };     
+            }
         }
         // check syntax slug end
 

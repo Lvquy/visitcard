@@ -270,8 +270,7 @@
                         
                         <div class="about col-12 mt-2 icon-addon text-center">
                             <h5 class="text-left text-primary">Intro <i onclick="edit_intro()" id="edit_icon_intro" class="fa right fa-pencil"></i></h5>
-                            <textarea onblur="ajax_submit_intro()" readonly class="text-left" name="intro" id="intro"  rows="4" ><?php echo $intro;?>
-                            </textarea>
+                            <textarea onblur="ajax_submit_intro()" readonly class="text-left" name="intro" id="intro"  rows="4" ><?php echo $intro;?></textarea>
                             <p class="f_alert" id="intro_alert" >Success!</p>
                             <hr/>
                         </div>

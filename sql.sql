@@ -87,11 +87,13 @@ CREATE TABLE sale_order (
     cus_mobile int,
     card_type varchar(20),
     price int,
+    total int,
     qty int DEFAULT 0,
     note varchar(100),
     order_date date,
     saler varchar(30),
     state int DEFAULT 0,
     text_color varchar(10),
+    username varchar(25),
     PRIMARY KEY (so)
 )AUTO_INCREMENT = 1;

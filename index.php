@@ -195,13 +195,12 @@
           <h2>ĐẶT MUA THẺ</h2>
         </div>
         
-        <div class="col-12 col-lg-6 text-center img-card">
+        <div class="col-12 col-lg-6 text-left img-card">
           <div id="img-card">
             <img class="card-shop card-front"
             src="static/images/cardtype/cardtype-1-f.png" alt="hình minh họa" >
-            <img class="card-shop card-back" onmouseout="show_front()" onmouseover="show_back()"
+            <img class="card-shop card-back"
             src="static/images/cardtype/cardtype-1-b.png" alt="hình minh họa" >
-            
           </div>
           <p class="cus-name">Tên của bạn...</p>
           <div class="radio mt-0">
@@ -210,12 +209,8 @@
             <label for="front">Mặt sau</label>
             <input  onclick="show_back()" type="radio" name="card" id="front" value="front">
           </div>
-          
-          
         </div>
-          
-
-        <div class="col-12 col-lg-6 mt-1">
+        <div class="col-12 col-lg-6 mt-2">
           <h3>Loại thẻ</h3>
           <div class="loai-the"> 
             <ul>
@@ -228,15 +223,17 @@
               <li><img onclick="type('type4')" id="type4" src="static/images/cardtype/cardtype-4-f.png" alt=""> <p>Thiết kế theo yêu cầu</p></li>
             </ul>
           </div>
-          <h3 class="mt-3">Tên in trên thẻ <span> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text" value="Tên của bạn" placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
-          <h3 class="mt-3">Số lượng: <input class="input-qty" id="input-qty" value="1" min="1" max="1000" type="number">x
-            <input class="input-qty" readonly id="price-card" type="number" value="150000"> đ
+          <h3 class="mt-1">Tên in trên thẻ <span> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
+          <h3 class="mt-2">
+            https://vncard.info/<span id="username"></span>
+            <input class="form-control" onchange="change_username(this.value)" type="text" placeholder="Username">
           </h3>
-          <h3 class="mt-3">
-            <span>&#160;&#160; (Free ship toàn quốc)</span>
-             <del>199.000 đ </del>
+          <h3 class="mt-4">Đơn giá <input class="input-qty" hidden id="input-qty" value="1" min="1" max="1000" type="number">:<input class="input-qty" readonly id="price-card" type="number" value="150000"> đ <del>199.000 đ </del>
           </h3>
-          <h3 class="mt-3">
+          <h3 class="mt-4">
+            <span>(Free ship toàn quốc)</span>
+          </h3>
+          <h3 class="mt-4 text-center">
             <button 
               class="btn btn-success" 
               data-bs-toggle="modal"
@@ -280,7 +277,7 @@
           <tr>
             <td>Tên in trên thẻ</td>
             <td>
-              <input id="modal-cus-name" class="form-control" type="text">
+              <input readonly id="modal-cus-name" class="form-control" type="text">
             </td>
           </tr>
 
@@ -305,7 +302,12 @@
 
           <tr>
             <td><strong>Tổng tiền</strong></td>
-            <td><strong><input id="modal-price" readonly class="form-control" type="text" value="150.000 vnđ &#160; &#160;&#160; (Free ship)"></strong></td>
+            <td><strong><input id="modal-price" readonly class="form-control" type="text" ></strong></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="alert-price">Mua nhiều giảm giá</span>
+            </td>
           </tr>
         </table>
       </div>
