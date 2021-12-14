@@ -224,13 +224,15 @@
             </ul>
           </div>
           <h3 class="mt-1">Tên in trên thẻ <span> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
-          <h3 class="mt-2">
-            https://vncard.info/<span id="username"></span>
-            <input class="form-control" onchange="change_username(this.value)" type="text" placeholder="Username">
+          <h6 class="mt-2" id="username">
+            https://vncard.info/
+          </h6>
+          <h3>
+            <input class="form-control" onchange="change_username(this.value)" id="input-username" type="text" placeholder="Username">
           </h3>
           <h3 class="mt-4">Đơn giá <input class="input-qty" hidden id="input-qty" value="1" min="1" max="1000" type="number">:<input class="input-qty" readonly id="price-card" type="number" value="150000"> đ <del>199.000 đ </del>
           </h3>
-          <h3 class="mt-4">
+          <h3 class="text-center">
             <span>(Free ship toàn quốc)</span>
           </h3>
           <h3 class="mt-4 text-center">
@@ -278,6 +280,12 @@
             <td>Tên in trên thẻ</td>
             <td>
               <input readonly id="modal-cus-name" class="form-control" type="text">
+            </td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td>
+              <input readonly id="modal-username" class="form-control" type="text">
             </td>
           </tr>
 

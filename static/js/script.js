@@ -110,6 +110,7 @@ if (CARD_TYPE ==4){
 var text_color = $("#input-textcolor").val()
 var qty = $("#input-qty").val()
 var price = $("#price-card").val()
+var username = $("#input-username").val()
 var total = price * qty * 1000
 
 var box_mobile = modal_order.querySelector('#modal-cus-name')
@@ -117,11 +118,13 @@ var box_card_type = modal_order.querySelector('#modal-card-type')
 var box_text_color = modal_order.querySelector('#modal-textcolor')
 var box_qty = modal_order.querySelector('#modal-qty')
 var box_price = modal_order.querySelector('#modal-price')
+var box_username = modal_order.querySelector('#modal-username')
 
 box_mobile.value = cus_name
 box_card_type.value = card_type
 box_text_color.value = text_color
 box_qty.value = qty
+box_username.value = username
 
 box_price.value = formatNumber(total)
 })
@@ -134,9 +137,10 @@ function order() {
 	var textcolor = $("#modal-textcolor").val()
 	var qty = $("#modal-qty").val()
 	var total = $("#modal-price").val()*1000
-	console.log(total)
+	var username = $("#modal-username").val()
+
 	$.post("ajax_process/action_order.php",
-		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,total:total},
+		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,total:total,username:username},
 		function(data){
 	})
 
@@ -190,7 +194,8 @@ function show_front() {
 
 // change_username
 function change_username(value) {
-	$("#username").html(value)
+	$("#username").html("https://vncard.info/")
+	$("#username").append(value)
 	var slug = value
 	$.post("ajax_process/edit.php",{slug:slug},function(data){
 		console.log(data)

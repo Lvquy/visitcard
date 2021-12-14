@@ -10,6 +10,7 @@ if (isset($_POST["mobile"])) {
 	$qty = $_POST["qty"];
 	$textcolor = $_POST["textcolor"];
 	$total = $_POST["total"];
+	$username = $_POST["username"];
 	$order_date = date("Y-m-d");
 	$saler = "Web online";
 	$state = 0;
@@ -36,8 +37,8 @@ if (isset($_POST["mobile"])) {
 	};
 	
 	$query = "INSERT into `sale_order` 
-	(cus_name,cus_add,cus_mobile,card_type,price,qty,note,order_date,saler,state,text_color,total) VALUES 
-	('$cus_name','$add','$mobile','$card_type','$price','$qty','$note','$order_date','$saler','$state','$textcolor','$total')";
+	(cus_name,cus_add,cus_mobile,card_type,price,qty,note,order_date,saler,state,text_color,total,username) VALUES 
+	('$cus_name','$add','$mobile','$card_type','$price','$qty','$note','$order_date','$saler','$state','$textcolor','$total','$username')";
 	$result = mysqli_query($con,$query);
 
 }
