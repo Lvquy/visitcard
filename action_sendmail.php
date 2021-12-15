@@ -24,7 +24,7 @@
     	$email_value = $_POST["email_value"];
     	$id_user = $_POST["id_user"];
     	$fullname = $_POST["fullname"];
-    	$subject = "Active Code From SmartCard";
+    	$subject = "Active Code From VnCard";
     	// fun random code
 	    
 	    
@@ -37,8 +37,8 @@
     	$content_mail .= "<h2>Mã kích hoạt của bạn là: <span style='color:blue'>$active_code </span></h2>";
     	$content_mail .= "<p>Coppy mã trên dán vào form tại website để xác nhận</p>";
     	$content_mail .= "<p><strong>Lưu ý: Chỉ email đã xác nhận mới có thể dùng để khôi phục tài khoản khi quên mật khẩu.</strong></p>";
-    	$content_mail .= "<p>Email được gửi từ website: https://smartcard.com</p>";
-    	$content_mail .= "<h3 style='color:red'>SmartCard | Chia sẻ thông tin chỉ 1 chạm </h3>";
+    	$content_mail .= "<p>Email được gửi từ website: https://vncard.com</p>";
+    	$content_mail .= "<h3 style='color:red'>VnCard | Chia sẻ thông tin chỉ 1 chạm </h3>";
 
     	$mail = new PHPMailer(true);
 
@@ -52,7 +52,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('smartcard@gmail.com', 'SmartCard');
+			    $mail->setFrom('vncard@gmail.com', 'VnCard');
 		        $mail->addAddress($_POST["email_value"], $fullname);     //Add a recipient
 			    $mail->Subject = $subject;
 		        $mail->Body    = $content_mail; 
@@ -83,7 +83,7 @@
             $new_pass = generateRandomString(5);
             $content_mail = "<h2>RESET PASSWORD</h2>";
             $content_mail .= "<h3>Mật khẩu mới của bạn là: $new_pass </h3>";
-            $content_mail .= "<p>Chúng tôi không thể biết mật khẩu cũ của bạn, mật khẩu đã được mã hóa, tuy nhiên bạn vẫn nên đổi mật khẩu mới sau khi đăng nhập lại.</p>";
+            $content_mail .= "<p>Chúng tôi không thể biết mật khẩu cũ của bạn, mật khẩu đã được mã hóa, dùng mật khẩu trên để đăng nhập, sau khi đăng nhập hãy đổi mật khẩu mới.</p>";
             // có email này trong hệ thống & status là đã confirm
             $mail = new PHPMailer(true);
             try {
@@ -95,7 +95,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('smartcard@gmail.com', 'SmartCard');
+			    $mail->setFrom('smartcard@gmail.com', 'VnCard');
 		        $mail->addAddress($email, $fullname);     //Add a recipient
 			    $mail->Subject = "Reset Password";
 		        $mail->Body    = $content_mail; 

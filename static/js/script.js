@@ -1,4 +1,25 @@
 
+
+
+
+function show_help(){
+	//
+	Toastify({
+	  text: "Username là duy nhất của bạn trong hệ thống \n để định danh tài khoản của bạn\n cũng như dùng để đăng nhập hệ thống",
+	  duration: 6000,
+	  //destination: "#",
+	  newWindow: true,
+	  close: true,
+	  gravity: "top", // `top` or `bottom`
+	  position: "center", // `left`, `center` or `right`
+	  stopOnFocus: true, // Prevents dismissing of toast on hover
+	  style: {
+	    background: "linear-gradient(to right, #0CF749, #3DB0C9)",
+	  },
+	  //onClick: function(){} // Callback after click
+	}).showToast();
+	//
+}
 function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
  }
@@ -138,12 +159,99 @@ function order() {
 	var qty = $("#modal-qty").val()
 	var total = $("#modal-price").val()*1000
 	var username = $("#modal-username").val()
-
-	$.post("ajax_process/action_order.php",
+	
+	if (mobile.length<=9){
+		//
+		Toastify({
+		  text: "Nhập đầy đủ số điện thoại nhận hàng",
+		  duration: 6000,
+		  //destination: "#",
+		  newWindow: true,
+		  close: true,
+		  gravity: "top", // `top` or `bottom`
+		  position: "center", // `left`, `center` or `right`
+		  stopOnFocus: true, // Prevents dismissing of toast on hover
+		  style: {
+		    background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+		  },
+		  //onClick: function(){} // Callback after click
+		}).showToast();
+		//	
+	}
+	else if (add.length <15){
+		//
+		Toastify({
+		  text: "Nhập đầy đủ địa chỉ nhận hàng",
+		  duration: 6000,
+		  //destination: "#",
+		  newWindow: true,
+		  close: true,
+		  gravity: "top", // `top` or `bottom`
+		  position: "center", // `left`, `center` or `right`
+		  stopOnFocus: true, // Prevents dismissing of toast on hover
+		  style: {
+		    background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+		  },
+		  //onClick: function(){} // Callback after click
+		}).showToast();
+		//
+	}
+	else{
+		$("#modal_confirm_so").modal('show');
+		$.post("ajax_process/action_order.php",
 		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,total:total,username:username},
 		function(data){
-	})
+		})
+	}
+	
+	
+	
 
+}
+function show_modal_order() {
+	// $('#modal_order').modal('toggle');
+	// $('#myModal').modal('show');
+	// $('#myModal').modal('hide');
+	var username = $("#input-username").val()
+	if (trung_username == true) {
+		//
+		Toastify({
+		  text: "Username này đã có người sử dụng",
+		  duration: 6000,
+		  //destination: "#",
+		  newWindow: true,
+		  close: true,
+		  gravity: "top", // `top` or `bottom`
+		  position: "center", // `left`, `center` or `right`
+		  stopOnFocus: true, // Prevents dismissing of toast on hover
+		  style: {
+		    background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+		  },
+		  //onClick: function(){} // Callback after click
+		}).showToast();
+		//
+	};
+	if (username.length <3){
+		//
+		Toastify({
+		  text: "Username: 3 - 25 kí tự, KHÔNG DÙNG (khoảng trắng, kí tự đặc biệt, có dấu)",
+		  duration: 6000,
+		  //destination: "#",
+		  newWindow: true,
+		  close: true,
+		  gravity: "top", // `top` or `bottom`
+		  position: "center", // `left`, `center` or `right`
+		  stopOnFocus: true, // Prevents dismissing of toast on hover
+		  style: {
+		    background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+		  },
+		  //onClick: function(){} // Callback after click
+		}).showToast();
+		//
+	}
+	else if(trung_username == false){
+		$('#modal_order').modal('show');
+	}
 }
 function color_name(color) {
 	$(".cus-name").css({"color":color})
@@ -193,12 +301,12 @@ function show_front() {
 }
 
 // change_username
+var trung_username = false
 function change_username(value) {
 	$("#username").html("https://vncard.info/")
 	$("#username").append(value)
 	var slug = value
 	$.post("ajax_process/edit.php",{slug:slug},function(data){
-		console.log(data)
 		if (data == 2){
 			//
 			Toastify({
@@ -217,8 +325,10 @@ function change_username(value) {
 			}).showToast();
 			//
 			$("#username").css({"color":"red"})
+			// $("#btn-order").css({"display":"none"})
 		};
 		if (data == 0){
+			trung_username = true
 			//
 			Toastify({
 			  text: "username này đã có người sử dụng",
@@ -236,26 +346,11 @@ function change_username(value) {
 			}).showToast();
 			//
 			$("#username").css({"color":"red"})
+			// $("#btn-order").css({"display":"none"})
 		};
 		if (data == 1){
-			console.log(data)
+			trung_username = false
 			$("#username").css({"color":"green"})
-			//
-			Toastify({
-			  text: "OK! có thể sử dụng username này",
-			  duration: 6000,
-			  //destination: "#",
-			  newWindow: true,
-			  close: true,
-			  gravity: "top", // `top` or `bottom`
-			  position: "center", // `left`, `center` or `right`
-			  stopOnFocus: true, // Prevents dismissing of toast on hover
-			  style: {
-			    background: "linear-gradient(to right, #0CF71D, #4B17F6)",
-			  },
-			  //onClick: function(){} // Callback after click
-			}).showToast();
-			//
 		};
 	})
 }

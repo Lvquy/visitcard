@@ -1,6 +1,13 @@
 
 
+.bi-question-circle{
+    cursor: pointer;
+}
 
+.float-right{
+    float: right;
+    text-align: left;
+}
 
 #username{
     color: green;
@@ -91,12 +98,16 @@ h3 del{
     
 }
 
-h3 span{
+h3 span#color-text{
     color: #989898;
-    font-size: 2rem;
+    font-size: 1rem;
+    float: right;  
+}
+h3 span#freeship{
+    
+    font-size: 1.8rem;
     text-align: center;
     
-
 }
 p.cus-name{
     color: white;
