@@ -102,53 +102,9 @@ function change_qty(qty) {
 		alert = "Mua nhiều liên hệ trực tiếp để được giá tốt nhất"
 	};
 	$("#modal-price").val(ct)
-		$("#alert-price").html(alert + " (Free ship)")
-	
-	
+		$("#alert-price").html(alert + " + Free ship")
 }
-//get value to order modal 
-var modal_order = document.getElementById('modal_order')
-modal_order.addEventListener('show.bs.modal', function (event) {
-var button = event.relatedTarget
 
-var cus_name = $('#input-cus-name').val()
-if (CARD_TYPE ==1){
-	var card_type = "Loại 1, màu gradient"
-}
-if (CARD_TYPE ==2){
-	var card_type = "Loại 2, Nền đen"
-	
-}
-if (CARD_TYPE ==3){
-	var card_type = "Loại 3, Nền trắng"
-	
-}
-if (CARD_TYPE ==4){
-	var card_type = "Thiết kế theo yêu cầu"
-	
-	
-}
-var text_color = $("#input-textcolor").val()
-var qty = $("#input-qty").val()
-var price = $("#price-card").val()
-var username = $("#input-username").val()
-var total = price * qty * 1000
-
-var box_mobile = modal_order.querySelector('#modal-cus-name')
-var box_card_type = modal_order.querySelector('#modal-card-type')
-var box_text_color = modal_order.querySelector('#modal-textcolor')
-var box_qty = modal_order.querySelector('#modal-qty')
-var box_price = modal_order.querySelector('#modal-price')
-var box_username = modal_order.querySelector('#modal-username')
-
-box_mobile.value = cus_name
-box_card_type.value = card_type
-box_text_color.value = text_color
-box_qty.value = qty
-box_username.value = username
-
-box_price.value = formatNumber(total)
-})
 function order() {
 	var mobile = $("#modal-mobile").val()
 	var add = $("#modal-add").val()
@@ -250,6 +206,46 @@ function show_modal_order() {
 		//
 	}
 	else if(trung_username == false){
+		//get value to order modal 
+		var modal_order = document.getElementById('modal_order')
+		modal_order.addEventListener('show.bs.modal', function (event) {
+			var button = event.relatedTarget
+
+			var cus_name = $('#input-cus-name').val()
+			if (CARD_TYPE ==1){
+				var card_type = "Loại 1, màu gradient"
+			}
+			if (CARD_TYPE ==2){
+				var card_type = "Loại 2, Nền đen"
+			}
+			if (CARD_TYPE ==3){
+				var card_type = "Loại 3, Nền trắng"
+			}
+			if (CARD_TYPE ==4){
+				var card_type = "Thiết kế theo yêu cầu"
+			}
+			var text_color = $("#input-textcolor").val()
+			var qty = $("#input-qty").val()
+			var price = $("#price-card").val()
+			var username = $("#input-username").val()
+			var total = price * qty * 1000
+
+			var box_mobile = modal_order.querySelector('#modal-cus-name')
+			var box_card_type = modal_order.querySelector('#modal-card-type')
+			var box_text_color = modal_order.querySelector('#modal-textcolor')
+			var box_qty = modal_order.querySelector('#modal-qty')
+			var box_price = modal_order.querySelector('#modal-price')
+			var box_username = modal_order.querySelector('#modal-username')
+
+			box_mobile.value = cus_name
+			box_card_type.value = card_type
+			box_text_color.value = text_color
+			box_qty.value = qty
+			box_username.value = username
+
+			box_price.value = formatNumber(total)
+		})
+		//
 		$('#modal_order').modal('show');
 	}
 }
