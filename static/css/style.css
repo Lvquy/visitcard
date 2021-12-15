@@ -70,25 +70,10 @@
     text-align: center;
     
 }
-h3.card-back-1{
-    color: white;
-    margin: 2px;
-    padding: 2px;
-    text-align: center;
-    position: relative;
-    top: -100px;
-    display: none;
-}
-h3.card-front-1{
-    color: white;
-    margin: 2px;
-    padding: 2px;
-    text-align: center;
-    position: relative;
-    top: -100px;
-}
+
 .card-back{
     display: none;
+   
 }
 h3 del{
     color: red;
