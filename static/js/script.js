@@ -253,8 +253,6 @@ function color_name(color) {
 	$(".cus-name").css({"color":color})
 }
 
-
-
 function change_cusname(name){
 	if (name ==''){
 		name = "&nbsp;"
@@ -263,37 +261,45 @@ function change_cusname(name){
  }
 function show_back() {
 	var back = $(".card-back")
-	var back_1 = $(".card-back-1")
 	var front = $(".card-front")
-	var front_1 = $(".card-front-1")
 	var cus_name = $(".cus-name")
-	
-	
-	back.css({"display":"inline-block"})
-	back_1.css({"display":"inline-block"})
-	front.css({"display":"none"})
-	front_1.css({"display":"none"})
+	var  a = $(".card-front")
+	var  b = $(".card-back")
+	a.css({"transform":"rotateY(-90deg)","-webkit-transform":"rotateY(-90deg)","transition":".6s"})
+	var delayInMilliseconds = 600;
+	setTimeout(function() {
+	  	a.css({"transform":"rotateY(0deg)","-webkit-transform":"rotateY(0deg)","transition":".6s"})
+	  	back.css({"display":"inline-block"})
+	  	b.css({"transform":"rotateY(-90deg)","-webkit-transform":"rotateY(-90deg)","transition":"0s"})
+		front.css({"display":"none"})
+		setTimeout(function() {	
+			b.css({"transform":"rotateY(0deg)","-webkit-transform":"rotateY(0deg)","transition":"1s"})
+		},100)
+	}, delayInMilliseconds);	
 	cus_name.html('&nbsp;')
 }
 function show_front() {
-	
 	var back = $(".card-back")
-	var back_1 = $(".card-back-1")
 	var front = $(".card-front")
-	var front_1 = $(".card-front-1")
 	var div_cus_name = $(".cus-name")
 	var cus_name = $("#input-cus-name").val()
-
-
-	back.css({"display":"none"})
-	back_1.css({"display":"none"})
-	front.css({"display":"inline-block"})
-	front_1.css({"display":"inline-block"})
-	if (cus_name ==""){
-		cus_name ="&nbsp;"
-	}
-	div_cus_name.html(cus_name)
-
+	var  b = $(".card-back")
+	var  a = $(".card-front")
+	b.css({"transform":"rotateY(-90deg)","-webkit-transform":"rotateY(-90deg)","transition":".6s"})
+	var delayInMilliseconds = 600;
+	setTimeout(function() {
+		b.css({"transform":"rotateY(0deg)","-webkit-transform":"rotateY(0deg)","transition":".6s"})
+		back.css({"display":"none"})
+		front.css({"display":"inline-block"})
+		a.css({"transform":"rotateY(-90deg)","-webkit-transform":"rotateY(-90deg)","transition":"0s"})
+		setTimeout(function() {
+			a.css({"transform":"rotateY(0deg)","-webkit-transform":"rotateY(0deg)","transition":".6s"})
+			if (cus_name ==""){
+			cus_name ="&nbsp;"
+			}
+			div_cus_name.html(cus_name)
+		},100)
+	}, delayInMilliseconds);
 }
 
 // change_username
