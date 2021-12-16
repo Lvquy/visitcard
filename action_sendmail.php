@@ -95,7 +95,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('smartcard@gmail.com', 'VnCard');
+			    $mail->setFrom('vncard@gmail.com', 'VnCard');
 		        $mail->addAddress($email, $fullname);     //Add a recipient
 			    $mail->Subject = "Reset Password";
 		        $mail->Body    = $content_mail; 
@@ -117,4 +117,58 @@
 
     }
     //reset pass
+
+    // sent mail confirm
+    if (isset($_POST["sent_mail_confirm"])){
+    	$sent_mail_confirm = $_POST["sent_mail_confirm"];
+    	$mobile = $_POST["mobile"];
+    	$add = $_POST["add"];
+    	$note = $_POST["note"];
+    	$cus_name = $_POST["cus_name"];
+    	$card_type = $_POST["card_type"];
+    	$textcolor = $_POST["textcolor"];
+    	$qty = $_POST["qty"];
+    	$total = $_POST["total"];
+    	$username = $_POST["username"];
+
+    	if ($sent_mail_confirm == true){
+    		$data_email = mysqli_fetch_array($result);
+            $email = "in24h.com.vn@gmail.com";
+            $fullname = "Web Online";
+            $content_mail = "<h2>New Order</h2>";
+            $content_mail .= "<h3>Bạn có 1 đơn hàng mới từ website</h3>";
+            $content_mail .= "<p>Cus name: $cus_name</p>";
+            $content_mail .= "<p>Username: $username</p>";
+            $content_mail .= "<p>Add: $add</p>";
+            $content_mail .= "<p>Mobile: $mobile</p>";
+            $content_mail .= "<p>Note: $note</p>";
+            $content_mail .= "<p>Card type: $card_type</p>";
+            $content_mail .= "<p>Qty: $qty</p>";
+            $content_mail .= "<p>Text color: $textcolor</p>";
+            $content_mail .= "<p>Total: $total</p>";
+            $content_mail .= "<p><hr></p>";
+            $content_mail .= "<p>Kiểm tra ngay: <a href='https://vncard.info/admin.php'>https://vncard.info/admin.php</a></p>";
+            $mail = new PHPMailer(true);
+    		try {
+            	$mail->isSMTP();                                            //Send using SMTP
+			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+			    $mail->Username   = 'in24h.com.vn';                     //SMTP username
+			    $mail->Password   = 'Talathulinh@91';                               //SMTP password
+			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+			    $mail->Port       = 465;  //465 587
+			    $mail->isHTML(true);
+			    $mail->setFrom('vncard@gmail.com', 'VnCard');
+		        $mail->addAddress($email, $fullname);     //Add a recipient
+			    $mail->Subject = "New Order";
+		        $mail->Body    = $content_mail; 
+
+		        $mail->send();
+		        echo 1;
+            }catch (Exception $e) {
+    			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+				}
+    	}
+    }
+    // sent mail confirm end
 ?>
