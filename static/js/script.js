@@ -155,8 +155,17 @@ function order() {
 	else{
 		$("#modal_confirm_so").modal('show');
 		$.post("ajax_process/action_order.php",
-		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,total:total,username:username},
+		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,
+			qty:qty,total:total,username:username},
 		function(data){
+		})
+		var sent_mail_confirm = true
+		$.post("action_sendmail.php",{sent_mail_confirm:sent_mail_confirm,mobile:mobile,add:add,
+			note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,
+			total:total,username:username},function(data){
+			if (data ==1){
+				console.log('OK')
+			}
 		})
 	}
 	
