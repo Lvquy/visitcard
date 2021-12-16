@@ -1,15 +1,19 @@
 <?php
-
 	if(!isset($_SESSION["id"])){
+        $username = '';
 	    echo "<style>
 	     #profile, #logout {display:none;}
 	    </style>";
 	    echo "<link rel='icon' href='static/images/logo-off.png' type='image/x-icon'>";
 	}
 	else{
-	    echo "<style>#reg ,#login{display:none;} </style>";
+	    echo "
+            <style>
+                .float-right,#username,#input-username,#reg ,#login{display:none;} 
+            </style>";
 	    echo "<link rel='icon' href='static/images/logo.png' type='image/x-icon'>";
         $id = $_SESSION["id"];
+        $username = $_SESSION["username"];
         $sql_query = "SELECT * FROM `users` WHERE id = $id";
         $result = mysqli_query($con,$sql_query) ;
         $data = mysqli_fetch_array($result);

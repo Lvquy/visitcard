@@ -14,13 +14,15 @@
 		$rows = mysqli_num_rows($result);
         if($rows==1){
             session_start();
-            $query_id = "SELECT id, admin FROM `users` WHERE slug='$username'";
+            $query_id = "SELECT id, admin, slug FROM `users` WHERE slug='$username'";
             $result = mysqli_query($con,$query_id);
             $data_id = mysqli_fetch_array($result);
             $id = $data_id['id'];
             $admin = $data_id['admin'];
+            $username = $data_id['slug'];
 			$_SESSION['id'] = $id;
             $_SESSION['admin'] = $admin;
+            $_SESSION['username'] = $username;
 			header("Location: profile.php");
 			exit();
         }
