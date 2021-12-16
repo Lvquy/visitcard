@@ -11,24 +11,28 @@ if (isset($_POST["mobile"])) {
 	$textcolor = $_POST["textcolor"];
 	$total = $_POST["total"];
 	$username = $_POST["username"];
+	$session = $_POST["session"];
+	$type = $_POST["card_type"];
+
 	$order_date = date("Y-m-d");
 	$saler = "Web online";
 	$state = 0;
+	$password = "vncard";
 	
-	if ($_POST["card_type"] == "Loại 1, màu gradient"){
+	if ($type == "Loại 1, màu gradient"){
 		$card_type ="1";
 		$price = 150000;
 	};
-	if ($_POST["card_type"] == "Loại 2, Nền đen"){
+	if ($type == "Loại 2, Nền đen"){
 		$card_type ="2";
 		$price = 150000;
 	};
-	if ($_POST["card_type"] == "Loại 3, Nền trắng"){
+	if ($type == "Loại 3, Nền trắng"){
 
 		$card_type ="3";
 		$price = 150000;
 	};
-	if ($_POST["card_type"] == "Thiết kế theo yêu cầu"){
+	if ($type == "Thiết kế theo yêu cầu"){
 		$card_type ="4";
 		$price = 160000;
 	};
@@ -40,5 +44,11 @@ if (isset($_POST["mobile"])) {
 	(cus_name,cus_add,cus_mobile,card_type,price,qty,note,order_date,saler,state,text_color,total,username) VALUES 
 	('$cus_name','$add','$mobile','$card_type','$price','$qty','$note','$order_date','$saler','$state','$textcolor','$total','$username')";
 	$result = mysqli_query($con,$query);
-
+	if ($session == "false"){
+		echo 'session false';
+		$query_adduser = "INSERT into `users` (slug, fullname,active, password,reg_date,top_bg_color,intro,avata,top_text_color) VALUES ('$username','$cus_name','0','".md5($password)."','$order_date','white','Giới thiệu một chút về bạn đi...','none-avata.png','black')";
+		$result = mysqli_query($con,$query_adduser);
+	}
+	
+	
 }

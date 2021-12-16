@@ -619,7 +619,7 @@ if (isset($_POST["admin_get_code"])){
 if (isset($_POST["admin"])){
     $admin = $_POST["admin"];
     if ($admin == 1) {
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM users ORDER BY id DESC";
         $result = mysqli_query($con, $query);
         $output = '';
         if (mysqli_num_rows($result)>0){

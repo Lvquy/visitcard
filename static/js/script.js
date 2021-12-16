@@ -104,7 +104,7 @@ function change_qty(qty) {
 	$("#modal-price").val(ct)
 		$("#alert-price").html(alert + " + Free ship")
 }
-
+var session = "false";
 function order() {
 	var mobile = $("#modal-mobile").val()
 	var add = $("#modal-add").val()
@@ -115,6 +115,14 @@ function order() {
 	var qty = $("#modal-qty").val()
 	var total = $("#modal-price").val()*1000
 	var username = $("#modal-username").val()
+	var profile = $("#profile")
+
+	
+	if (profile.css('display') != 'none' ){
+		session = "true";
+		console.log('da dang nhap')
+		console.log(session)
+	}
 	
 	if (mobile.length<=9){
 		//
@@ -154,12 +162,15 @@ function order() {
 	}
 	else{
 		$("#modal_confirm_so").modal('show');
+		console.log(session)
 		$.post("ajax_process/action_order.php",
-		{mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,
+		{session:session,mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,
 			qty:qty,total:total,username:username},
 		function(data){
+			console.log("data tra ve", data)
 		})
 		var sent_mail_confirm = true
+
 		$.post("action_sendmail.php",{sent_mail_confirm:sent_mail_confirm,mobile:mobile,add:add,
 			note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,qty:qty,
 			total:total,username:username},function(data){
@@ -168,10 +179,6 @@ function order() {
 			}
 		})
 	}
-	
-	
-	
-
 }
 function show_modal_order() {
 	// $('#modal_order').modal('toggle');
@@ -214,6 +221,7 @@ function show_modal_order() {
 		}).showToast();
 		//
 	}
+
 	else if(trung_username == false){
 		//get value to order modal 
 		var modal_order = document.getElementById('modal_order')
