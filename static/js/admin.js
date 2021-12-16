@@ -1,8 +1,9 @@
 
 
 // phan trang
+var curent_page = 1
 function loadmore() {
-	var curent_page = 1
+	
 	curent_page = curent_page +1
 	$.post("ajax_process/action_admin.php",{curent_page:curent_page},function(data){
 		$("#load_so").append(data)	

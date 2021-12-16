@@ -442,6 +442,8 @@ body {
     /*background-image: url('https://hainh2k3.com/wp-content/uploads/2018/11/CSS-Particles.gif');*/
     background-image: url('../images/bg.gif');
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .card {
