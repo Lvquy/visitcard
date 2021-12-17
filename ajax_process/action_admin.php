@@ -641,7 +641,11 @@ if (isset($_POST["edit_token"])){
         WHERE id = '$id_token'";
     $result= mysqli_query($con,$query);
 }
-
+if (isset($_POST["id_token"])){
+    $id_token = $_POST["id_token"];
+    $query = "DELETE FROM push WHERE id = '$id_token' ";
+    $result= mysqli_query($con,$query);
+}
 if (isset($_POST["token"])){
     $token = $_POST["token"];
     $mobile_iden = $_POST["mobile_iden"];
