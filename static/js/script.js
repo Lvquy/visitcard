@@ -116,12 +116,22 @@ function order() {
 	var total = $("#modal-price").val()*1000
 	var username = $("#modal-username").val()
 	var profile = $("#profile")
+	// var ip = $("#ip").val()
+	var ip = 'Checkip'
 
+	$.post("ajax_process/checkip.php",{ip:ip,mobile:mobile},function(data){
+		console.log('checkip',data)
+		if (data == 0) {
+			console.log('trung ip roi')
+		}
+		if (data == 1){
+			console.log('chua trung')
+		}
+	})
 	
 	if (profile.css('display') != 'none' ){
 		session = "true";
-		console.log('da dang nhap')
-		console.log(session)
+
 	}
 	
 	if (mobile.length<=9){
@@ -162,7 +172,7 @@ function order() {
 	}
 	else{
 		$("#modal_confirm_so").modal('show');
-		console.log(session)
+		
 		$.post("ajax_process/action_order.php",
 		{session:session,mobile:mobile,add:add,note:note,cus_name:cus_name,card_type:card_type,textcolor:textcolor,
 			qty:qty,total:total,username:username},

@@ -25,7 +25,7 @@
         <div class="col-12"><br><br><br>
         </div>
         <input type="hidden" name="admin" value="<?php echo $_SESSION['admin']?>" id="admin">
-        <div class="col-12 text-center"><h2>ADMIN</h2></div>
+        <div class="col-12 text-center"><h2>ADMIN</h2></div>   
         <h4 class="h4">Sale Order
             <button class="btn-success btn" onclick="hide('list-order','btn-hide-so','btn-show-so')" id="btn-hide-so">Hide</button>
             <button class="btn-success btn" onclick="show('list-order','btn-hide-so','btn-show-so')" id="btn-show-so">Show</button>
@@ -164,6 +164,7 @@
                     <th>Slug</th>
                     <th title="(0,1,2)(new,try,actived)">Active</th>
                     <th>Email Status</th>
+                    <th>IP</th>
                     <th>Modify</th> 
                 </thead>
                 <tbody id="load_users">
@@ -197,6 +198,113 @@
         <div class="col-12 mb-3 mt-3">
             <hr>
         </div>
+        <h4 class="h4">Token Setting
+        </h4>
+        <div class="col-12">
+            <table class="table table-hover table-bordered table-responsive">
+                <thead>
+                    <th>ID</th>
+                    <th>Token</th>
+                    <th>Mobile Iden</th>
+                    <th>Active</th>
+                    <th>Email</th>
+                    <th>Create Token Date</th>
+                    <th>Modify</th>
+                </thead>
+                <tbody id="load_token">
+                    <tr>
+                        <td>Emtry</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button 
+                class="btn btn-success" 
+                data-bs-toggle="modal" 
+                data-bs-target="#new_token_modal">
+                Create new token
+            </button>
+        </div>
+        <div class="col-12 mb-5 mt-3">
+            <hr>
+        </div>
+        <!-- edit tocen modal -->
+        <div class="modal" id="edit_token_modal">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <form id="form_edit_token">
+                          <!-- Modal body -->
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>ID</td>
+                                    <td>
+                                        <input class="form-control" 
+                                        readonly type="text" id="e_id_token">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Token</td>
+                                    <td><input class="form-control" type="text" id="e_token"></td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile Iden</td>
+                                    <td><input class="form-control" type="text" id="e_mobile_iden"></td>
+                                </tr>
+                                <tr>
+                                    <td>Active</td>
+                                    <td><input class="form-control" id="e_active_token" placeholder="0,1 -> false/true" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><input class="form-control" id="e_email_token" type="text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" data-bs-dismiss="modal" onclick="confirm_edit_token()">Apply</button>
+                            <button class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- edit tocen modal -->
+
+        <!-- new_token_modal -->
+        <div class="modal" id="new_token_modal">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <form id="form_new_token">
+                          <!-- Modal body -->
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Token</td>
+                                    <td><input class="form-control" type="text" id="token"></td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile Iden</td>
+                                    <td><input class="form-control" type="text" id="mobile_iden"></td>
+                                </tr>
+                                <tr>
+                                    <td>Active</td>
+                                    <td><input class="form-control" id="active_token" placeholder="0,1 -> false/true" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><input class="form-control" id="email_token" type="text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" onclick="create_new_token()">Create</button>
+                            <button class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <!-- edit modal code -->
         <div class="modal" id="edit_code_modal">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -274,7 +382,9 @@
                                     <tr>
                                         <td><label for="e_status_email">Email Status</label></td>
                                         <td><input class="form-control mt-2" type="text" name="e_status_email" id="e_status_email" placeholder="Email status"></td>
+
                                     </tr>
+
                                 </tbody>
                             </table>       
                         </div>
