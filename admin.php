@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <?php include('includes/head.html');?>
-<title>Admin | VisitCard</title>
+<title>Admin | VnCard</title>
 <link rel="stylesheet" href="static/css/admin.css">
 <script src="vendor/jquery/jquery.min.js"></script>
 
