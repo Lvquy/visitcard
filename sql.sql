@@ -4,7 +4,7 @@ DROP TABLE skill;
 DROP TABLE social;
 DROP TABLE sale_order;
 DROP TABLE users ;
-DROP TABLE pushbllet ;
+DROP TABLE pushb ;
 
 
 CREATE TABLE push (
@@ -43,7 +43,7 @@ CREATE TABLE users (
     
     PRIMARY KEY (id)
 
-)AUTO_INCREMENT=100;
+)AUTO_INCREMENT=10;
 CREATE TABLE social (
     id int NOT NULL AUTO_INCREMENT,
     social_name varchar(25),
@@ -55,7 +55,7 @@ CREATE TABLE social (
     PRIMARY KEY (id),
     CONSTRAINT FK_SocialUsers FOREIGN KEY (of_user)
     REFERENCES users(id)
-)AUTO_INCREMENT=200;
+)AUTO_INCREMENT=5000;
 
 CREATE TABLE skill (
     id int NOT NULL AUTO_INCREMENT,
@@ -67,7 +67,7 @@ CREATE TABLE skill (
     PRIMARY KEY (id),
     CONSTRAINT FK_SkillUsers FOREIGN KEY (of_user)
     REFERENCES users(id)
-)AUTO_INCREMENT =300;
+)AUTO_INCREMENT =10000;
 
 
 CREATE TABLE coins (
@@ -80,7 +80,7 @@ CREATE TABLE coins (
     PRIMARY KEY (id),
     CONSTRAINT FK_CoinsUsers FOREIGN KEY (of_user)
     REFERENCES users(id)
-)AUTO_INCREMENT = 200;
+)AUTO_INCREMENT = 15000;
 
 CREATE TABLE active_codes (
     id int NOT NULL AUTO_INCREMENT,
@@ -91,7 +91,7 @@ CREATE TABLE active_codes (
     PRIMARY KEY (id),
     CONSTRAINT FK_CodeUsers FOREIGN KEY (for_user)
     REFERENCES users(id)
-)AUTO_INCREMENT = 10000;
+)AUTO_INCREMENT = 20000;
 
 CREATE TABLE sale_order (
     so int NOT NULL AUTO_INCREMENT,
@@ -110,4 +110,4 @@ CREATE TABLE sale_order (
     username varchar(25),
     ip varchar(35),
     PRIMARY KEY (so)
-)AUTO_INCREMENT = 9000;
+)AUTO_INCREMENT = 100000;

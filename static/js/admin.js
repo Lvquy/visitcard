@@ -155,7 +155,6 @@ function check_user(new_username) {
 
 function del_token_1(id) {
 	console.log('del 1')
-	$("#1-del").css({"display":"none"})
 	$("#"+id+"-del").fadeOut(1)
 	$("#"+id+"-undo").fadeIn(1)
 	$("#"+id+"-confirm-del").fadeIn(1)
