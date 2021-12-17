@@ -111,6 +111,7 @@ if (isset($_POST["id_so"])) {
                 $text_color = $row["text_color"];
                 $total = $row["total"];
                 $username = $row["username"];
+                $ip = $row["ip"];
 
 
             }
@@ -257,6 +258,12 @@ if (isset($_POST["id_so"])) {
                 <td>Username</td>
                 <td>$username</td>
                 
+            </tr>
+            <tr>
+                <td>IP Customer</td>
+                <td>$ip</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Note</td>
@@ -462,7 +469,7 @@ if (isset($_POST["username"])){
         $active = $_POST["active"];
         $password = $_POST["password"];
         $password_admin = $_POST["password_admin"];
-        $reg_date = date("Y-m-d H:i:s");
+        $reg_date = date("Y-m-d");
 
         $query_check_pass = "SELECT password FROM users WHERE admin='1' and password='".md5($password_admin)."' ";
         $result_check_pass= mysqli_query($con,$query_check_pass);
@@ -510,9 +517,11 @@ if (isset($_POST["e_id"])){
         $e_email = $_POST["e_email"];
         $e_slug = $_POST["e_slug"];
         $e_active = $_POST["e_active"];
+        
         $e_status_email = $_POST["e_status_email"];
 
-        $query="UPDATE users SET 
+        $query="UPDATE users SET
+            
             fullname='$e_fullname',mobile='$e_mobile',email='$e_email',
             slug='$e_slug',active='$e_active',status_email='$e_status_email'
             WHERE id ='$e_id' ";
@@ -616,12 +625,97 @@ if (isset($_POST["admin_get_code"])){
         }
     }           
 }
+
+if (isset($_POST["edit_token"])){
+    $id_token = $_POST["id_token"];
+    $edit_token = $_POST["edit_token"];
+    $mobile_iden = $_POST["mobile_iden"];
+    $active_token = $_POST["active_token"];
+    $email_token = $_POST["email_token"];
+
+    $query ="UPDATE push SET
+        token = '$edit_token',
+        mobile_iden = '$mobile_iden',
+        active ='$active_token',
+        email_token='$email_token'
+        WHERE id = '$id_token'";
+    $result= mysqli_query($con,$query);
+}
+
+if (isset($_POST["token"])){
+    $token = $_POST["token"];
+    $mobile_iden = $_POST["mobile_iden"];
+    $active_token = $_POST["active_token"];
+    $email_token = $_POST["email_token"];
+    $today = date("Y-m-d");
+
+    $query ="INSERT into `push` 
+    (token,mobile_iden,active,email_token,create_token_date) VALUES 
+    ('$token','$mobile_iden','$active_token','$email_token','$today')";
+    $result = mysqli_query($con,$query);
+}
+if (isset($_POST["admin_token"])){
+    $admin_token = $_POST["admin_token"];
+    if ($admin_token ==1){
+        $query = "SELECT * FROM push order by id, active desc";
+        $result = mysqli_query($con,$query);
+        $output = "";
+        if (mysqli_num_rows($result)>0){
+            $output = "";
+            while($row = mysqli_fetch_array($result)){
+                $id = $row["id"];
+                $token = $row["token"];
+                $mobile_iden = $row["mobile_iden"];
+                $active = $row["active"];
+                $email_token = $row["email_token"];
+                $create_token_date = $row["create_token_date"];
+                $output .="
+                    <tr>
+                        <td>$id</td>
+                        <td>$token</td>
+                        <td>$mobile_iden</td>
+                        <td>$active</td>
+                        <td>$email_token</td>
+                        <td>$create_token_date </td>
+                        <td>
+                            <i 
+                            data-id='$id' 
+                            data-token='$token'
+                            data-mobile_iden ='$mobile_iden'
+                            data-active ='$active'
+                            data-email_token ='$email_token'
+                            data-create_token_date ='$create_token_date'
+                            
+                            
+                            data-bs-toggle='modal'
+                            data-bs-target='#edit_token_modal'
+                            class='fa right fa-pencil'></i>&#160; &#160;
+
+
+                            <i class='fa fa-trash-o trash-right' id='$id-del'
+                            onclick='del_token_1($id)' title='Xóa'></i>
+
+                            <i class='fa fa-undo undo-del' id='$id-undo' title='Hủy xóa' aria-hidden='true'
+                                onclick='undo_del($id)'
+                             ></i>
+                             &nbsp;&nbsp;
+                             <i class='fa fa-check confirm-del' title='Xác nhận xóa' onclick='del_token($id)' id='$id-confirm-del' aria-hidden='true'></i>
+                        </td>
+                    </tr>
+                ";
+            }
+        }
+    echo $output;
+    }
+}
+
 if (isset($_POST["admin"])){
     $admin = $_POST["admin"];
     if ($admin == 1) {
         $query = "SELECT * FROM users ORDER BY id DESC";
         $result = mysqli_query($con, $query);
         $output = '';
+        
         if (mysqli_num_rows($result)>0){
             $output = "";
             while($row = mysqli_fetch_array($result)){
@@ -633,6 +727,7 @@ if (isset($_POST["admin"])){
                 $slug = $row["slug"];
                 $active = $row["active"];
                 $status_email = $row["status_email"];
+                $ip = $row["ip"];
                 $output.="
                     <tr>
                         <td >$id</td>
@@ -643,6 +738,8 @@ if (isset($_POST["admin"])){
                         <td >$slug</td>
                         <td >$active</td>
                         <td >$status_email</td>
+                        <td >$ip</td>
+                        
                         <td >
                             <i 
                             data-id='$id' 
@@ -652,6 +749,7 @@ if (isset($_POST["admin"])){
                             data-slug='$slug'
                             data-active='$active'
                             data-status-email='$status_email'
+                            
                             data-bs-toggle='modal'
                             data-bs-target='#modify_modal'
                             class='fa right fa-pencil'></i>&#160; &#160;

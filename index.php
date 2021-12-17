@@ -229,7 +229,7 @@
             https://vncard.info/
           </span><span class="float-right"><i class="bi bi-question-circle" onclick="show_help()" title="username dùng để đăng nhập"></i></span>
           <h3>
-
+            <!-- <input type="text" value="<?php echo $ip;?>" id="ip"> -->
             <input class="form-control" onchange="change_username(this.value)" id="input-username" type="text" value="<?php echo $username;?>" placeholder="Username">
           </h3>
           <h3 class="mt-4">Đơn giá <input class="input-qty" hidden id="input-qty" value="1" min="1" max="1000" type="number">:<input class="input-qty" readonly id="price-card" type="number" value="150000"> đ <del>199.000 đ </del>

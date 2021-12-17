@@ -1,5 +1,18 @@
 
 
+
+
+function create_new_token() {
+	var token = $("#token").val()
+	var mobile_iden = $("#mobile_iden").val()
+	var active_token = $("#active_token").val()
+	var email_token = $("#email_token").val()
+	$.post("ajax_process/action_admin.php",
+		{token:token,mobile_iden:mobile_iden,active_token:active_token,email_token:email_token},function(data){
+		//
+	})
+
+}
 // phan trang
 var curent_page = 1
 function loadmore() {
@@ -115,8 +128,6 @@ function create_newso() {
 	var c_add = $("#add").val()
 	var c_note = $("#note").val()
 	var c_price = $("#price").val()
-	
-	
 	$.post("ajax_process/action_admin.php",
 		{c_name:c_name,c_mobile:c_mobile,c_add:c_add,c_type:c_type,c_price:c_price,c_qty:c_qty,c_note:c_note,c_saler:c_saler,c_state:c_state},
 		function(data){
@@ -142,6 +153,18 @@ function check_user(new_username) {
 	})
 }
 
+function del_token_1(id) {
+	console.log('del 1')
+	$("#1-del").css({"display":"none"})
+	$("#"+id+"-del").fadeOut(1)
+	$("#"+id+"-undo").fadeIn(1)
+	$("#"+id+"-confirm-del").fadeIn(1)
+}
+function del_token(id) {
+	$.post("ajax_process/action_admin.php",{id:id},function(data){
+		get_token()
+	})
+}
 function del_so_1(so) {
 	$("#"+so+"-del").fadeOut(1)
 	$("#"+so+"-undo").fadeIn(1)
@@ -209,28 +232,66 @@ function update_user() {
 	var e_slug = $("#e_slug").val()
 	var e_active = $("#e_active").val()
 	var e_status_email = $("#e_status_email").val()
+	var e_token = $("#e_token").val()
 	$.post("ajax_process/action_admin.php",
-		{e_id:e_id,e_fullname:e_fullname,e_mobile:e_mobile,e_email:e_email,e_slug:e_slug,e_active:e_active,e_status_email:e_status_email},
+		{e_id:e_id,e_fullname:e_fullname,e_mobile:e_mobile,e_email:e_email,e_slug:e_slug,e_active:e_active,e_status_email:e_status_email,e_token:e_token},
 		function(data){
 		get_list_user()
 	})
 }
+function confirm_edit_token() {
+	var id_token = $("#e_id_token").val()
+	var edit_token = $("#e_token").val()
+	var mobile_iden = $("#e_mobile_iden").val()
+	var active_token = $("#e_active_token").val()
+	var email_token = $("#e_email_token").val()
+	console.log(id_token, mobile_iden, active_token, email_token)
+	$.post("ajax_process/action_admin.php",
+		{id_token:id_token,edit_token:edit_token,mobile_iden:mobile_iden,active_token:active_token,email_token:email_token},
+		function(data){
+		get_token()
+	})
+}
+// get value to edit token modal 
+var edit_token_modal = document.getElementById('edit_token_modal')
+edit_token_modal.addEventListener('show.bs.modal', function (event) {
+	var button = event.relatedTarget
+
+	var id = button.getAttribute('data-id')
+	var token = button.getAttribute('data-token')
+	var mobile_iden = button.getAttribute('data-mobile_iden')
+	var active = button.getAttribute('data-active')
+	var email_token = button.getAttribute('data-email_token')
+	var create_token_date = button.getAttribute('data-create_token_date')
+
+	var box_id = edit_token_modal.querySelector('#e_id_token')
+	var box_token = edit_token_modal.querySelector('#e_token')
+	var box_mobile_iden = edit_token_modal.querySelector('#e_mobile_iden')
+	var box_active = edit_token_modal.querySelector('#e_active_token')
+	var box_email = edit_token_modal.querySelector('#e_email_token')
+
+	box_id.value = id
+	box_token.value = token
+	box_mobile_iden.value = mobile_iden
+	box_active.value = active
+	box_email.value = email_token
+})
 //get value to edit modal code
 var edit_code_modal = document.getElementById('edit_code_modal')
 edit_code_modal.addEventListener('show.bs.modal', function (event) {
-var button = event.relatedTarget
+	var button = event.relatedTarget
 
-var id = button.getAttribute('data-id')
-var code = button.getAttribute('data-code')
-var status = button.getAttribute('data-status')
+	var id = button.getAttribute('data-id')
+	var code = button.getAttribute('data-code')
+	var status = button.getAttribute('data-status')
 
-var box_id = edit_code_modal.querySelector('#edit_c_id')
-var box_code = edit_code_modal.querySelector('#edit_c_code')
-var box_status = edit_code_modal.querySelector('#edit_c_status')
+	var box_id = edit_code_modal.querySelector('#edit_c_id')
+	var box_code = edit_code_modal.querySelector('#edit_c_code')
+	var box_status = edit_code_modal.querySelector('#edit_c_status')
 
-box_id.value = id
-box_code.value = code
-box_status.value = status
+	box_id.value = id
+	box_code.value = code
+	box_status.value = status
 
 })
 
@@ -238,31 +299,31 @@ box_status.value = status
 //get value to edit modal user
 var modify_modal = document.getElementById('modify_modal')
 modify_modal.addEventListener('show.bs.modal', function (event) {
-var button = event.relatedTarget
+	var button = event.relatedTarget
 
-var id = button.getAttribute('data-id')
-var fullname = button.getAttribute('data-fullname')
-var mobile = button.getAttribute('data-mobile')
-var email = button.getAttribute('data-email')
-var slug = button.getAttribute('data-slug')
-var active = button.getAttribute('data-active')
-var status_email = button.getAttribute('data-status-email')
+	var id = button.getAttribute('data-id')
+	var fullname = button.getAttribute('data-fullname')
+	var mobile = button.getAttribute('data-mobile')
+	var email = button.getAttribute('data-email')
+	var slug = button.getAttribute('data-slug')
+	var active = button.getAttribute('data-active')
+	var status_email = button.getAttribute('data-status-email')
 
-var box_id = modify_modal.querySelector('#e_id')
-var box_fullname = modify_modal.querySelector('#e_fullname')
-var box_mobile = modify_modal.querySelector('#e_mobile')
-var box_email = modify_modal.querySelector('#e_email')
-var box_slug = modify_modal.querySelector('#e_slug')
-var box_active = modify_modal.querySelector('#e_active')
-var box_status_email = modify_modal.querySelector('#e_status_email')
+	var box_id = modify_modal.querySelector('#e_id')
+	var box_fullname = modify_modal.querySelector('#e_fullname')
+	var box_mobile = modify_modal.querySelector('#e_mobile')
+	var box_email = modify_modal.querySelector('#e_email')
+	var box_slug = modify_modal.querySelector('#e_slug')
+	var box_active = modify_modal.querySelector('#e_active')
+	var box_status_email = modify_modal.querySelector('#e_status_email')
 
-box_fullname.value = fullname
-box_id.value = id
-box_mobile.value = mobile
-box_email.value = email
-box_slug.value = slug
-box_active.value = active
-box_status_email.value = status_email
+	box_fullname.value = fullname
+	box_id.value = id
+	box_mobile.value = mobile
+	box_email.value = email
+	box_slug.value = slug
+	box_active.value = active
+	box_status_email.value = status_email
 })
 // end get value to edit modal
 
@@ -321,6 +382,12 @@ function get_so() {
 		$("#load_so").html(data)
 	})
 }
+function get_token() {
+	var admin_token = $("#admin").val()
+	$.post("ajax_process/action_admin.php",{admin_token:admin_token},function(data){
+		$("#load_token").html(data)
+	})
+}
 function get_list_user() {
 	var admin = $("#admin").val()
 	$.post("ajax_process/action_admin.php",{admin:admin},function(data){
@@ -362,6 +429,7 @@ $(document).ready(function(){
 	get_list_user()
 	get_list_code()
 	get_so()
+	get_token()
 
 
 	$(".search").keyup(function(){
@@ -369,8 +437,7 @@ $(document).ready(function(){
 		if ($("#search_by_mobile").is(":checked")){
 			var text_mobile = $(".search").val();
 			$.post("ajax_process/action_admin.php",{text_mobile:text_mobile},function(data){
-			//
-			$("#load_users").html(data);
+				$("#load_users").html(data);
 			})
 		}
 		else{

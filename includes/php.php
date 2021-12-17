@@ -34,6 +34,12 @@
         $bank_sub = $data["bank_sub"];
         $bank_user = $data["bank_user"];
         $top_bg_img = $data["top_bg_img"];
+        // $ip =   getenv('HTTP_CLIENT_IP')?:
+        //     getenv('HTTP_X_FORWARDED_FOR')?:
+        //     getenv('HTTP_X_FORWARDED')?:
+        //     getenv('HTTP_FORWARDED_FOR')?:
+        //     getenv('HTTP_FORWARDED')?:
+        //     getenv('REMOTE_ADDR');
        
 
         // lấy tất cả dữ liệu trong bảng social
