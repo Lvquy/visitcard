@@ -22,7 +22,7 @@ CREATE TABLE users (
     password varchar(255) NOT NULL,
     mobile varchar(15),
     email varchar(100),
-    address varchar(100),
+    address varchar(150),
     reg_date date,
     avata varchar(255),
     intro varchar(255),
@@ -47,7 +47,7 @@ CREATE TABLE users (
 CREATE TABLE social (
     id int NOT NULL AUTO_INCREMENT,
     social_name varchar(25),
-    social_link varchar(50),
+    social_link varchar(200),
     of_user int,
     is_active boolean DEFAULT FALSE,
     icon_url varchar(60),

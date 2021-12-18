@@ -557,7 +557,7 @@ function add_coin(coin_name) {
         
     });
 }
-//ajax  run function when reload end page
+//ajax  run function when reload end page auto
 $( document ).ready(function() {
 
     get_social();
@@ -582,6 +582,7 @@ $( document ).ready(function() {
         hide_id("active_btn");
         show_id("tichxanh");
         hide_id('edit_slug');
+        hide_id('btn_order');
         $("#alert-header").html("Hi, Cảm ơn bạn đã tin dùng SmartCard!");
 
     }else if (active == 1){

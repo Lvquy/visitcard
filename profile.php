@@ -741,12 +741,14 @@
                             <span id="help" class="form-text">
                               <button  onclick="check_code()" class="btn btn-success ">Kích hoạt ngay</button>
                             </span>
-                            
                           </div>
                         </div>
                         
                         <div class="col-lg-6 col-md-12 col-sm-12 mt-2" id="try_btn">
                             <a href="#" onclick="tryfree()" class="btn btn-success mt-2">Dùng thử miễn phí</a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 mt-2" id="btn_order">
+                            <a href="./#order" class="btn btn-success mt-2">Đặt in thẻ</a>
                         </div>
                 
                         <!-- test -->

@@ -28,7 +28,7 @@ if (isset($_POST["ip"])) {
 
 	$row = mysqli_num_rows($result);
 	$row_user = mysqli_num_rows($result_user);
-	$trung_ip = 'true';
+	$trung_ip = true;
 	if ($row_user >0 || $row > 0) {
 		// trung ip
 		$trung_ip = true;
