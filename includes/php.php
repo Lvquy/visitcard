@@ -9,7 +9,7 @@
 	else{
 	    echo "
             <style>
-                .float-right,#username,#input-username,#reg ,#login{display:none;} 
+                .float-right,#username,#input-username ,#login{display:none;} 
             </style>";
 	    echo "<link rel='icon' href='static/images/logo.png' type='image/x-icon'>";
         $id = $_SESSION["id"];
@@ -34,35 +34,12 @@
         $bank_sub = $data["bank_sub"];
         $bank_user = $data["bank_user"];
         $top_bg_img = $data["top_bg_img"];
-        // $ip =   getenv('HTTP_CLIENT_IP')?:
-        //     getenv('HTTP_X_FORWARDED_FOR')?:
-        //     getenv('HTTP_X_FORWARDED')?:
-        //     getenv('HTTP_FORWARDED_FOR')?:
-        //     getenv('HTTP_FORWARDED')?:
-        //     getenv('REMOTE_ADDR');
-       
-
         // lấy tất cả dữ liệu trong bảng social
         $query ="SELECT * FROM social WHERE of_user = $id";
         $result = mysqli_query($con, $query);
         $data = array();
         while ($row = mysqli_fetch_array($result,1)){
             $data[] = $row;}
-        
-
-
-	    echo "<script>";
-            echo "document.addEventListener('DOMContentLoaded', function() {
-
-               function hello(){
-                var user = document.getElementById('hello');
-                user.innerHTML = 'Welcome, $fullname';
-
-                    }
-                    hello();
-                }, false);";
-	    echo "</script>";
-
 	}
 
 ?>

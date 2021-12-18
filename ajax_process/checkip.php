@@ -21,10 +21,24 @@ if (isset($_POST["ip"])) {
             getenv('HTTP_FORWARDED')?:
             getenv('REMOTE_ADDR');
 
-	$query ="SELECT ip FROM users WHERE ip = '$ip'";
+	$query ="SELECT ip FROM sale_order WHERE ip = '$ip'";
 	$result = mysqli_query($con,$query);
+	$query_user ="SELECT ip FROM users WHERE ip = '$ip'";
+	$result_user = mysqli_query($con,$query_user);
+
 	$row = mysqli_num_rows($result);
-	if ($row >0) {
+	$row_user = mysqli_num_rows($result_user);
+	$trung_ip = 'true';
+	if ($row_user >0 || $row > 0) {
+		// trung ip
+		$trung_ip = true;
+		
+	}
+	else{
+		$trung_ip = false;
+	};
+
+	if ($trung_ip == true) {
 		// trung ip
 		echo 0;
 		if (strlen($mobile_token) > 5 ){

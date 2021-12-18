@@ -160,8 +160,8 @@ function del_token_1(id) {
 	$("#"+id+"-confirm-del").fadeIn(1)
 }
 function del_token(id) {
-	var id_token = id
-	$.post("ajax_process/action_admin.php",{id_token:id_token},function(data){
+	var id_token_del = id
+	$.post("ajax_process/action_admin.php",{id_token_del:id_token_del},function(data){
 		get_token()
 	})
 }
