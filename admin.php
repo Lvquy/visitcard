@@ -404,7 +404,7 @@
                     <form id="form_adduser">
                           <!-- Modal body -->
                         <div class="modal-body">
-                            <input type="text" name="username" id="username" 
+                            <input type="text" name="username" id="new_username" 
                                 class="form-control mt-2" placeholder="Username" 
                                 onblur="check_user(this.value)">
                             <input type="text" name="fullname" id="fullname" 

@@ -180,15 +180,13 @@ function send_mail() {
     var id_user = $("#id_user").val();
     var fullname = $("#fullname").val();
     var email_value = $("#email").val();
+    hide_id("warning-email");
+    hide_id("f_email_alert");
     // console.log(id_user, email_value); -> ok
     $.post("action_sendmail.php",{fullname:fullname,id_user:id_user,email_value:email_value},function(data){
             if (data ==1) {
                 //true
-                $("#f_email_alert").html("Đã gửi mã!, kiểm tra email lấy code để <a onclick='show_box_confirm_email()' href='#'>xác nhận!</a>").fadeIn(1000);
-                
-                hide_id("warning-email");
-                
-
+                $("#f_email_alert").html("Đã gửi mã!, kiểm tra email lấy code để <a onclick='show_box_confirm_email()' href='#'>xác nhận!</a> <br>chưa nhận được mã? <a href='#' onclick='send_mail()'> Gửi lại</a>").fadeIn(1000);
             }
             else{
                 //false
@@ -568,7 +566,7 @@ $( document ).ready(function() {
     var status_email = $("#status_email").val();
     if (status_email == 'send') {
         hide_id("warning-email");
-        $("#f_email_alert").html("Đã gửi mã!, kiểm tra email lấy code để <a onclick='show_box_confirm_email()' href='#'>xác nhận!</a>");
+        $("#f_email_alert").html("Đã gửi mã!, kiểm tra email lấy code để <a onclick='show_box_confirm_email()' href='#'>xác nhận!</a> <br>chưa nhận được mã? <a href='#' onclick='send_mail()'> Gửi lại</a>");
         show_id("f_email_alert");
     }
     if ( status_email == 'confirmed'){

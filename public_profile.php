@@ -133,10 +133,11 @@ require('includes/db.php');
 					
 				</div>
 				<div class="call-button1">
-					<i class="bi bi-telephone-forward"></i>
-					<span id="copped_mobile">Gọi điện</span>
-					<i class="bi bi-person-lines-fill" title="Lưu danh bạ"></i>
-					<span id="copped_mobile">Lưu danh bạ</span>
+					<a href="tel:<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-telephone-forward"></i> Gọi Điện</a>
+					<button class="btn btn-success"><i class="bi bi-person-lines-fill" title="Lưu danh bạ"></i> Lưu danh bạ</button>
+					<!-- <span id="copped_mobile">Gọi điện</span>
+					
+					<span id="copped_mobile">Lưu danh bạ</span> -->
 				</div>
 				<hr>
 			</div>
@@ -180,21 +181,23 @@ require('includes/db.php');
 		<div class="container pb-0">
 			<div class="row">
 				<div class="col-6 col-md-4 footer-1">
-					<p>Coppyright @ visitcard.info</p>
-					<p>Home</p>
-					<p>Edit Profile</p>
+					<p> <a href="." title="Home">Home</a> </p>
+					<p> <a href="./profile.php">Edit Profile</a> </p>
+					<p> <a href="./register.php">Dùng thử miễn phí</a> </p>
 					<hr>
 				</div>
 				<div class="col-6 col-md-4 footer-2">
-					<p>Đặt làm thẻ ngay</p>
-					<p>Dùng thử miễn phí</p>
-					<p>Tự tay thiết kế thẻ</p>
+					<p> <a href="./#order">Đặt làm thẻ ngay</a> </p>
+					<p><a href="https://in24h.com.vn" target="_blank" title="in ốp lưng theo yêu cầu">In ốp lưng theo yêu cầu</a></p>
+					<p>vncard.info là một sản phẩm của in24h</p>
 					<hr>
 				</div>
 				<div class="col-6 col-md-4 footer-3">
-					<p>Contact Us</p>
-					<p>Facebook</p>
-					<p>Zalo</p>
+					<p><a href="https://maps.google.com/?q=in24h Bình hòa 24, Thuận An, Bình Dương" target="_blank">
+						<i class="bi bi-geo-alt" title="Mở google map"> Bình hòa 24, Thuận An, Bình Dương</i>
+					</a></p>
+					<p> <a href="https://fb.com/otnon.ictu" target="_blank">Facebook</a></p>
+					<p> <a href="https://zalo.me/0988136106" target="_blank" title="Zalo">Zalo in hình</a></p>
 					<hr>
 				</div>
 			</div>
