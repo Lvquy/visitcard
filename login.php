@@ -29,7 +29,7 @@ session_start();
                 <div class="row text-center">
                     <div class="col-lg-12">
                         <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <h2 id='login'>LOGIN</h2>
+                            <h5 id='login'>LOGIN</h5>
                         </div>
                     </div>
                 </div>
@@ -46,9 +46,12 @@ session_start();
                             <input type="password" name="password"  class="form-control" placeholder="Password" />
                         </div>
                         <button type="submit" class="btn btn-primary mt-4">Đăng nhập</button>
-                        <a href="#" class="btn btn-primary mt-4" id="lost_pass" onclick="show_form_reset_pass()">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <a href="#" class="badge badge-success mt-4" id="lost_pass" onclick="show_form_reset_pass()">
                             Quên mật khẩu
                         </a>
+                        <a class="badge badge-success mt-4" href="./register.php">Đăng kí</a>
                     </div>
                 </form>
             

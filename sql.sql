@@ -4,7 +4,7 @@ DROP TABLE skill;
 DROP TABLE social;
 DROP TABLE sale_order;
 DROP TABLE users ;
-DROP TABLE pushb ;
+DROP TABLE push ;
 
 
 CREATE TABLE push (

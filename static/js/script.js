@@ -119,14 +119,7 @@ function order() {
 	// var ip = $("#ip").val()
 	var ip = 'Checkip'
 
-	$.post("ajax_process/checkip.php",{ip:ip,mobile:mobile},function(data){
-		console.log('checkip',data)
-		if (data == 0) {
-			console.log('trung ip roi')
-		}
-		if (data == 1){
-			console.log('chua trung')
-		}
+	$.post("ajax_process/checkip.php",{ip:ip,mobile:mobile},function(){
 	})
 	
 	if (profile.css('display') != 'none' ){
