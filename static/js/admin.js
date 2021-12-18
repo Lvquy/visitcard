@@ -342,11 +342,12 @@ function show(id,btn_hide,btn_show){
 	$("#"+btn_hide).fadeIn(1)
 }
 function adduser() {
-	var username = $("#username").val()
+	var username = $("#new_username").val()
 	var fullname = $("#fullname").val()
 	var active = $("#active").val()
 	var password = $("#password").val()
 	var password_admin = $("#password_admin").val()
+	console.log(username)
 	$.post("ajax_process/action_admin.php",
 		{username:username,fullname:fullname,active:active,password:password,password_admin:password_admin},
 		function(data){
