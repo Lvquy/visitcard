@@ -1,4 +1,11 @@
 
+
+
+ h2.title_admin{
+	font-weight: 1000!important;
+	color: red!important;
+}
+
 #state_header label{
 	cursor: pointer;
 	border-radius: 10px;

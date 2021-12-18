@@ -25,7 +25,7 @@
         <div class="col-12"><br><br><br>
         </div>
         <input type="hidden" name="admin" value="<?php echo $_SESSION['admin']?>" id="admin">
-        <div class="col-12 text-center"><h2>ADMIN</h2></div>   
+        <div class="col-12 text-center"><h2 class="title_admin">ADMIN</h2></div>   
         <h4 class="h4">Sale Order
             <button class="btn-success btn" onclick="hide('list-order','btn-hide-so','btn-show-so')" id="btn-hide-so">Hide</button>
             <button class="btn-success btn" onclick="show('list-order','btn-hide-so','btn-show-so')" id="btn-show-so">Show</button>

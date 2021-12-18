@@ -78,8 +78,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          
-          <h2>BẠN CÓ THỂ CHIA SẺ NHỮNG GÌ?</h2>
+          <div class="section-heading">
+            <h2>BẠN CÓ THỂ CHIA SẺ NHỮNG GÌ?</h2>
+          </div>
           <br>
           <br>
         </div>
@@ -132,9 +133,12 @@
                   <p>Lưu các ví điện tử cũng như tài khoản ngân hàng tích hợp tính năng sao chép nhanh, giảm thiểu sai sót khi chuyển khoản.</p>
                 </div>
               </div>
+
             </div>
           </div>
+          <h4 class="text-center mt-3">Và còn nhiều hơn nữa...</h4>
         </div>
+
       </div>
     </div>
   </div>
@@ -192,9 +196,10 @@
   <div class="container">
       <div class="row">
         <div class="col-12 mb-3">
-          <h2 id="order">ĐẶT MUA THẺ</h2>
+          <div class="section-heading">
+            <h2 id="order">ĐẶT MUA THẺ <em>VN</em>CARD</h2>
+          </div> 
         </div>
-        
         <div class="col-12 col-lg-6 text-left img-card">
           <div id="img-card">
             <img class="card-shop card-front"
@@ -224,7 +229,7 @@
               <li><img onclick="type('type4')" id="type4" src="static/images/cardtype/cardtype-4-f.png" alt=""> <p>Thiết kế theo yêu cầu</p></li>
             </ul>
           </div>
-          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#fffFFF">  (30 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
+          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#fffFFF">  (25 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
           <span class="mt-3" id="username">
             https://vncard.info/
           </span><span class="float-right"><i class="bi bi-question-circle" onclick="show_help()" title="username dùng để đăng nhập"></i></span>
