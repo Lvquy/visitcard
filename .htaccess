@@ -2,7 +2,7 @@
 Order Allow,Deny
 Deny from all
 </Files>
-#vietcoding.com/user.php?username=xyz —> vietcoding.com/xyz
+#abc.com/user.php?username=xyz —> abc.com/xyz
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

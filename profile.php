@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <?php include('includes/head.html');?>
-<title>VisitCard | Profile</title>
+<title>VnCard | Profile</title>
 
 <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -251,7 +251,7 @@
                             
                             <!---Qr Code-->
                             <h3 id="qr_code" class="mt-2"></h3>
-                            <h6 class="" id="qr_code_link" >smartcard.com/<span id="j_slug" style="color:blue"><?php echo $slug;?></span>
+                            <h6 class="" id="qr_code_link" >https://vncard.info/<span id="j_slug" style="color:blue"><?php echo $slug;?></span>
                             </h6>
                             
                         </div>
@@ -283,7 +283,7 @@
                     <div class="card-body">
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h4 class="mb-2">Personal Details <i class="badge badge-primary">Total visitor count: <?php echo $visit; ?></i></h4>
+                                <h4 class="mb-2">Thông tin cá nhân <i class="badge badge-primary">Tổng lượt truy cập: <?php echo $visit; ?></i></h4>
 
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -649,7 +649,10 @@
                                     </div>
                                   </div>
                                 </div>
-                            <!-- coins -->
+                            
+                            <!------button------->
+                        </div>
+                        <!-- coins -->
                         <div class="row gutters">
                             <div class="mt-2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h4 class="mb-2 ">Coins</h4>
@@ -728,8 +731,6 @@
                                 </div>
                         </div>
                             <!-- coins -->
-                            <!------button------->
-                        </div>
                         <!-- test -->
                         <div class="row align-items-center" id="active_btn">
                           <div class="col-lg-6 col-md-12 col-sm-12 mt-2">
