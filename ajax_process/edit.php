@@ -252,6 +252,7 @@ require_once("../includes/db.php");
         $result = mysqli_query($con, $query);
         echo 1;
     }
+    // change theme
     if (isset($_POST["id_theme"])){
         $id_theme = $_POST["id_theme"];
         $id_user = $_POST["id_user"];
@@ -264,6 +265,7 @@ require_once("../includes/db.php");
                 $top_text_color = 'black';
                 break;
             case 2:
+                // $top_bg_img = 'linear-gradient(green, yellow)';
                 $top_bg_img = 'cover-2.jpg';
                 $top_bg_color = 'white';
                 $top_text_color = 'white';

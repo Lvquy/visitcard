@@ -209,7 +209,6 @@
           </div>
           <p class="cus-name">Tên của bạn...</p>
           <div class="radio mt-0">
-            <label for="">Hình minh họa: </label>
             <label for="back">Mặt trước</label>
             <input  onclick="show_front()" type="radio" checked name="card" id="back" value="back">
             <label for="front">Mặt sau</label>
@@ -217,6 +216,14 @@
           </div>
         </div>
         <div class="col-12 col-lg-6 mt-2">
+          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#fffFFF">  (25 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
+          <span class="mt-3" id="username">
+            https://vncard.info/
+          </span><span class="float-right"><i class="bi bi-question-circle" onclick="show_help()" title="username dùng để đăng nhập"></i></span>
+          <h3>
+            <!-- <input type="text" value="<?php echo $ip;?>" id="ip"> -->
+            <input class="form-control" onchange="change_username(this.value)" id="input-username" type="text" value="<?php echo $username;?>" placeholder="Username">
+          </h3>
           <h3>Loại thẻ</h3>
           <div class="loai-the"> 
             <ul>
@@ -229,14 +236,7 @@
               <li><img onclick="type('type4')" id="type4" src="static/images/cardtype/cardtype-4-f.png" alt=""> <p>Thiết kế theo yêu cầu</p></li>
             </ul>
           </div>
-          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#fffFFF">  (25 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
-          <span class="mt-3" id="username">
-            https://vncard.info/
-          </span><span class="float-right"><i class="bi bi-question-circle" onclick="show_help()" title="username dùng để đăng nhập"></i></span>
-          <h3>
-            <!-- <input type="text" value="<?php echo $ip;?>" id="ip"> -->
-            <input class="form-control" onchange="change_username(this.value)" id="input-username" type="text" value="<?php echo $username;?>" placeholder="Username">
-          </h3>
+          
           <h3 class="mt-4">Đơn giá <input class="input-qty" hidden id="input-qty" value="1" min="1" max="1000" type="number">:<input class="input-qty" readonly id="price-card" type="number" value="150000"> đ <del>199.000 đ </del>
           </h3>
           <h3 class="text-center">

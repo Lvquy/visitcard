@@ -31,7 +31,7 @@ function coppy_social(id_social) {
 }
 //show intro
 function show_intro(){
-	$("#intro").fadeIn(2000);
+	$("#intro").fadeIn(1000);
 	$("#hide_intro").fadeIn(1);
 	$("#show_intro").fadeOut(1);
 }
@@ -75,19 +75,17 @@ function get_coins() {
 	};
 
 //coppy
-function coppy(id,id_show,id_hide,id_alert){
+function coppy(id,id_show,id_hide){
 	document.getElementById(id_hide).style.display = "none";
 	document.getElementById(id_show).style.display = "inline-block";
-	var range = document.createRange();
-	range.selectNode(document.getElementById(id));
-	window.getSelection().removeAllRanges(); // clear current selection
-	window.getSelection().addRange(range); // to select text
-	document.execCommand("copy");
-	window.getSelection().removeAllRanges();// to deselect
-	// navigator.clipboard.writeText('text can coppy'); coppy text 
 
-	$('#' + id_alert).html("Đã coppy")
-	$('#' + id_alert).fadeOut(3000);
+	var text_cp = $("#"+id).val()
+	if (text_cp.length==0){
+		var text_cp = $("#"+id).html()
+	}
+	navigator.clipboard.writeText(text_cp);
+	console.log(text_cp)
+
 }
 //visitor count
 function visit_count() {

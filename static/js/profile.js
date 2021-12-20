@@ -7,7 +7,7 @@ function change_theme(id_theme){
     $.post("ajax_process/edit.php",{id_theme:id_theme,id_user:id_user,active:active},function(data){
         if (data ==1) {
             //thanh cong
-            console.log('thanh cong')
+            
             $("#alert-theme").html("Thành công").fadeIn(1)
             $("#alert-theme").html("Thành công").fadeOut(5000)
         }else{
@@ -369,6 +369,7 @@ function done_social(id_social) {
     var id_btn_done = id_social+"-done"
     var id_name_social = id_social+"-name_social";
     var social_name = $("#"+id_name_social).val();
+    console.log(social_name)
     $.post("ajax_process/edit.php",{id_social:id_social,social_link:social_link,social_name:social_name},function(data){
         if (data==1){
             //ok xxx

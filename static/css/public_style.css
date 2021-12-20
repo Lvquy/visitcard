@@ -24,9 +24,10 @@ body{
 }
 #hide_intro{
 	text-align: center;
+	display: none;
 }
 #show_intro{
-	display: none;
+	
 	text-align: center;
 }
 
@@ -34,10 +35,13 @@ body{
 #show_intro img, #hide_intro img{
 	cursor: pointer;
 }
-
+#intro{
+	display: none;
+}
 .tb-text-right{
 	text-align: right;
-	padding: 1em;
+	color: red;
+	/*padding: 14em;*/
 }
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -108,8 +112,11 @@ a{
 	margin: 1px;
 }
 .bi-clipboard{
+
+
 	cursor: pointer;
 	color: green!important;
+
 }
 .skill-list{
 	margin: auto;

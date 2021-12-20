@@ -13,7 +13,7 @@ require('includes/db.php');
         if ($count > 0){
 			$random = rand(100,9000);
 			$avata = $row["avata"]."?".$random;
-			$domain = "localhost/code/smartcard/";
+			$domain = "https://vncard.info/";
 			$slug = $row["slug"];
 			$url = $domain.$slug;
 			$address = $row["address"];
@@ -77,7 +77,7 @@ require('includes/db.php');
 					<i class="bi bi-person-bounding-box" id="url">
 						 <?php echo $url ;?>
 					</i>
-					&emsp;<i title="coppy link" class="bi bi-clipboard" onClick="coppy('url','cped_url','cp_url','copped_url')" id="cp_url"></i>
+					&emsp;<i title="coppy link" class="bi bi-clipboard" onClick="coppy('url','cped_url','cp_url')" id="cp_url"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_url"></i>
 					
 					
@@ -94,20 +94,22 @@ require('includes/db.php');
 					<i class="bi bi-envelope">
 						<a href="mailto:<?php echo $email?>" id="cp_mail"><?php echo $email?></a>
 					</i>
-					&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('cp_mail','cped_mail','icon_cp_mail','copped_mail')"id="icon_cp_mail"></i>
+					&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('cp_mail','cped_mail','icon_cp_mail')"id="icon_cp_mail"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mail"></i>
-					<span id="copped_mail"></span>
+					
 				</p>
 				<div id="p_bank_name">
 					<p>
 					<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span id="bank_num"><?php echo $bank_num ?></span>
-					&emsp;<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank','copped_bank_num')">
-					</i>
-					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
-					<span id="copped_bank_num"></span>
 					</p>
 					<i> &emsp;&emsp;&emsp;- Chủ tài khoản: <?php echo $bank_user ?></i><br/>
 					<i> &emsp;&emsp;&emsp;- Chi nhánh: <?php echo $bank_sub ?></i><br/>
+					<i> &emsp;&emsp;&emsp;- Coppy số tài khoản: 
+						<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank')"></i>
+						
+						<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
+					</i>
+				<br/>
 				</div>
 			
 				<p id="p_intro">
@@ -126,18 +128,18 @@ require('includes/db.php');
 					
 				</div>
 				<div class="call-button" id="phone">
-					<i class="bi bi-phone-vibrate"></i>
+					<!-- <i class="bi bi-phone-vibrate"></i> -->
 					<a class="link-danger" href="tel:<?php echo $mobile?>" id="cp_mobile"> <?php echo $mobile?></a>
-					<i title="coppy số điện thoại" class="bi bi-clipboard cped-mobile" onClick="coppy('cp_mobile','cped_mobile','icon_cp_mobile','')"id="icon_cp_mobile"></i>
+					<i title="coppy số điện thoại" class="bi bi-clipboard cped-mobile" onClick="coppy('cp_mobile','cped_mobile','icon_cp_mobile')"id="icon_cp_mobile"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mobile"></i>
 					
 				</div>
 				<div class="call-button1">
-					<a href="tel:<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-telephone-forward"></i> Gọi Điện</a>
-					<button class="btn btn-success"><i class="bi bi-person-lines-fill" title="Lưu danh bạ"></i> Lưu danh bạ</button>
-					<!-- <span id="copped_mobile">Gọi điện</span>
+
+					<a href="sms:<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-telephone-forward"></i> Gọi Điện</a>
+
+					<a href="sms://<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-chat-left-text"></i> SMS</a>
 					
-					<span id="copped_mobile">Lưu danh bạ</span> -->
 				</div>
 				<hr>
 			</div>
