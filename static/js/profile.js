@@ -56,14 +56,46 @@ function change_pass() {
     $.post("ajax_process/edit.php",{id_user:id_user,old_pass:old_pass,new_pass:new_pass},function(data){
             //return alert
             if (data ==1) {
-                location.reload();
-                alert('Đổi mật khẩu thành công!');
+                
+                //
+                Toastify({
+                  text: "Đổi mật khẩu thành công",
+                  duration: 3000,
+                  //destination: "#",
+                  newWindow: true,
+                  close: true,
+                  gravity: "top", // `top` or `bottom`
+                  position: "center", // `left`, `center` or `right`
+                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                  style: {
+                    background: "linear-gradient(to right, #0CF743, #1182F5)",
+                  },
+                  //onClick: function(){} // Callback after click
+                }).showToast();
+                //
+                setTimeout(function() {
+                    location.reload();
+                }, 2000);
                 
             }
             else{
                 
-                location.reload();
-                alert('Error!');
+                //
+                Toastify({
+                  text: "Lỗi, thử lại!",
+                  duration: 3000,
+                  //destination: "#",
+                  newWindow: true,
+                  close: true,
+                  gravity: "top", // `top` or `bottom`
+                  position: "center", // `left`, `center` or `right`
+                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                  style: {
+                    background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+                  },
+                  //onClick: function(){} // Callback after click
+                }).showToast();
+                //
             }
     });
     
@@ -305,51 +337,29 @@ function del_social(id_social){
 
 //edit coin
 function edit_coin(id_coin) {
-    var id_name_coin = id_coin+"-name_coin"
-    var id_wallet = id_coin+"-wallet";
-    var id_edit_icon = id_coin+"-edit";
-    var id_done_icon = id_coin+"-done";
-    readonly_false(id_name_coin);
-    readonly_false(id_wallet);
-    hide_id(id_edit_icon);
-    show_id(id_done_icon);
+    $("#modal_edit_coin").modal('show');
+    $("#id_coin").val(id_coin)
+    var name_coin = $("#"+id_coin+"-name_coin").val()
+    var value_coin = $("#"+id_coin+"-wallet").val()
+    $("#name_coin").val(name_coin)
+    $("#value_coin").val(value_coin)
 }
 //done coin
-function done_coin(id_coin) {
-
-    var id_name_coin = id_coin+"-name_coin"
-    var id_wallet = id_coin+"-wallet";
-    var id_edit_icon = id_coin+"-edit";
-    var id_done_icon = id_coin+"-done";
-    readonly_true(id_name_coin)
-    readonly_true(id_wallet)
-    hide_id(id_done_icon)
-    show_id(id_edit_icon)
-    var name_coin = $("#"+id_name_coin).val()
-    var wallet_coin = $("#"+id_wallet).val()
+function done_coin() {
+    var id_coin = $("#id_coin").val()
+    var name_coin = $("#name_coin").val()
+    var wallet_coin = $("#value_coin").val()
     $.post("ajax_process/edit.php",{id_coin:id_coin,name_coin:name_coin,wallet_coin:wallet_coin},function(data){
-        //
+        get_coin()
     })
 }
-function undo_del_coin(id_coin) {
-    var id_confirm_del = id_coin+"-confirm"
-    var id_icon_del = id_coin+"-del"
-    var id_icon_undo = id_coin+"-undo"
-    show_id(id_icon_del)
-    hide_id(id_confirm_del)
-    hide_id(id_icon_undo)
-}
-function del_coin_1(id_coin) {
-    var id_confirm_del = id_coin+"-confirm"
-    var id_icon_del = id_coin+"-del"
-    var id_icon_undo = id_coin+"-undo"
-    show_id(id_confirm_del)
-    show_id(id_icon_undo)
-    hide_id(id_icon_del)
-    
+function confirm_del_coin(id_coin) {
+    $("#modal_confirm_del_coin").modal('show');
+    $("#id_del_coin").val(id_coin)
 }
 //del coin delete coin
-function del_coin(id_coin){
+function del_coin(){
+    var id_coin = $("#id_del_coin").val()
     $.post("action_del.php",{id_coin:id_coin},function(data){
         get_coin()
     })

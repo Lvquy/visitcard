@@ -724,7 +724,56 @@
                                   Thêm ví
                                 </button>
                             </div>
-                                
+                            <!-- modal edit coin start -->
+                            <div class="modal" id="modal_edit_coin">
+                                  <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                      <!-- Modal body -->
+                                      <div class="modal-body">
+                                        <label for="name_coin">
+                                            Tên ví
+                                        </label>
+                                        <input type="hidden" id="id_coin">
+                                        <input type="text" class="form-control mt-3" id="name_coin">
+                                        <label for="value_coin" class="mt-2">Địa chỉ ví</label>
+                                        <input type="text" class="form-control mt-3" id="value_coin">
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                                          <button 
+                                          class="btn btn-success" data-bs-dismiss="modal"
+                                          onclick="done_coin()" 
+                                          >OK</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                            <!-- modal edit coin end -->
+                            <!-- modal_confirm_del_coin start -->
+                            <div class="modal" id="modal_confirm_del_coin">
+                                  <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" >Xác nhận xóa</h5>
+                                        </div>
+                                      <!-- Modal body -->
+                                      <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <button class="btn btn-success"
+                                                    data-bs-dismiss="modal">Cancel
+                                                </button>
+                                                <button class="btn btn-success mt-3"
+                                                    onclick="del_coin()" data-bs-dismiss="modal">OK
+                                                </button>
+                                            </div>
+                                            <input type="hidden" id="id_del_coin">
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                            <!-- modal_confirm_del_coin end -->
                            
                             <!-- The Modal -->
                                 <div class="modal" id="coin_modal">

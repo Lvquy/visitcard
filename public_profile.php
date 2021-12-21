@@ -72,7 +72,7 @@ require('includes/db.php');
 				</div>
 				<div class="name">
 					<h6 style="--top-text-color:<?php echo $top_text_color?>"><?php echo $fullname?></h6>
-					<i class="bi bi-check" style="display: none;color:blue" id='tichxanh' title="Tài khoản chính thức"></i>
+					<i class="bi bi-check-circle" style="display: none;color:blue" id='tichxanh' title="Tài khoản chính thức"></i>
 				</div>
 				<div class="slug" style="--top-text-color:<?php echo $top_text_color?>">
 					<i class="bi bi-person-bounding-box" >
