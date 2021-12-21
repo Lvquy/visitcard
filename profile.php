@@ -182,6 +182,96 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-9.png" onclick="change_theme(9)">
+                                                <input type="radio" id="theme_9" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-10.png" onclick="change_theme(10)">
+                                                <input type="radio"  id="theme_10" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-11.png" onclick="change_theme(11)">
+                                                <input type="radio" id="theme_11" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-12.png" onclick="change_theme(12)">
+                                                <input type="radio"  id="theme_12" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-13.png" onclick="change_theme(13)">
+                                                <input type="radio" id="theme_13" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-14.png" onclick="change_theme(14)">
+                                                <input type="radio"  id="theme_14" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-15.png" onclick="change_theme(15)">
+                                                <input type="radio" id="theme_15" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-16.png" onclick="change_theme(16)">
+                                                <input type="radio"  id="theme_16" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-17.png" onclick="change_theme(17)">
+                                                <input type="radio" id="theme_17" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-6 mt-5">
+                                            <label>
+                                                <img src="static/images/theme/screen-18.png" onclick="change_theme(18)">
+                                                <input type="radio"  id="theme_18" name = "theme">
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
                                 
                             </table>
                         </div>

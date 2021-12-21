@@ -144,13 +144,13 @@ require('includes/db.php');
 			<div class="col-12 main-box">
 				<div class="container mt-2">
 					<div class="social">
-						<h4 class="text-dark">Social Link</h4>
+						<h4 class="text-dark">Liên kết</h4>
 						<span id="load_social"></span>
 						<hr>
 					</div>
 					
 					<div class="coins">
-						<h4 class="text-dark">Coins</h4>
+						<h4 class="text-dark">Ví điện tử</h4>
 						
 						<span id="load_coins">
 						</span>
@@ -158,7 +158,7 @@ require('includes/db.php');
 					</div>
 					
 					<div class="skill">
-						<h4 class="text-dark">My Skill</h4>
+						<h4 class="text-dark">Kỹ năng</h4>
 						<div class="row skill-list">
 							<table>
 								<tr>
@@ -180,19 +180,19 @@ require('includes/db.php');
 	<footer>
 		<div class="container pb-0">
 			<div class="row">
-				<div class="col-6 col-md-4 footer-1">
-					<p> <a href="." title="Home"><i class="bi bi-house"></i> Home</a> </p>
-					<p> <a href="./profile.php"><i class="bi bi-person"></i> Edit Profile</a> </p>
+				<div class="col-12 col-md-4 footer-1">
+					<p> <a href="." title="Home"><i class="bi bi-house"></i> Trang chủ</a> </p>
+					<p> <a href="./profile.php"><i class="bi bi-person"></i> Sửa thông tin</a> </p>
 					<p> <a href="./register.php"><i class="bi bi-cursor"></i> Dùng thử miễn phí</a> </p>
 					<hr>
 				</div>
-				<div class="col-6 col-md-4 footer-2">
-					<p> <a href="./#order"><i class="bi bi-cart"></i> Đặt làm thẻ ngay</a> </p>
-					<p><a href="https://in24h.com.vn" target="_blank" title="in ốp lưng theo yêu cầu"><i class="bi bi-cart"></i> In ốp lưng theo yêu cầu</a></p>
-					<p><i class="bi bi-at"></i> vncard.info là một sản phẩm của in24h</p>
+				<div class="col-12 col-md-4 footer-2">
+					<p> <a href="./#order"><i class="bi bi-cart"></i> Đặt mua ngay</a> </p>
+					<p><a href="https://in24h.com.vn" target="_blank" title="in ốp lưng theo yêu cầu"><i class="bi bi-cart"></i> In ốp lưng</a></p>
+					<p>vncard.info thuộc sở hữu của in24h</p>
 					<hr>
 				</div>
-				<div class="col-6 col-md-4 footer-3">
+				<div class="col-12 col-md-4 footer-3">
 					<p><a href="https://maps.google.com/?q=in24h Bình hòa 24, Thuận An, Bình Dương" target="_blank">
 						<i class="bi bi-geo-alt" title="Mở google map"> Bình hòa 24, Thuận An, Bình Dương</i>
 					</a></p>

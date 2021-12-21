@@ -266,40 +266,91 @@ require_once("../includes/db.php");
                 break;
             case 2:
                 // $top_bg_img = 'linear-gradient(green, yellow)';
-                $top_bg_img = 'cover-2.jpg';
-                $top_bg_color = 'white';
+                $top_bg_img = '';
+                $top_bg_color = '#444343';
                 $top_text_color = 'white';
                 break;
             case 3:
-                $top_bg_img = 'cover-3.jpg';
+                $top_bg_img = 'cover-3.png';
                 $top_bg_color = 'white';
-                $top_text_color = 'white';
+                $top_text_color = 'blue';
                 break;
             case 4:
-                $top_bg_img = 'cover-4.jpg';
+                $top_bg_img = 'cover-4.png';
                 $top_bg_color = 'white';
                 $top_text_color = 'white';
                 break;
             case 5:
-                $top_bg_img = 'cover-5.jpg';
+                $top_bg_img = 'cover-5.png';
                 $top_bg_color = 'white';
                 $top_text_color = 'white';
                 break;
             case 6:
-                $top_bg_img = 'cover-6.jpg';
+                $top_bg_img = 'cover-6.png';
                 $top_bg_color = 'white';
                 $top_text_color = 'white';
                 break;
             case 7:
-                $top_bg_img = 'cover-7.jpg';
-                $top_bg_color = 'white';
-                $top_text_color = 'red';
+                $top_bg_img = 'cover-7.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
                 break;
             case 8:
-                $top_bg_img = 'cover-8.jpg';
+                $top_bg_img = 'cover-8.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 9:
+                $top_bg_img = 'cover-9.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 10:
+                $top_bg_img = 'cover-10.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 11:
+                $top_bg_img = 'cover-11.png';
+                $top_bg_color = 'white';
+                $top_text_color = 'black';
+                break;
+            case 12:
+                $top_bg_img = 'cover-12.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 13:
+                $top_bg_img = 'cover-13.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 14:
+                $top_bg_img = 'cover-14.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 15:
+                $top_bg_img = 'cover-15.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 16:
+                $top_bg_img = 'cover-16.png';
                 $top_bg_color = 'white';
                 $top_text_color = 'red';
                 break;
+            case 17:
+                $top_bg_img = 'cover-17.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+            case 18:
+                $top_bg_img = 'cover-18.png';
+                $top_bg_color = 'black';
+                $top_text_color = 'white';
+                break;
+                
               default:
                 $top_bg_img = '';
                 $top_bg_color = 'white';
