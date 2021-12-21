@@ -93,8 +93,7 @@ require('includes/db.php');
 				<p id="p_email">
 					<i class="bi bi-envelope">
 						<a href="mailto:<?php echo $email?>" id="cp_mail"><?php echo $email?></a>
-					</i>
-					&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('cp_mail','cped_mail','icon_cp_mail')"id="icon_cp_mail"></i>
+					</i>&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('cp_mail','cped_mail','icon_cp_mail')"id="icon_cp_mail"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mail"></i>
 					
 				</p>
@@ -128,17 +127,17 @@ require('includes/db.php');
 					
 				</div>
 				<div class="call-button" id="phone">
-					<!-- <i class="bi bi-phone-vibrate"></i> -->
-					<a class="link-danger" href="tel:<?php echo $mobile?>" id="cp_mobile"> <?php echo $mobile?></a>
+					
+					<a class="link-dark" href="tel:<?php echo $mobile?>" id="cp_mobile"> <?php echo $mobile?></a>
 					<i title="coppy số điện thoại" class="bi bi-clipboard cped-mobile" onClick="coppy('cp_mobile','cped_mobile','icon_cp_mobile')"id="icon_cp_mobile"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mobile"></i>
 					
 				</div>
 				<div class="call-button1">
 
-					<a href="sms:<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-telephone-forward"></i> Gọi Điện</a>
+					<a href="tel:<?php echo $mobile?>" class="btn btn-dark"><i class="bi bi-telephone-forward"></i> Gọi Điện</a>
 
-					<a href="sms://<?php echo $mobile?>" class="btn btn-success"><i class="bi bi-chat-left-text"></i> SMS</a>
+					<a href="sms://<?php echo $mobile?>" class="btn btn-dark"><i class="bi bi-chat-left-text"></i> SMS</a>
 					
 				</div>
 				<hr>
@@ -146,13 +145,13 @@ require('includes/db.php');
 			<div class="col-12 main-box">
 				<div class="container mt-2">
 					<div class="social">
-						<h4 class="text-success">Social Link</h4>
+						<h4 class="text-dark">Social Link</h4>
 						<span id="load_social"></span>
 						<hr>
 					</div>
 					
 					<div class="coins">
-						<h4 class="text-success">Coins</h4>
+						<h4 class="text-dark">Coins</h4>
 						
 						<span id="load_coins">
 						</span>
@@ -160,7 +159,7 @@ require('includes/db.php');
 					</div>
 					
 					<div class="skill">
-						<h4 class="text-success">My Skill</h4>
+						<h4 class="text-dark">My Skill</h4>
 						<div class="row skill-list">
 							<table>
 								<tr>

@@ -119,9 +119,6 @@ function order() {
 	// var ip = $("#ip").val()
 	var ip = 'Checkip'
 
-	$.post("ajax_process/checkip.php",{ip:ip,mobile:mobile},function(){
-	})
-	
 	if (profile.css('display') != 'none' ){
 		session = "true";
 
@@ -164,6 +161,8 @@ function order() {
 		//
 	}
 	else{
+		$.post("ajax_process/checkip.php",{ip:ip,mobile:mobile},function(){
+	})
 		$("#modal_confirm_so").modal('show');
 		
 		$.post("ajax_process/action_order.php",
