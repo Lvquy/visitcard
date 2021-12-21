@@ -177,32 +177,8 @@ require('includes/db.php');
 			</div>
 		</div>
 	</div>
-	<footer>
-		<div class="container pb-0">
-			<div class="row">
-				<div class="col-12 col-md-4 footer-1">
-					<p> <a href="." title="Home"><i class="bi bi-house"></i> Trang chủ</a> </p>
-					<p> <a href="./profile.php"><i class="bi bi-person"></i> Sửa thông tin</a> </p>
-					<p> <a href="./register.php"><i class="bi bi-cursor"></i> Dùng thử miễn phí</a> </p>
-					<hr>
-				</div>
-				<div class="col-12 col-md-4 footer-2">
-					<p> <a href="./#order"><i class="bi bi-cart"></i> Đặt mua ngay</a> </p>
-					<p><a href="https://in24h.com.vn" target="_blank" title="in ốp lưng theo yêu cầu"><i class="bi bi-cart"></i> In ốp lưng</a></p>
-					<p>vncard.info thuộc sở hữu của in24h</p>
-					<hr>
-				</div>
-				<div class="col-12 col-md-4 footer-3">
-					<p><a href="https://maps.google.com/?q=in24h Bình hòa 24, Thuận An, Bình Dương" target="_blank">
-						<i class="bi bi-geo-alt" title="Mở google map"> Bình hòa 24, Thuận An, Bình Dương</i>
-					</a></p>
-					<p> <a href="https://fb.com/otnon.ictu" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></p>
-					<p> <a href="https://zalo.me/0988136106" target="_blank" title="Zalo"><i class="bi bi-chat-dots"></i> Zalo in hình</a></p>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php include('includes/footer.html'); ?>
+	
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="static/js/public_profile.js"></script>
 </body>

@@ -18,7 +18,7 @@ if (isset($_POST["id"])){
     $file_ext=strtolower(end($file_parts));
     $expensions= array("jpeg","jpg","png");
 
-    if((in_array($file_ext,$expensions) === false) or ($file_size > 2097152) ){
+    if((in_array($file_ext,$expensions) === false) or ($file_size > 2097152*2) ){
         $errors[]="Chỉ hỗ trợ upload file JPEG hoặc PNG.";
         $errors[]="file không đc quá 2MB.";
         $avata = "error-avata.png";
