@@ -269,7 +269,7 @@
                         </div>
                         
                         <div class="about col-12 mt-2 icon-addon text-center">
-                            <h5 class="text-left text-primary">Intro <i onclick="edit_intro()" id="edit_icon_intro" class="fa right fa-pencil"></i></h5>
+                            <h5 class="text-left text-primary">Giới thiệu <i onclick="edit_intro()" id="edit_icon_intro" class="fa right fa-pencil"></i></h5>
                             <textarea onchange="ajax_submit_intro()" readonly class="text-left" name="intro" id="intro"  rows="4" ><?php echo $intro;?></textarea>
                             <p class="f_alert" id="intro_alert" >Success!</p>
                             <hr/>
@@ -477,7 +477,7 @@
                         
                         <div class="row gutters mt-2">
                             <div class="mt-2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h4 class="mb-2 title-cus">Social Link</h4>
+                                <h4 class="mb-2 title-cus">Liên kết chia sẻ</h4>
                             </div>
                             <div style="overflow-x:auto;">
                                 <table class="table  table-responsive">
@@ -490,7 +490,7 @@
                             <div class="col-12">
                             <!-- Button to Open the Modal -->
                                 <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#social_modal">
-                                  Add Social
+                                  Thêm liên kết
                                 </button>
                             </div>
                                 <!-- The Modal -->
@@ -667,13 +667,13 @@
                         </div>
                         <div class="row gutters">
                             <div class="mt-2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h4 class="mb-2 ">My Skill</h4>
+                                <h4 class="mb-2 ">Kỹ năng</h4>
                             </div>
                             <div class="container" id="load_skill">
                             </div>
                             <div class="col-12">
                                 <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#skill_modal">
-                                  Add Skill
+                                  Thêm kỹ năng
                                 </button>
                             </div>
                             <!-- The Modal -->
@@ -698,7 +698,7 @@
                                       <div class="modal-footer">
                                         <p id="alert_skill_modal" style="color:white;"></p>
                                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" onclick="add_skill()" class="btn btn-success">Add</button>
+                                        <button type="submit" onclick="add_skill()" class="btn btn-success">Thêm</button>
                                       </div>
 
                                     </div>
@@ -710,7 +710,7 @@
                         <!-- coins -->
                         <div class="row gutters">
                             <div class="mt-2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h4 class="mb-2 ">Coins</h4>
+                                <h4 class="mb-2 ">Ví tiền điện tử</h4>
                             </div>
                             <div style="overflow-x:auto;">
                                 <table class="table  table-responsive">
@@ -721,7 +721,7 @@
                             
                             <div class="col-12">
                                 <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#coin_modal">
-                                  Add Coin
+                                  Thêm ví
                                 </button>
                             </div>
                                 

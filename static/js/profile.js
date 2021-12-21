@@ -98,7 +98,22 @@ function coppy() {
     window.getSelection().addRange(range); // to select text
     document.execCommand("copy");
     window.getSelection().removeAllRanges();// to deselect
-    alert("coppied");
+    //
+        Toastify({
+          text: "Đã coppy",
+          duration: 3000,
+          //destination: "#",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+          },
+          //onClick: function(){} // Callback after click
+        }).showToast();
+        //
 }
 function hide_id(id_hidden){
     document.getElementById(id_hidden).style.display = "none";
@@ -486,8 +501,10 @@ function check_code(){
             $("#alert-active").html("Kích hoạt thành công").fadeIn(10)
             $("#alert-active").html("Kích hoạt thành công").fadeOut(6000)
             get_social();
-            console.log(code)
-            location.reload();
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+            
 
          }
          else{
@@ -504,11 +521,44 @@ function tryfree(){
     $.post("action_try.php",{id:id},function(data){
         if (data == 1){
             
-            location.reload();
-            alert("Đã kích hoạt dùng thử");
+            
+            //
+            Toastify({
+              text: "Đã kích hoạt dùng thử",
+              duration: 3000,
+              //destination: "#",
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "center", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+              },
+              //onClick: function(){} // Callback after click
+            }).showToast();
+            //
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
         }
         else{
-            alert("Bạn đang dùng thử rồi");
+            //
+        Toastify({
+          text: "Bạn đang dùng thử rồi",
+          duration: 6000,
+          //destination: "#",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #F70C3E, #C9AD3D)",
+          },
+          //onClick: function(){} // Callback after click
+        }).showToast();
+        //
         }
     });
 }
@@ -565,14 +615,14 @@ $( document ).ready(function() {
         show_id("tichxanh");
         hide_id('edit_slug');
         hide_id('btn_order');
-        $("#alert-header").html("Hi, Cảm ơn bạn đã tin dùng SmartCard!");
+        $("#alert-header").html("Cảm ơn bạn đã tin dùng SmartCard!");
 
     }else if (active == 1){
         hide_id("try_btn");
-        $("#alert-header").html("Hi, Sau khi kích hoạt, bạn sẽ được gỡ bỏ hạn chế tài khoản.");
+        $("#alert-header").html("Sau khi kích hoạt, bạn sẽ được gỡ bỏ hạn chế tài khoản.");
     }
     else{
-        $("#alert-header").html("Hi, Bạn có thể kích hoạt dùng thử bằng nút dưới để trải nghiệm miễn phí, tuy nhiên một số tính năng sẽ bị hạn chế.");
+        $("#alert-header").html("Bạn có thể kích hoạt dùng thử để trải nghiệm miễn phí, tuy nhiên một số tính năng sẽ bị hạn chế.");
         hide_id("tichxanh");
     }
     //load id theme

@@ -24,14 +24,14 @@ if (isset($_POST["id"])){
 					  $img_icon
 					</div>
 					<div class='col-8'>
-						<a href='$social_link' target='_blank' id='$id_social.social_link' onclick='clicked($id_social)'>
+						<a href='$social_link' target='_blank' id='$id_social-social_link' onclick='clicked($id_social)'>
 							$social_name
 						</a>
 					</div>
 					<div class='col-2'>
-
-						<i onclick='coppy_social($id_social)' class='bi bi-clipboard' id='$id_social-icon-cp'></i>
-						<i class='bi bi-clipboard-check right-social' style='display: none;color:blue;float:right' id='$id_social-icon-cped'></i>
+						<i onclick='coppy_social($id_social)' class='bi bi-clipboard'
+						 id='$id_social-scp'></i>
+						<i class='bi bi-clipboard-check right-social' style='display: none;color:blue;float:right' id='$id_social-scped'></i>
 					</div>
 				</div>
 			";
