@@ -35,13 +35,13 @@
                         </label>";
             };
 
-            $active_show_hide = "<input  type='hidden' name='$name-$id_social' id='$id_social-active' value='$active'>";
+            $active_show_hide = "<input  type='hidden'  id='$id_social-active' value='$active'>";
             $output.="
 
             <tr>
                 <td rowspan='2'>$img_icon</td>
                 <td>
-                    <input type='text' readonly placeholder='Label name social' class='form-control' name='$id_social.$name' value='$name' id='$id_social-name_social'>
+                    <input type='text' readonly placeholder='Label name social' class='form-control'  value='$name' id='$id_social-name_social'>
                 </td>
                 <td >$active_show_hide
         
@@ -52,7 +52,7 @@
                 <td>
                     <div class='inner-addon icon-addon'>
                         <input placeholder='Link social' readonly class='form-control' type='text'
-                         id='$id_social' name='$name' value='$link'>
+                         id='$id_social-link_social'  value='$link'>
                          <i  class='badge badge-primary'>Clicked: $clicked</i>
                          <p id='alert.$id_social' style=$style1>Success!</p>
                     </div>
@@ -62,17 +62,9 @@
                     <i class='fa pencil-right fa-pencil' title='Sửa' id='$id_social-edit'
                         onclick='edit_social($id_social)'>
                     </i> 
-                    <i class='fa pencil-right fa-check' title='Lưu sửa đổi' id='$id_social-done'
-                     onclick='done_social($id_social)' style=$style>
-                     </i>
-                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span>&nbsp|&nbsp;</span>
                      <i class='fa fa-trash-o trash-right' id='$id_social-del'
-                      onclick='del_social_1($id_social)' title='Xóa'></i>
-                      <i class='fa fa-undo undo-del' id='$id_social-undo' title='Hủy xóa' aria-hidden='true'
-                        onclick='undo_del($id_social)'
-                     ></i>
-                     &nbsp;&nbsp;
-                     <i class='fa fa-check confirm-del' title='Xác nhận xóa' onclick='del_social($id_social)' id='$id_social-confirm-del' aria-hidden='true'></i>
+                      onclick='del_social($id_social)' title='Xóa'></i>
                 </td>
             </tr>
             <tr>

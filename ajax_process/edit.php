@@ -140,14 +140,14 @@ require_once("../includes/db.php");
         echo "$bg_color";
 
     }
-    if (isset($_POST["intro"])){
-        $intro = $_POST["intro"];
-        $id_user = $_POST["id_user"];
+    if (isset($_POST["intro_e"])){
+        $intro_e = $_POST["intro_e"];
+        $id_u = $_POST["id_u"];
 
-        $query = "UPDATE users SET intro='$intro' WHERE id = '$id_user'";
+        $query = "UPDATE users SET intro='$intro_e' WHERE id = '$id_u'";
         $result = mysqli_query($con, $query);
 
-        echo "$intro";
+        echo "$result";
 
     }
     if (isset($_POST["id_social_checbox"])){

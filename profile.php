@@ -270,7 +270,7 @@
                         
                         <div class="about col-12 mt-2 icon-addon text-center">
                             <h5 class="text-left text-primary">Intro <i onclick="edit_intro()" id="edit_icon_intro" class="fa right fa-pencil"></i></h5>
-                            <textarea onblur="ajax_submit_intro()" readonly class="text-left" name="intro" id="intro"  rows="4" ><?php echo $intro;?></textarea>
+                            <textarea onchange="ajax_submit_intro()" readonly class="text-left" name="intro" id="intro"  rows="4" ><?php echo $intro;?></textarea>
                             <p class="f_alert" id="intro_alert" >Success!</p>
                             <hr/>
                         </div>
@@ -609,6 +609,61 @@
                                   </div>
                                 </div>
                             <!-------modal end------>
+                            <!-- modal edit social start -->
+                            <div class="modal" id="modal_edit_social">
+                                  <div class="modal-dialog modal-fullscreen">
+                                    <div class="modal-content">
+                                      <!-- Modal body -->
+                                      <div class="modal-body">
+                                        <input class="form-control" type="hidden" id="s_id">
+                                        <label for="s_name" class="mt-2">Tên</label>
+                                        
+                                        <input class="form-control" id="s_name" type="text">
+                                        <label for="s_link" class="mt-3">Link</label>
+                                        <input class="form-control" id="s_link" type="text">
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <div class="col-2 ">
+                                            <button class="btn btn-success " data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-success " data-bs-dismiss="modal" 
+                                      onclick="done_social()">Ok</button>
+                                        </div>
+                                      
+                                  </div>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+                            
+                            <!-- modal edit social end -->
+                            <!-- modal del social start -->
+                            <div class="modal" id="modal_del_social">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" >Xác nhận xóa</h5>
+                                        </div>
+                                      <!-- Modal body -->
+                                      <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <button class="btn btn-success"
+                                                    data-bs-dismiss="modal">Cancel
+                                                </button>
+                                                <button class="btn btn-success mt-3"
+                                                    onclick="ok()" data-bs-dismiss="modal">OK
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="id_social">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal del social end -->
                         </div>
                         <div class="row gutters">
                             <div class="mt-2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

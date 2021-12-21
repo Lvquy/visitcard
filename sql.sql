@@ -25,7 +25,7 @@ CREATE TABLE users (
     address varchar(150),
     reg_date date,
     avata varchar(255),
-    intro varchar(255),
+    intro varchar(1000),
     slug varchar(25) NOT NULL,
     top_bg_color varchar(15),
     top_bg_img varchar(255),

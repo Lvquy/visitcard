@@ -272,29 +272,19 @@ function add_social(id_social){
     });
 }; 
 
-//undo del
-function undo_del(id_social) {
-    var id_icon_del = id_social+"-del"
-    var id_confirm_del = id_social+"-confirm-del"
-    var id_icon_undo = id_social+"-undo"
-    show_id(id_icon_del)
-    hide_id(id_confirm_del)
-    hide_id(id_icon_undo)
+
+function ok() {
+    var id_social = $("#id_social").val()
+    $.post("action_del.php",{id_social:id_social},function(data){
+        get_social()
+    })
 }
-//del 
-function del_social_1(id_social){
-    var id_confirm_del = id_social+"-confirm-del"
-    var id_icon_del = id_social+"-del"
-    var id_icon_undo = id_social+"-undo"
-    show_id(id_confirm_del)
-    show_id(id_icon_undo)
-    hide_id(id_icon_del)
-}
+
 //del social function
 function del_social(id_social){
-    $.post("action_del.php",{id_social:id_social},function(data){
-    get_social()
-    })
+    $("#id_social").val(id_social)
+    $("#modal_del_social").modal('show');
+    
 };
 //end del social
 
@@ -351,37 +341,28 @@ function del_coin(id_coin){
 }
 //function edit social
 function edit_social(id_social) {
-    var id_btn_edit = id_social+"-edit";
-    var id_btn_done = id_social+"-done";
-    var id_name_social = id_social+"-name_social";
+    // open modal edit social
+    $("#modal_edit_social").modal('show');
+    $("#s_id").val(id_social)
+    var s_name = $("#"+id_social+"-name_social").val()
+    var s_link = $("#"+id_social+"-link_social").val()
+    $("#s_name").val(s_name)
+    $("#s_link").val(s_link)
     
-    readonly_false(id_social);
-    readonly_false(id_name_social);
-    hide_id(id_btn_edit);
-    show_id(id_btn_done);
+    
 
 };
 //function edit social end
 //function done social
-function done_social(id_social) {
-    var social_link = document.getElementById(id_social).value;
-    var id_btn_edit = id_social+"-edit"
-    var id_btn_done = id_social+"-done"
-    var id_name_social = id_social+"-name_social";
-    var social_name = $("#"+id_name_social).val();
-    console.log(social_name)
+function done_social() {
+    var id_social = $("#s_id").val()
+    var social_name = $("#s_name").val()
+    var social_link = $("#s_link").val()
+    
     $.post("ajax_process/edit.php",{id_social:id_social,social_link:social_link,social_name:social_name},function(data){
         if (data==1){
             //ok xxx
-            var id_s_alert = "alert."+id_social;
-            show_id(id_s_alert);
-            hide_id(id_btn_done);
-            show_id(id_btn_edit);
-            setTimeout(function() {
-                hide_id(id_s_alert);
-            }, 5000)
-            readonly_true(id_social);
-            readonly_true(id_name_social);
+            get_social()
         };
         if (data == 0){
             //loi
@@ -822,10 +803,12 @@ function edit_intro(){
     readonly_false('intro');
 };
 function ajax_submit_intro(){
-    var id_user = $("#id_user").val();
-    var intro = $("#intro").val();
-    $.post("ajax_process/edit.php",{id_user:id_user,intro:intro},function(data){
-        
+    var id_u = $("#id_user").val();
+    var intro_e = $("#intro").val();
+    console.log('value intro',intro_e.length)
+    console.log('id',id_u)
+    $.post("ajax_process/edit.php",{id_u:id_u,intro_e:intro_e},function(data){
+        console.log('data tra ve',data)  
         show_id('edit_icon_intro');
         show_id('intro_alert');
             setTimeout(function() {
