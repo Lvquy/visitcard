@@ -8,27 +8,45 @@ function clicked(id_s) {
 
 	})
 }
-//coppy coin
+//coppy
+function copyToClipboard(text) {
+    var text_coppy = document.createElement("textarea");
+    document.body.appendChild(text_coppy);
+    text_coppy.value = text; //save main text in it
+    text_coppy.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(text_coppy);
+}
+function coppy(id,id_show,id_hide){
+    var copyText = document.getElementById(id);
+    copyToClipboard(copyText.value);
+    document.getElementById(id_hide).style.display = "none";
+	document.getElementById(id_show).style.display = "inline-block";
+}
 function coppy_coin(id_coin) {
-	var icon_cp = id_coin+"-icon-cp";
-	var icon_cped = id_coin+"-icon-cped";
-	var text_cp = $("#"+id_coin+"-wallet").text()
-	$("#"+icon_cped).fadeIn(1);
-	$("#"+icon_cp).fadeOut(1);
-	navigator.clipboard.writeText(text_cp);
+	var id_cp_coin = id_coin+"-wallet"
+  	var range = document.createRange();
+	range.selectNode(document.getElementById(id_cp_coin));
+	window.getSelection().removeAllRanges(); // clear current selection
+	window.getSelection().addRange(range); // to select text
+	document.execCommand("copy");
+	window.getSelection().removeAllRanges();// to deselect
+	$("#"+id_coin+"-icon-cp").css({"display":"none"})
+	$("#"+id_coin+"-icon-cped").css({"display":"inline-block"})
+}
+function coppy_social(id_social) {
+	var id = id_social+"-social_link";
+	var id_cp = id_social+"-scp"
+	var id_cped = id_social+"-scped"
+	var a = document.getElementById(id_cp)
+	$("#"+id_cp).css({"display":"none"})
+	$("#"+id_cped).css({"display":"inline-block"})
+	var social_link = document.getElementById(id).getAttribute("href");
+ 	copyToClipboard(social_link);
+ 	
+	
 }
 
-//coppy social
-function coppy_social(id_social) {
-	var icon_cp = id_social+"-icon-cp";
-	var icon_cped = id_social+"-icon-cped";
-	var id_social_link = id_social+".social_link";
-	var social_link = document.getElementById(id_social_link).getAttribute("href");
-	$("#"+icon_cped).fadeIn(1);
-	$("#"+icon_cp).fadeOut(1);
-	console.log(social_link);
-	navigator.clipboard.writeText(social_link);
-}
 //show intro
 function show_intro(){
 	$("#intro").fadeIn(1000);
@@ -74,19 +92,9 @@ function get_coins() {
 	});
 	};
 
-//coppy
-function coppy(id,id_show,id_hide){
-	document.getElementById(id_hide).style.display = "none";
-	document.getElementById(id_show).style.display = "inline-block";
 
-	var text_cp = $("#"+id).val()
-	if (text_cp.length==0){
-		var text_cp = $("#"+id).html()
-	}
-	navigator.clipboard.writeText(text_cp);
-	console.log(text_cp)
 
-}
+
 //visitor count
 function visit_count() {
 	var id_u = $("#id_user").val()
