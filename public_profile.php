@@ -144,6 +144,7 @@ require('includes/db.php');
 			<div class="col-12 main-box">
 				<div class="container mt-2">
 					<div class="social">
+
 						<h4 class="text-dark">Liên kết</h4>
 						<span id="load_social"></span>
 						<hr>
