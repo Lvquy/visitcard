@@ -1,32 +1,4 @@
-/*
 
-TemplateMo 563 SEO Dream
-
-https://templatemo.com/tm-563-seo-dream
-
-/
-/* ---------------------------------------------
-Table of contents
-------------------------------------------------
-01. font & reset css
-02. reset
-03. global styles
-04. header
-05. banner
-06. features
-07. testimonials
-08. contact
-09. footer
-10. preloader
-11. search
-12. portfolio
-
---------------------------------------------- */
-/* 
----------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 /* 
 ---------------------------------------------
@@ -603,6 +575,21 @@ header
 
 .header-area.header-sticky .nav li a.active {
   color: #33ccc5;
+}
+@media (min-width: 767px){
+  img.card-shop{
+    width: 70%!important;
+    height: auto;
+    text-align: center;
+    opacity: .8;
+    padding-left: 5px;
+  }
+  img.card-shop:hover{
+    width: calc(70% + 1rem)!important;
+    height: auto;
+    opacity: 1;
+    transition: .4s;  
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1620,7 +1607,7 @@ Footer Style
 */
 
 footer p {
-  text-align: center;
+  text-align: left;
   margin: 30px 0px;
 }
 

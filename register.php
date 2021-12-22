@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <?php include('includes/head.html');?>
-<title>SmartCard | Register</title>
+<title>VnCard | Register</title>
 </head>
 <body>
   <!-- ***** Preloader Start ***** -->
@@ -19,11 +19,11 @@
 <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="row text-center">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <h1 id='login'>ĐĂNG KÍ</h1>
+                            <h1 id='login1'>ĐĂNG KÝ</h1>
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,11 @@
                              <i class="fa fa-key left"></i>
                             <input name="password" type="password" class="form-control"
                                                        id="password" required placeholder="Mật khẩu...">
-                            <input type="checkbox" onclick="show_passwd()">Hiện mật khẩu
+                            <input class="mt-2" type="checkbox" onclick="show_passwd()" id="showpass">
+                            <label for="showpass">Hiện mật khẩu</label>
+                            
                         </div>
-                        <button type="submit" class="btn btn-primary mt-2">Đăng kí</button>
+                        <button type="submit" class="btn btn-primary mt-2 text-center">Đăng ký</button>
                     </div>
                 </form>
             </div>

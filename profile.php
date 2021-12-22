@@ -40,10 +40,11 @@
                         <ul >
                             <div id="ul_cus_menu">
                             <li>
-                                  <i  class="bi bi-palette cha"
-                                   data-bs-toggle="modal" data-bs-target="#change_theme_modal">
-                                      <div class="con">Chọn theme</div>
-                                  </i>
+                                
+                              <i  class="bi bi-palette cha"
+                               data-bs-toggle="modal" data-bs-target="#change_theme_modal">
+                                  <div class="con">Chọn theme</div>
+                              </i>
                             </li>
                             
                             <li >

@@ -9,7 +9,7 @@ session_start();
 
 <head>
 <?php include('includes/head.html');?>
-<title>SmartCard | Login</title>
+<title>VnCard | Login</title>
 </head>
 
 <body>
@@ -25,11 +25,11 @@ session_start();
 <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="row text-center">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <h5 id='login'>LOGIN</h5>
+                            <h1 id='login1'>LOGIN</h1>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ session_start();
                         <a href="#" class="badge badge-success mt-4" id="lost_pass" onclick="show_form_reset_pass()">
                             Quên mật khẩu
                         </a>
-                        <a class="badge badge-success mt-4" href="./register.php">Đăng kí</a>
+                        <a class="badge badge-success mt-4" href="./register.php">Đăng ký</a>
                     </div>
                 </form>
             
