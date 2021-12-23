@@ -1647,7 +1647,7 @@ responsive
     margin-right: 0px;
   }
   .main-banner {
-    text-align: center;
+    text-align: left;
   }
   .main-banner:before {
     display: none;
