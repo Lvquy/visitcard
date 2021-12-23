@@ -88,5 +88,6 @@
 </body>
     <!--   footer start -->
     <?php include('includes/footer.html'); ?>
+    <?php include('includes/script.html');?>
     <!--   footer end -->
 </html>
