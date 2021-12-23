@@ -116,7 +116,7 @@ function show_btn_submit() {
 }
 function generate_qrcode(){
     var sample = $('#slug').val();
-    sample = 'localhost/code/2/'+sample;
+    sample = 'https://vncard.info/'+sample;
     $.post("qr_code.php",{sample:sample},function(data){
         $("#qr_code").html(data);
         
@@ -625,7 +625,7 @@ $( document ).ready(function() {
         show_id("tichxanh");
         hide_id('edit_slug');
         hide_id('btn_order');
-        $("#alert-header").html("Cảm ơn bạn đã tin dùng SmartCard!");
+        $("#alert-header").html("Cảm ơn bạn đã tin dùng VnCard!");
 
     }else if (active == 1){
         hide_id("try_btn");

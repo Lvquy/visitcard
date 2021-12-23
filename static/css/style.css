@@ -1,4 +1,12 @@
 
+p#important{
+    color: red;
+    font-weight: bold;
+}
+footer p img.icon-footer{
+    width: 1.5rem!important;
+    height: auto;
+}
 
 .bi-question-circle{
     cursor: pointer;
