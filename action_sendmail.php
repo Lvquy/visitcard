@@ -9,8 +9,8 @@
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
     //emailer end
-    $user_gmail = "quyseo.ictu";
-    $pass_gmail = "Talathulinh@91";
+    $user_gmail = "vncard.notify";
+    $pass_gmail = "vkkdajafissqnmlh";
 
     function generateRandomString($length = 10) {
 	    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -54,7 +54,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('quyseo.ictu@gmail.com', 'VnCard');
+			    $mail->setFrom('vncard.notify@gmail.com', 'VnCard');
 		        $mail->addAddress($_POST["email_value"], $fullname);     //Add a recipient
 			    $mail->Subject = $subject;
 		        $mail->Body    = $content_mail; 
@@ -97,7 +97,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('vncard.info@gmail.com', 'VnCard');
+			    $mail->setFrom('vncard.notify@gmail.com', 'VnCard');
 		        $mail->addAddress($email, $fullname);     //Add a recipient
 			    $mail->Subject = "Reset Password";
 		        $mail->Body    = $content_mail; 
@@ -135,7 +135,7 @@
 
     	if ($sent_mail_confirm == true){
     		$data_email = mysqli_fetch_array($result);
-            $email = "in24h.com.vn@gmail.com";
+            $email = "vncard.notify@gmail.com";
             $fullname = "Web Online";
             $content_mail = "<h2>New Order</h2>";
             $content_mail .= "<h3>Bạn có 1 đơn hàng mới từ website</h3>";
@@ -160,7 +160,7 @@
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('vncard@gmail.com', 'VnCard');
+			    $mail->setFrom('vncard.notify@gmail.com', 'VnCard');
 		        $mail->addAddress($email, $fullname);     //Add a recipient
 			    $mail->Subject = "New Order";
 		        $mail->Body    = $content_mail; 
