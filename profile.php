@@ -960,11 +960,8 @@
     </div>
   </div>
 </body>
-<!--   footer start -->
-<!-- <?php include('includes/footer.html'); ?> -->
-<!--   footer end -->
-
   <!-- Scripts -->
   <script src="static/js/profile.js"></script>
+  
 <?php include('includes/script.html');?>
 </html>

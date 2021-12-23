@@ -9,6 +9,8 @@
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
     //emailer end
+    $user_gmail = "quyseo.ictu";
+    $pass_gmail = "Talathulinh@91";
 
     function generateRandomString($length = 10) {
 	    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -37,22 +39,22 @@
     	$content_mail .= "<h2>Mã kích hoạt của bạn là: <span style='color:blue'>$active_code </span></h2>";
     	$content_mail .= "<p>Coppy mã trên dán vào form tại website để xác nhận</p>";
     	$content_mail .= "<p><strong>Lưu ý: Chỉ email đã xác nhận mới có thể dùng để khôi phục tài khoản khi quên mật khẩu.</strong></p>";
-    	$content_mail .= "<p>Email được gửi từ website: https://vncard.com</p>";
+    	$content_mail .= "<p>Email được gửi từ website: https://vncard.info</p>";
     	$content_mail .= "<h3 style='color:red'>VnCard | Chia sẻ thông tin chỉ 1 chạm </h3>";
 
     	$mail = new PHPMailer(true);
 
     	try {
-				//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+				// $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
 			    $mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			    $mail->Username   = 'in24h.com.vn';                     //SMTP username
-			    $mail->Password   = 'Talathulinh@91';                               //SMTP password
+			    $mail->Username   = $user_gmail;                     //SMTP username
+			    $mail->Password   = $pass_gmail;                               //SMTP password
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('vncard@gmail.com', 'VnCard');
+			    $mail->setFrom('quyseo.ictu@gmail.com', 'VnCard');
 		        $mail->addAddress($_POST["email_value"], $fullname);     //Add a recipient
 			    $mail->Subject = $subject;
 		        $mail->Body    = $content_mail; 
@@ -90,12 +92,12 @@
             	$mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			    $mail->Username   = 'in24h.com.vn';                     //SMTP username
-			    $mail->Password   = 'Talathulinh@91';                               //SMTP password
+			    $mail->Username   =  $user_gmail;                     //SMTP username
+			    $mail->Password   = $pass_gmail;                               //SMTP password
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
-			    $mail->setFrom('vncard@gmail.com', 'VnCard');
+			    $mail->setFrom('vncard.info@gmail.com', 'VnCard');
 		        $mail->addAddress($email, $fullname);     //Add a recipient
 			    $mail->Subject = "Reset Password";
 		        $mail->Body    = $content_mail; 
@@ -153,8 +155,8 @@
             	$mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			    $mail->Username   = 'in24h.com.vn';                     //SMTP username
-			    $mail->Password   = 'Talathulinh@91';                               //SMTP password
+			    $mail->Username   = $user_gmail;                     //SMTP username
+			    $mail->Password   = $pass_gmail;                               //SMTP password
 			    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 			    $mail->Port       = 465;  //465 587
 			    $mail->isHTML(true);
@@ -166,6 +168,7 @@
 		        $mail->send();
 		        echo 1;
             }catch (Exception $e) {
+            	echo 0;
     			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 				}
     	}
