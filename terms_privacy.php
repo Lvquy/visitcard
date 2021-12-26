@@ -36,7 +36,7 @@
         </div>
         <div class="col-12">
         	<hr>
-        	Ghi chú: <span style="color:red;font-weight:bold;">thông tin công khai(*)</span>: Là những thông tin bạn chia sẻ trên website với đường dẫn vncard.info/USER  trong đó USER là tên đăng nhập của tài khoản bạn.
+        	Ghi chú: <span style="color:red;font-weight:bold;">thông tin công khai</span>: Là những thông tin bạn chia sẻ trên website với đường dẫn vncard.info/USER  trong đó USER là tên đăng nhập của tài khoản bạn.
         </div>
         <div class="col-lg-12">
         	<h2 class="text-center fw-bold">Điều khoản dịch vụ</h2>
@@ -44,7 +44,7 @@
         <div class="col-12">
         	<h4 class="mt-2">1. Giới thiệu</h4>
         	<p class="mt-2">
-						- Cảm ơn bạn đã sử dụng sản phẩm và dịch vụ của chúng tôi (gọi tắt là “Dịch vụ”). Bằng việc đăng ký sử dụng Dịch vụ của VnCard, bạn được hiểu là đồng ý với các điều khoản và điều kiện của chúng tôi. VnCard có quyền hạn cập nhật và thay đổi điều khoản dịch vụ bằng cách cập nhật thông tin tại trang web của VnCard là vncard.info <br>
+						- Cảm ơn bạn đã sử dụng sản phẩm và dịch vụ của chúng tôi. Bằng việc đăng ký sử dụng Dịch vụ của VnCard, bạn được hiểu là đồng ý với các điều khoản và điều kiện của chúng tôi. VnCard có quyền hạn cập nhật và thay đổi điều khoản dịch vụ bằng cách cập nhật thông tin tại trang web của VnCard là vncard.info <br>
 
 						- Hãy xem lại điều khoản tại trang này khi có thông báo mới từ chúng tôi. <br>
 

@@ -106,9 +106,9 @@
                     <h6>02</h6>
                   </div>
                   <div class="icon"></div>
-                  <h4>GỌI ĐIỆN & LƯU DANH BẠ</h4>
+                  <h4>GỌI ĐIỆN & SMS</h4>
                   <div class="line-dec"></div>
-                  <p>Bạn bè có thể gọi cho bạn nhanh hơn chỉ cần bấm và gọi, hoặc LƯU DANH BẠ chỉ với 1 chạm mà không cần làm gì thêm.</p>
+                  <p>Bạn bè có thể gọi/sms cho bạn nhanh hơn chỉ cần bấm và gọi, hoặc lưu danh bạ chỉ với 1 chạm mà không cần làm gì thêm.</p>
                 </div>
               </div>
               <div class="col-lg-3">
