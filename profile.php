@@ -73,7 +73,7 @@
                             <li id="btn-smt-li">
                                 <form method="post" action="action_update.php" enctype="multipart/form-data">
                                   <input onchange="show_btn_submit()" 
-                                  accept="image/png, image/jpeg, image/gif , image/jpg"
+                                  accept=".png, .jpeg, .gif , .jpg"
                                   type="file" id="input_avatar" name="input_avatar" style="display:none" class="text-center center-block file-upload">
                                   <input type="hidden" name="id" id ="id_user" value="<?php echo $id;?>"/>
                                   <input type="hidden" name="active" id ="active" value="<?php echo $active;?>"/>
