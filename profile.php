@@ -607,7 +607,7 @@
                                                 <img id="tiktok" onclick = "add_social('Tiktok')" src="static/images/social_icon/Tiktok.svg" width="100" height="100" title="Tiktok">
                                             </td>
                                             <td>
-                                                <img id="momo" onclick = "add_social('Momo')" src="static/images/social_icon/Momo.svg" width="100" height="100" title="Momo">
+                                                <img id="spotify" onclick = "add_social('Spotify')" src="static/images/social_icon/Spotify.svg" width="100" height="100" title="Spotify">
                                             </td>
                                         </tr>
                                         <tr>
@@ -680,7 +680,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                             
+                                                <img id="email" onclick = "add_social('Email')" src="static/images/social_icon/Email.svg" width="100px" height="100px"title="Email">
                                             </td>
                                             <td>
                                                
@@ -715,14 +715,9 @@
 
                                       </div>
                                       <div class="modal-footer">
-                                        <div class="col-2 ">
                                             <button class="btn btn-success " data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                        <div class="col-4">
                                             <button class="btn btn-success " data-bs-dismiss="modal" 
                                       onclick="done_social()">Ok</button>
-                                        </div>
-                                      
                                   </div>
                                   </div>
                                   
@@ -795,6 +790,31 @@
                                     </div>
                                   </div>
                                 </div>
+                                <!-- modal_confirm_del_skill -->
+                                <div class="modal" id="modal_confirm_del_skill">
+                                  <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" >Xác nhận xóa</h5>
+                                        </div>
+                                      <!-- Modal body -->
+                                      <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <button class="btn btn-success"
+                                                    data-bs-dismiss="modal">Cancel
+                                                </button>
+                                                <button class="btn btn-success mt-3"
+                                                    onclick="del_skill()" data-bs-dismiss="modal">OK
+                                                </button>
+                                            </div>
+                                            <input type="hidden" id="id_del_skill">
+                                        </div>
+                                      </div>
+                                  </div>
+                                  </div>
+                                </div>
+                                <!-- modal_confirm_del_skill end-->
                             
                             <!------button------->
                         </div>
@@ -902,14 +922,63 @@
                                                     onclick = "add_coin('PiNetwork')"
                                                 src="static/images/coins/PiNetwork.svg" width="100" height="100" title="PiNetwork">
                                                 </td>
-                                                <td>.</td>
-                                                <td>.</td>
+                                                <td>
+                                                    <img id="momo" 
+                                                    onclick = "add_coin('Momo')"
+                                                src="static/images/coins/Momo.svg" width="100" height="100" title="Momo">
+                                                </td>
+                                                
+                                                <td>
+                                                    <img id="vietcombank" 
+                                                    onclick = "add_coin('Vietcombank')"
+                                                src="static/images/coins/Vietcombank.svg" width="100" height="100" title="Vietcombank">
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>.</td>
-                                                <td>.</td>
-                                                <td>.</td>
-                                                <td>.</td>
+                                                <td>
+                                                    <img id="agribank" 
+                                                    onclick = "add_coin('Agribank')"
+                                                src="static/images/coins/Agribank.svg" width="100" height="100" title="Agribank">
+                                                </td>
+                                                
+                                                <td>
+                                                    <img id="mBbank" 
+                                                    onclick = "add_coin('MBbank')"
+                                                src="static/images/coins/MBbank.svg" width="100" height="100" title="MBbank">
+                                                </td>
+
+                                                <td>
+                                                    <img id="shinhanBank" 
+                                                    onclick = "add_coin('ShinhanBank')"
+                                                src="static/images/coins/ShinhanBank.svg" width="100" height="100" title="ShinhanBank">
+                                                </td>
+                                                <td>
+                                                    <img id="sHBBank" 
+                                                    onclick = "add_coin('SHBBank')"
+                                                src="static/images/coins/SHBBank.svg" width="100" height="100" title="SHB Bank">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img id="vIBBank" 
+                                                    onclick = "add_coin('VIBBank')"
+                                                src="static/images/coins/VIBBank.svg" width="100" height="100" title="VIBBank">
+                                                </td>
+                                                <td>
+                                                    <img id="vPBank" 
+                                                    onclick = "add_coin('VPBank')"
+                                                src="static/images/coins/VPBank.svg" width="100" height="100" title="VPBank">
+                                                </td>
+                                                <td>
+                                                    <img id="aCBBank" 
+                                                    onclick = "add_coin('ACBBank')"
+                                                src="static/images/coins/ACBBank.svg" width="100" height="100" title="ACBBank">
+                                                </td>
+                                                <td>
+                                                    <img id="techcombank" 
+                                                    onclick = "add_coin('Techcombank')"
+                                                src="static/images/coins/Techcombank.svg" width="100" height="100" title="Techcombank">
+                                                </td>
                                             </tr>
                                         
                                         </table>
@@ -949,6 +1018,9 @@
                 
                         <!-- test -->
                     </div>
+                </div>
+                <div class="help text-center">
+                    <a class="btn btn-primary" target="_blank" href="help.php#help">Hướng dẫn thêm thông tin vào thẻ</a>
                 </div>
             </div>
 

@@ -34,12 +34,6 @@
                         <div class='col-2' id='del_skill'>
                             <i  onclick='del_skill_1($id_skill)' id='$id_skill-del' class='fa fa-trash-o' title='Xóa'>
                             </i>
-                            <i class='fa fa-undo undo-del' id='$id_skill-undo' title='Hủy xóa' aria-hidden='true'
-                                onclick='undo_del_skill($id_skill)'>
-                            </i>
-                                &nbsp;&nbsp;
-                            <i class='fa fa-check confirm-del' title='Xác nhận xóa' onclick='del_skill($id_skill)' id='$id_skill-confirm' aria-hidden='true'>
-                            </i>
                         </div>
 
                         <input type='hidden' name='id_skill' value='$id_skill' id='$id_skill'>
