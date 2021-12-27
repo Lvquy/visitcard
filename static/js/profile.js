@@ -400,24 +400,13 @@ function done_social() {
 //function done social end
 //del skill
 function del_skill_1(id_skill){
-    var id_icon_del = id_skill+"-del"
-    var id_icon_undo = id_skill+"-undo"
-    var id_icon_confirm = id_skill+"-confirm"
-    show_id(id_icon_undo)
-    show_id(id_icon_confirm)
-    hide_id(id_icon_del)
+    $("#modal_confirm_del_skill").modal('show');
+    $("#id_del_skill").val(id_skill)
+    
 } 
-//undo del skill
-function undo_del_skill(id_skill) {
-    var id_icon_del = id_skill+"-del"
-    var id_icon_undo = id_skill+"-undo"
-    var id_icon_confirm = id_skill+"-confirm"
-    hide_id(id_icon_undo)
-    hide_id(id_icon_confirm)
-    show_id(id_icon_del)
-}
 //del skill
-function del_skill(id_skill) {
+function del_skill() {
+    var id_skill = $("#id_del_skill").val()
     $.post("action_del.php",{id_skill:id_skill},function(data){
     get_skill();
     });

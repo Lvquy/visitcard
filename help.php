@@ -73,7 +73,7 @@
         	</div>
 			
         
-        <div class="col-lg-12 mt-3"><h2 class="text-center fw-bold">Hướng dẫn thêm thông tin vào thẻ</h2></div>
+        <div id="help" class="col-lg-12 mt-3"><h2 class="text-center fw-bold">Hướng dẫn thêm thông tin vào thẻ</h2></div>
         <div class="col-sm-6 col-12 mt-3">
 	        <h4 class="mt-2">1. Bước 1</h4>
 	        <p class="mt-3">

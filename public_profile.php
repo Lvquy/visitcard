@@ -102,12 +102,13 @@ require('includes/db.php');
 					<p>
 					<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span><?php echo $bank_num ?></span>
 					</p>
-					<i> &emsp;&emsp;&emsp;- Chủ tài khoản: <?php echo $bank_user ?></i><br/>
-					<i> &emsp;&emsp;&emsp;- Chi nhánh: <?php echo $bank_sub ?></i><br/>
-					<i> &emsp;&emsp;&emsp;- Coppy số tài khoản: 
+					<i> &emsp;- Coppy số tài khoản: 
 						<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank')"></i>
-						<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
+						<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i> <br>
 					</i>
+					<i> &emsp;- Chủ tài khoản: <?php echo $bank_user ?></i><br/>
+					<i> &emsp;- Chi nhánh: <?php echo $bank_sub ?></i><br/>
+					
 				<br/>
 				</div>
 			
