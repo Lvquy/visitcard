@@ -2,6 +2,7 @@
 Order Allow,Deny
 Deny from all
 </Files>
+ErrorDocument 404 /error/404.html
 #abc.com/user.php?username=xyz —> abc.com/xyz
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
