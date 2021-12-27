@@ -205,7 +205,7 @@ function show_modal_order() {
 		}).showToast();
 		//
 	};
-	if (username.length <3){
+	if (username.length <3 || error_slug == true){
 		//
 		Toastify({
 		  text: "Username: 3 - 25 kí tự, KHÔNG DÙNG (khoảng trắng, kí tự đặc biệt, có dấu)",
@@ -323,12 +323,14 @@ function show_front() {
 
 // change_username
 var trung_username = false
+var error_slug = false
 function change_username(value) {
 	$("#username").html("https://vncard.info/")
 	$("#username").append(value)
 	var slug = value
 	$.post("ajax_process/edit.php",{slug:slug},function(data){
 		if (data == 2){
+			error_slug = true
 			//
 			Toastify({
 			  text: "3 - 25 kí tự, KHÔNG DÙNG (khoảng trắng, kí tự đặc biệt, có dấu)",
