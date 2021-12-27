@@ -194,7 +194,9 @@ a{
 
 .avata .img-avata{
 	width: 150px;
-	border: 1px solid white;
+	height: 150px;
+	object-fit:cover ;
+	border: 2px solid white;
 	margin: auto;
 	position: relative;
 	top: -20px;
