@@ -484,13 +484,6 @@ body {
     transition: .5s ease;
 }
 
-.img-circle {
-    border-radius: 50%;
-    width: auto;
-    height: 200;
-    position: relative;
-    top: -90px;
-}
 
 /*text upload avata*/
 .middle {
@@ -504,7 +497,14 @@ body {
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
-
+.user-avatar img{
+    width: 200;
+    height: 200;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: -90px;
+}
 .user-avatar:hover .image {
     opacity: 0.1;
 }

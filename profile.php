@@ -325,7 +325,7 @@
                         <div class="user-profile">
                             <div class="user-avatar text-center">
                                 <img src="static/images/avata/<?php echo $avata;?>?<?php echo rand()?>"
-                                 class=" img-circle avatar  img-thumbnail" alt="img">
+                                 class="avatar img-thumbnail" alt="img">
                                 <div class="middle text-center">
                                     <div id="avatar" style="cursor:pointer" class="text">
                                         <i class="bi bi-camera"></i>
