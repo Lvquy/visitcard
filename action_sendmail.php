@@ -35,17 +35,20 @@
     	$active_code = $active_code_tml;
     	$sql_ins_code = "UPDATE users set active_code ='$active_code' WHERE id = '$id_user'";
     	$result_ins_code = mysqli_query($con,$sql_ins_code);
-    	$content_mail ="<h1>Xin chào bạn: $fullname </h1>";
-    	$content_mail .= "<h2>Mã kích hoạt của bạn là: <span style='color:blue'>$active_code </span></h2>";
-    	$content_mail .= "<p>Coppy mã trên dán vào form tại website để xác nhận</p>";
-    	$content_mail .= "<p><strong>Lưu ý: Chỉ email đã xác nhận mới có thể dùng để khôi phục tài khoản khi quên mật khẩu.</strong></p>";
-    	$content_mail .= "<p>Email được gửi từ website: https://vncard.info</p>";
-    	$content_mail .= "<h3 style='color:red'>VnCard | Chia sẻ thông tin chỉ 1 chạm </h3>";
+    	$content_mail ="<h1>Xin chào anh/chị: $fullname </h1>
+    					<h2>Mã kích hoạt của anh/chị là: <span style='color:blue'>$active_code </span></h2>
+    					<p>Coppy mã trên dán vào form tại website để xác nhận</p>
+    					<p><strong>Lưu ý: Chỉ email đã xác nhận mới có thể dùng để khôi phục tài khoản khi quên mật khẩu.</strong></p>
+    					<p>Email được gửi từ website: https://vncard.info</p>
+    					<h3 style='color:red'>VnCard | Chia sẻ thông tin chỉ 1 chạm </h3>
+    					";
 
     	$mail = new PHPMailer(true);
 
+    	// send code confirm mail
     	try {
 				// $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    			$mail->charSet = "UTF-8"; 
 			    $mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -69,7 +72,7 @@
 				}
     }
 
-    //reset pass
+    //reset password
     if (isset($_POST["email_user"])){
         $email_user = $_POST["email_user"];
         
@@ -83,12 +86,17 @@
             $email = $data_email["email"];
             $fullname = $data_email["fullname"];
             $new_pass = generateRandomString(5);
-            $content_mail = "<h2>RESET PASSWORD</h2>";
-            $content_mail .= "<h3>Mật khẩu mới của bạn là: $new_pass </h3>";
-            $content_mail .= "<p>Chúng tôi không thể biết mật khẩu cũ của bạn, mật khẩu đã được mã hóa, dùng mật khẩu trên để đăng nhập, sau khi đăng nhập hãy đổi mật khẩu mới.</p>";
+            $content_mail = "
+            	<h2>RESET PASSWORD</h2>
+   				<h3>Mật khẩu mới của bạn là: $new_pass </h3>
+            	<p>Chúng tôi không thể biết mật khẩu cũ của bạn, mật khẩu đã được mã hóa, dùng mật khẩu trên để đăng nhập, sau khi đăng nhập hãy đổi mật khẩu mới.</p>
+            	<p>Link đăng nhập tại: <a href='https://vncard.info/login.php' title='login'>Đây</a> </p>
+            	";
+
             // có email này trong hệ thống & status là đã confirm
             $mail = new PHPMailer(true);
             try {
+            	$mail->charSet = "UTF-8"; 
             	$mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -120,7 +128,7 @@
     }
     //reset pass
 
-    // sent mail confirm
+    // notify new order
     if (isset($_POST["sent_mail_confirm"])){
     	$sent_mail_confirm = $_POST["sent_mail_confirm"];
     	$mobile = $_POST["mobile"];
@@ -137,21 +145,24 @@
     		$data_email = mysqli_fetch_array($result);
             $email = "vncard.notify@gmail.com";
             $fullname = "Web Online";
-            $content_mail = "<h2>New Order</h2>";
-            $content_mail .= "<h3>Bạn có 1 đơn hàng mới từ website</h3>";
-            $content_mail .= "<p>Cus name: $cus_name</p>";
-            $content_mail .= "<p>Username: $username</p>";
-            $content_mail .= "<p>Add: $add</p>";
-            $content_mail .= "<p>Mobile: $mobile</p>";
-            $content_mail .= "<p>Note: $note</p>";
-            $content_mail .= "<p>Card type: $card_type</p>";
-            $content_mail .= "<p>Qty: $qty</p>";
-            $content_mail .= "<p>Text color: $textcolor</p>";
-            $content_mail .= "<p>Total: $total</p>";
-            $content_mail .= "<p><hr></p>";
-            $content_mail .= "<p>Kiểm tra ngay: <a href='https://vncard.info/admin.php'>https://vncard.info/admin.php</a></p>";
+            $content_mail = "
+            	<h2>New Order</h2>
+	            <h3>Bạn có 1 đơn hàng mới từ website</h3>
+	            <p>Cus name: $cus_name</p>
+	            <p>Username: $username</p>
+	            <p>Add: $add</p>
+	            <p>Mobile: $mobile</p>
+	            <p>Note: $note</p>
+	            <p>Card type: $card_type</p>
+	            <p>Qty: $qty</p>
+	            <p>Text color: $textcolor</p>
+	            <p>Total: $total</p>
+	            <p><hr></p>
+	            <p>Kiểm tra ngay: <a href='https://vncard.info/admin.php'>https://vncard.info/admin.php</a></p>
+	        ";
             $mail = new PHPMailer(true);
     		try {
+    			$mail->charSet = "UTF-8"; 
             	$mail->isSMTP();                                            //Send using SMTP
 			    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication

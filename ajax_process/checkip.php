@@ -57,7 +57,7 @@ if (isset($_POST["ip"])) {
 		echo 1;
 		//send sms
 		$addresses = $mobile; 
-		$sms = 'Cảm ơn bạn đã đặt hàng';
+		$sms = 'Đặt thẻ thành công, VnCard.info sẽ sớm liên hệ với anh/chị để xác nhận';
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'https://api.pushbullet.com/v2/texts');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
