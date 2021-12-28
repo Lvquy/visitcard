@@ -23,15 +23,10 @@
 			$_SESSION['id'] = $id;
             $_SESSION['admin'] = $admin;
             $_SESSION['username'] = $username;
-			header("Location: profile.php");
-			exit();
+			echo 1;
         }
         else{
-            echo '<script language="javascript">';
-            echo 'alert("Sai tên hoặc mật khẩu!")';
-            echo '</script>';
-            include("login.php");
-            exit();
+            echo 0;
 		}
     }
 ?>
