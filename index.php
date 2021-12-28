@@ -207,7 +207,8 @@
             <img class="card-shop card-back"
             src="static/images/cardtype/cardtype-1-b.png" alt="hình minh họa" >
           </div>
-          <p class="cus-name">Tên của bạn...</p>
+          <p class="cus-name">
+            <i class="bi bi-person"></i> Tên của bạn...</p>
           <div class="radio mt-0">
             <label for="back">Mặt trước</label>
             <input  onclick="show_front()" type="radio" checked name="card" id="back" value="back">
