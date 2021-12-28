@@ -216,7 +216,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-6 mt-2">
-          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#1C1C1C">  (25 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
+          <h3 class="mt-1 mb-3">Tên in trên thẻ <span id="color-text"> Màu chữ: <input type="color" id="input-textcolor" onchange="color_name(this.value)" value="#FCFCFC">  (25 kí tự)</span> <input class="form-control" onkeyup="change_cusname(this.value)" type="text"  placeholder="Nhập tên của bạn" id="input-cus-name"></h3>
           <span class="mt-3" id="username">
             https://vncard.info/
           </span><span class="float-right"><i class="bi bi-question-circle" onclick="show_help()" title="username dùng để đăng nhập"></i></span>

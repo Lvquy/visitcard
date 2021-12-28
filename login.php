@@ -35,17 +35,17 @@ session_start();
                 </div>
             </div>
             <div class="col-lg-6 ">
-                <form method="POST" action="action_login.php" id="form_login">
+                <div id="form_login">
                     <div class="form-group col-xs-6">
                         <div class="inner-addon icon-addon">
                             <i class="fa left fa-user"></i>
-                            <input type="text" name="username" class="form-control" placeholder="ID đăng nhập..." />
+                            <input type="text" id="username" class="form-control" placeholder="ID đăng nhập..." />
                         </div>
                         <div class="mt-2 inner-addon icon-addon">
                              <i class="fa left fa-key"></i>
-                            <input type="password" name="password"  class="form-control" placeholder="Password" />
+                            <input type="password" id="password"  class="form-control" placeholder="Password" />
                         </div>
-                        <button type="submit" class="btn btn-primary mt-4">Đăng nhập</button>
+                        <button onclick="login()" class="btn btn-primary mt-4">Đăng nhập</button>
                     </div>
                     <div class="form-group col-xs-12">
                         <a href="#" class="badge badge-success mt-4" id="lost_pass" onclick="show_form_reset_pass()">
@@ -53,9 +53,38 @@ session_start();
                         </a>
                         <a class="badge badge-success mt-4" href="./register.php">Đăng ký</a>
                     </div>
-                </form>
+                </div>
+                <script>
+                    function login() {
+                        var username = $("#username").val()
+                        var password = $("#password").val()
+                        $.post("action_login.php",{username:username,password:password},function(data){
+                            if (data == 1) {
+                                window.location.replace("https://vncard.info/profile.php");
+                            }
+                            else{
+                                //
+                                Toastify({
+                                  text: "Sai tên đăng nhập hoặc mật khẩu",
+                                  duration: 6000,
+                                  //destination: "#",
+                                  newWindow: true,
+                                  close: true,
+                                  gravity: "top", // `top` or `bottom`
+                                  position: "center", // `left`, `center` or `right`
+                                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                                  style: {
+                                    background: "linear-gradient(to right, #0CF749, #3DB0C9)",
+                                  },
+                                  //onClick: function(){} // Callback after click
+                                }).showToast();
+                                //
+                            }
+                           
+                        })
+                    }
+                </script>
             
-
                 <div class="inner-addon icon-addon reset" id="div_reset_pass">
                     <i class="fa fa-envelope-o left" aria-hidden="true"></i>
                     <input type="email" name="email" id="reset_password" class="form-control" placeholder="Nhập email..." />
@@ -65,7 +94,7 @@ session_start();
                 <a href="#" class="btn btn-primary mt-4" id="reset_password_submit" onclick="reset_password()">
                     Lấy lại mật khẩu
                 </a>
-                
+                <div id="backto_login"></div>
             </div>
         </div>
     </div>
@@ -75,22 +104,22 @@ session_start();
         document.getElementById("reset_password_submit").style.display = "block";
         document.getElementById("div_reset_pass").style.display = "block";
         document.getElementById("form_login").style.display = "none";
-
+        document.getElementById("backto_login").innerHTML = "<a href='#' class='badge badge-success mt-4' id='backto_login' onclick='backto_login()'>Quay lại đăng nhập</a>";
     };
     //lost pass
     function reset_password() {
-        console.log('reset_password');
+        
         var email_user = $("#reset_password").val();
-        console.log(email_user);
+        
         $.post("action_sendmail.php",{email_user:email_user},function(data){
             if (data == 0) {
                 //false
-                console.log('email nay chua dc xac nhan');
+                
                 $("#send_pass_ok").html("Email chưa được xác nhận trong hệ thống!");
             }
             else{
                 //true > lấy email đc trả về từ biến data -> gửi email new pass
-                console.log(data);
+                
                 $("#send_pass_ok").html("Đã gửi mật khẩu mới tới email!");
                 document.getElementById("reset_password_submit").style.display = "none";
 
@@ -98,7 +127,14 @@ session_start();
         });
     }
     //lost pass
-
+     // back to login
+      function backto_login() {
+        document.getElementById("reset_password_submit").style.display = "none";
+        document.getElementById("div_reset_pass").style.display = "none";
+        document.getElementById("form_login").style.display = "inline-block";
+        document.getElementById("backto_login").innerHTML ="";
+      }
+     // back to login
     
 </script>
 
