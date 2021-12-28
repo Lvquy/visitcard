@@ -273,11 +273,9 @@ function color_name(color) {
 }
 
 function change_cusname(name){
-	if (name ==''){
-		name = "&nbsp;"
-	}
-    $(".cus-name").html(name)
- }
+	var new_name = "<i class='bi bi-person'></i> " + name
+    	$(".cus-name").html(new_name)
+}
 function show_back() {
 	var back = $(".card-back")
 	var front = $(".card-front")
