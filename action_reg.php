@@ -1,6 +1,6 @@
 <?php
 require('includes/db.php');
-    if (isset($_REQUEST['username'])){
+    if (isset($_POST['username'])){
 		$fullname = stripslashes($_REQUEST['fullname']);
 		$fullname = mysqli_real_escape_string($con,$fullname);
 		$username = stripslashes($_REQUEST['username']);
@@ -17,10 +17,8 @@ require('includes/db.php');
 			getenv('HTTP_FORWARDED')?:
 			getenv('REMOTE_ADDR');
 		if (mysqli_num_rows($result_check_unique) > 0){
-            echo '<script language="javascript">';
-            echo 'alert("ID này đã có người dùng!")';
-            echo '</script>';
-            include("register.php");
+            // ID này đã có người dùng!
+			echo 0;
 		}
 		else {
 		    $query_user = "INSERT into `users`
@@ -28,10 +26,8 @@ require('includes/db.php');
 		    ('$fullname','".md5($password)."', '$reg_date','white','$username','Giới thiệu một chút về bạn đi...','none-avata.png','black','$ip')";
             $result_user = mysqli_query($con,$query_user);
              if($result_user){
-                echo '<script language="javascript">';
-                echo 'alert("Đăng ký thành công ")';
-                echo '</script>';
-                include("login.php");
+               // Đăng ký thành công
+               echo 1;
              }
 		}
 	}
