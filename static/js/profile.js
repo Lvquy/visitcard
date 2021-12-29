@@ -1,5 +1,56 @@
 
 
+
+//up
+function up_index(index_up) {
+    $.post("ajax_process/edit.php",{index_up:index_up},function(data){
+        get_social()
+        if (data == 1){
+            //
+            Toastify({
+              text: "Trên cùng rồi",
+              duration: 1000,
+              //destination: "#",
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "center", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, #0CF743, #1182F5)",
+              },
+              //onClick: function(){} // Callback after click
+            }).showToast();
+            //
+        }
+
+    })
+}
+//
+// down
+function down_index(index_down) {
+    $.post("ajax_process/edit.php",{index_down:index_down},function(data){
+        get_social()
+        if (data == 1){
+             //
+            Toastify({
+              text: "Dưới cùng rồi",
+              duration: 1000,
+              //destination: "#",
+              newWindow: true,
+              close: true,
+              gravity: "top", // `top` or `bottom`
+              position: "center", // `left`, `center` or `right`
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+              style: {
+                background: "linear-gradient(to right, #0CF743, #1182F5)",
+              },
+              //onClick: function(){} // Callback after click
+            }).showToast();
+            //
+        }
+    })
+}
 //change theme
 function change_theme(id_theme){
     var id_user = $("#id_user").val();
