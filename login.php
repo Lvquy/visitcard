@@ -36,7 +36,7 @@ session_start();
             </div>
             <div class="col-lg-6 ">
                 <div id="form_login">
-                    <div class="form-group col-xs-6">
+                    <div class="form-group">
                         <div class="inner-addon icon-addon">
                             <i class="fa left fa-user"></i>
                             <input type="text" id="username" class="form-control" placeholder="ID đăng nhập..." />
@@ -47,7 +47,7 @@ session_start();
                         </div>
                         <button onclick="login()" class="btn btn-primary mt-4">Đăng nhập</button>
                     </div>
-                    <div class="form-group col-xs-12">
+                    <div class="form-group">
                         <a href="#" class="badge badge-success mt-4" id="lost_pass" onclick="show_form_reset_pass()">
                             Quên mật khẩu
                         </a>
@@ -60,13 +60,10 @@ session_start();
                         var password = $("#password").val()
                         $.post("action_login.php",{username:username,password:password},function(data){
                             if (data == 1) {
-                                window.location.replace("https://vncard.info/profile.php");
-                            }
-                            else{
                                 //
                                 Toastify({
-                                  text: "Sai tên đăng nhập hoặc mật khẩu",
-                                  duration: 6000,
+                                  text: "Đăng nhập thành công!",
+                                  duration: 2000,
                                   //destination: "#",
                                   newWindow: true,
                                   close: true,
@@ -74,7 +71,28 @@ session_start();
                                   position: "center", // `left`, `center` or `right`
                                   stopOnFocus: true, // Prevents dismissing of toast on hover
                                   style: {
-                                    background: "linear-gradient(to right, #0CF749, #3DB0C9)",
+                                    background: "linear-gradient(to right, #0CF722, #3DB0C9)",
+                                  },
+                                  //onClick: function(){} // Callback after click
+                                }).showToast();
+                                //
+                                setTimeout(function() {
+                                    window.location.replace("profile.php");
+                                }, 2000);
+                            }
+                            else{
+                                //
+                                Toastify({
+                                  text: "Sai tên đăng nhập hoặc mật khẩu",
+                                  duration: 2000,
+                                  //destination: "#",
+                                  newWindow: true,
+                                  close: true,
+                                  gravity: "top", // `top` or `bottom`
+                                  position: "center", // `left`, `center` or `right`
+                                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                                  style: {
+                                    background: "linear-gradient(to right, #F70C17, #3DB0C9)",
                                   },
                                   //onClick: function(){} // Callback after click
                                 }).showToast();
