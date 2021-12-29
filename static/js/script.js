@@ -33,6 +33,10 @@ function unactive_boder(id) {
 }
 var CARD_TYPE =1;
 function type(type) {
+	var cus_name = $("#input-cus-name").val()
+	console.log(cus_name)
+	var new_name = "<i class='bi bi-person'></i> " + cus_name
+	$(".cus-name").html(new_name)
 	if (type == 'type1'){
 		CARD_TYPE =1
 		$("#price-card").val(formatNumber(150000))
