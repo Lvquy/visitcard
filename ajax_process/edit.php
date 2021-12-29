@@ -1,5 +1,55 @@
 <?php
 require_once("../includes/db.php");
+    if (isset($_POST["index_up"])){
+
+        $query_min_id = "SELECT MIN(id) FROM social";
+        $result_min_id = mysqli_query($con,$query_min_id);
+        $row_min_id = mysqli_fetch_row($result_min_id);
+        $min_index =  $row_min_id[0];
+
+        $index_up = $_POST["index_up"];
+        $new_index = $index_up - 1;
+
+        if ($min_index < $index_up){
+            $query_index_before = "UPDATE social SET id= '4999' WHERE id='$new_index' ";
+            $result_index_before = mysqli_query($con,$query_index_before);
+
+            $query = "UPDATE social SET id= '$new_index' WHERE id='$index_up' ";
+            $result = mysqli_query($con,$query);
+            
+            $query_index_before_swap = "UPDATE social SET id= '$index_up' WHERE id='4999' ";
+            $result_index_before_swap = mysqli_query($con,$query_index_before_swap);
+        }else{
+            echo 1;
+        }
+        
+    }
+    if (isset($_POST["index_down"])){
+
+        $query_max_id = "SELECT MAX(id) FROM social";
+        $result_max_id = mysqli_query($con,$query_max_id);
+        $row_max_id = mysqli_fetch_row($result_max_id);
+        $max_index =  $row_max_id[0];
+
+        $index_down = $_POST["index_down"];
+        $new_index = $index_down + 1;
+
+        if ($max_index > $index_down){
+            $query_index_after = "UPDATE social SET id= '4999' WHERE id='$new_index' ";
+            $result_index_after = mysqli_query($con,$query_index_after);
+
+            $query = "UPDATE social SET id= '$new_index' WHERE id='$index_down' ";
+            $result = mysqli_query($con,$query);
+
+            $query_index_after_swap = "UPDATE social SET id= '$index_down' WHERE id= '4999' ";
+            $result_index_after_swap = mysqli_query($con,$query_index_after_swap);
+        }else{
+            echo 1;
+        }
+        
+    }
+
+
     if (isset($_POST["fullname"])){
         $fullname = $_POST["fullname"];
         $id_user = $_POST["id_user"];

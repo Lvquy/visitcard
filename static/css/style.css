@@ -1,6 +1,15 @@
 
 
-
+.btn-swap{
+    background-color: #18191a;
+    border-radius: 7px;
+    border:1px solid white;
+    color: white;
+}
+.btn-swap:hover{
+    background-color: green;
+    color: red;
+}
 p#important{
     color: red;
     font-weight: bold;

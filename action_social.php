@@ -53,8 +53,10 @@
                     <div class='inner-addon icon-addon'>
                         <input placeholder='Link social' readonly class='form-control' type='text'
                          id='$id_social-link_social'  value='$link'>
-                         <i  class='badge badge-primary'>Clicked: $clicked</i>
-                         <p id='alert.$id_social' style=$style1>Success!</p>
+                         <i  class='float-start badge badge-primary'>Click: $clicked</i>
+                        <button title='Di chuyển xuống' class='float-end btn-swap' onclick='down_index($id_social)'><i class=' bi bi-arrow-bar-down'></i></button> 
+                        <span class='float-end'>&nbsp;</span>
+                        <button title='Di chuyển lên' class='float-end btn-swap' onclick='up_index($id_social)'><i class='bi bi-arrow-bar-up'></i></button> 
                     </div>
                 </td>
                 <td>
