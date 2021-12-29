@@ -311,10 +311,8 @@ function show_front() {
 		a.css({"transform":"rotateY(-90deg)","-webkit-transform":"rotateY(-90deg)","transition":"0s"})
 		setTimeout(function() {
 			a.css({"transform":"rotateY(0deg)","-webkit-transform":"rotateY(0deg)","transition":".6s"})
-			if (cus_name ==""){
-			cus_name ="&nbsp;"
-			}
-			div_cus_name.html(cus_name)
+			var new_name = "<i class='bi bi-person'></i> " + cus_name
+			div_cus_name.html(new_name)
 		},100)
 	}, delayInMilliseconds);
 }
