@@ -354,7 +354,7 @@
                                 <i class="fa left fa-user slug"></i>
                                 <a id="done_slug" onclick="done_slug()"  ><i class="fa fa-check right "></i></a>
                                 <a id="edit_slug" onclick="edit_slug()" ><i class="fa right fa-pencil"></i></a>
-                                <span id="ajax_slug"><input readonly onblur="check_unique_slug(this.value)" name="slug" id="slug"  type="text"
+                                <span id="ajax_slug"><input readonly onchange="check_unique_slug(this.value)" name="slug" id="slug"  type="text"
                                     class="form-control" value='<?php echo "$slug";?>' placeholder="Username">
                                 </span>
                                 <p class="f_alert" id="f_slug_alert" ></p>
