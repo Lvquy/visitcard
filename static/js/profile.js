@@ -561,7 +561,6 @@ function check_code(){
             $("#alert-active").html("Lỗi, không thể kích hoạt được!").fadeIn(10)
             $("#alert-active").html("Lỗi, không thể kích hoạt được!").fadeOut(6000)
             get_social();
-            console.log(code)
          };
     });
 };
@@ -632,7 +631,6 @@ function add_coin(coin_name) {
         };
         if (data == 0) {
             //loi khi them
-            console.log('loi khi them')
         }
         get_coin()
         
@@ -654,7 +652,6 @@ $( document ).ready(function() {
     if ( status_email == 'confirmed'){
         hide_id("warning-email");
         show_id("icon-confirmed");
-        console.log('confirmed...');
     }
 
     var active = $("#active").val();
@@ -679,31 +676,59 @@ $( document ).ready(function() {
     var theme = $("#id_theme").val();
     if (theme == ''){
         $("#theme_1").prop('checked', true);
-        console.log('theme 1');
     };
-    if (theme == 'cover-2.jpg'){
+    if (theme == 'cover-2.png'){
         $("#theme_2").prop('checked', true);
-        console.log('theme 2');
     };
-    if (theme == 'cover-3.jpg'){
+    if (theme == 'cover-3.png'){
         $("#theme_3").prop('checked', true);
-        console.log('theme 3');
     };
-    if (theme == 'cover-4.jpg'){
+    if (theme == 'cover-4.png'){
         $("#theme_4").attr( 'checked', true );
     };
-    if (theme == 'cover-5.jpg'){
+    if (theme == 'cover-5.png'){
         $("#theme_5").attr( 'checked', true );
     };
-    if (theme == 'cover-6.jpg'){
+    if (theme == 'cover-6.png'){
         $("#theme_6").attr( 'checked', true );
     };
-    if (theme == 'cover-7.jpg'){
+    if (theme == 'cover-7.png'){
         $("#theme_7").attr( 'checked', true );
     };
-    if (theme == 'cover-8.jpg'){
+    if (theme == 'cover-8.png'){
         $("#theme_8").attr( 'checked', true );
     };
+    if (theme == 'cover-9.png'){
+        $("#theme_9").attr( 'checked', true );
+    };
+    if (theme == 'cover-10.png'){
+        $("#theme_10").attr( 'checked', true );
+    };
+    if (theme == 'cover-11.png'){
+        $("#theme_11").attr( 'checked', true );
+    };
+    if (theme == 'cover-12.png'){
+        $("#theme_12").attr( 'checked', true );
+    };
+    if (theme == 'cover-13.png'){
+        $("#theme_13").attr( 'checked', true );
+    };
+    if (theme == 'cover-14.png'){
+        $("#theme_14").attr( 'checked', true );
+    };
+    if (theme == 'cover-15.png'){
+        $("#theme_15").attr( 'checked', true );
+    };
+    if (theme == 'cover-16.png'){
+        $("#theme_16").attr( 'checked', true );
+    };
+    if (theme == 'cover-17.png'){
+        $("#theme_17").attr( 'checked', true );
+    };
+    if (theme == 'cover-18.png'){
+        $("#theme_18").attr( 'checked', true );
+    };
+    
 
 });
 //end auto load when reloaded page
