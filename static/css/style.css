@@ -605,6 +605,10 @@ td img {
     pointer-events: none;
     left: 0px;
 }
+.icon-addon .slug {
+    position: absolute;
+    bottom: -3;
+}
 
 .icon-addon .right {
     pointer-events: auto;

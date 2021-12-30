@@ -297,20 +297,21 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title">Change Password</h5>
+                        <h5 class="modal-title">Đổi mật khẩu</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                           <i class="bi bi-x-circle"></i>
                         </button>
                       </div>
                       <!-- Modal body -->
                       <div class="modal-body">
-                        <input class="form-control mt-3" type="password" id="old_pass" name="old_pass" placeholder="Old Password">
-                        <input class="form-control mt-2" type="password" id="new_pass" name="new_pass" placeholder="New Password">
-                        <input type="checkbox" class="mt-2" name="show_password" id="show_password" onclick="show_pass()" value="1"> Show password 
+                        <input class="form-control mt-3" type="password" id="old_pass" name="old_pass" placeholder="Mật khẩu cũ">
+                        <input class="form-control mt-2" type="password" id="new_pass" name="new_pass" placeholder="Mật khẩu mới">
+                        <input type="checkbox" class="mt-2" name="show_password" id="show_password" onclick="show_pass()" value="1"> 
+                        <label for="show_password">Hiện mật khẩu </label>
                       </div>
                       <!-- Modal footer -->
                       <div class="modal-footer">
-                        <button class="btn btn-success" onclick="change_pass()" data-bs-dismiss="modal">Submit</button>
+                        <button class="btn btn-success" onclick="change_pass()">Xác nhận</button>
                         
                       </div>
                     </div>
@@ -350,7 +351,7 @@
                         </div>
                         <div class="setting">
                             <div class="inner-addon icon-addon mb-2">
-                                <i class="fa left fa-user"></i>
+                                <i class="fa left fa-user slug"></i>
                                 <a id="done_slug" onclick="done_slug()"  ><i class="fa fa-check right "></i></a>
                                 <a id="edit_slug" onclick="edit_slug()" ><i class="fa right fa-pencil"></i></a>
                                 <span id="ajax_slug"><input readonly onblur="check_unique_slug(this.value)" name="slug" id="slug"  type="text"

@@ -104,7 +104,25 @@ function change_pass() {
     var old_pass = $("#old_pass").val();
     var new_pass = $("#new_pass").val();
     console.log(id_user,old_pass,new_pass);
-    $.post("ajax_process/edit.php",{id_user:id_user,old_pass:old_pass,new_pass:new_pass},function(data){
+    if (new_pass.length < 6){
+        //
+        Toastify({
+          text: "Mật khẩu phải 6 kí tự trở lên",
+          duration: 2000,
+          //destination: "#",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #0CF743, #1182F5)",
+          },
+          //onClick: function(){} // Callback after click
+        }).showToast();
+        //
+    }else{
+        $.post("ajax_process/edit.php",{id_user:id_user,old_pass:old_pass,new_pass:new_pass},function(data){
             //return alert
             if (data ==1) {
                 
@@ -148,7 +166,9 @@ function change_pass() {
                 }).showToast();
                 //
             }
-    });
+        });
+
+    }
     
 };
 //change pass end
