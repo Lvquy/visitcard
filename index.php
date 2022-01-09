@@ -376,7 +376,7 @@
       <div class="grid image-grid">
           
 
-          <div class="grid-block">
+          <div class="grid-block ">
             <div class="tile">
               <span class="tile-link" >
                 <img class="tile-img tile-img3" src="static/images/card/3.png" alt="Image">
@@ -384,7 +384,7 @@
             </div>
           </div>
 
-          <div class="grid-block">
+          <div class="grid-block ">
             <div class="tile">
               <span class="tile-link" >
                 <img class="tile-img tile-img4" src="static/images/card/4.png" alt="Image">

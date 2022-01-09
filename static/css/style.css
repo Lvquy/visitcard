@@ -975,26 +975,21 @@ ul #qr-none-li,
 
 
 @media screen and (max-width: 600px) {
+    .grid-block, .image-grid,.grid , .rotate{
+    display: none;
+    }
 
-    /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 600px;*/
-   /* p.cus-name{
-    color: white;
-    position: relative;
-    top: -5rem;
-   
-    text-align: center;
-    font-weight: bold ;
-    font-size: 1.5rem;
-    }*/
 
 
 }
 
 @media screen and (max-width: 800px) {
 
-    /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 800px;*/
+/*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 800px;*/
  
-
+    .grid-block, .image-grid, .grid , .rotate{
+    display: none;
+    }
     .setting {
         display: flex;
     }
@@ -1009,7 +1004,11 @@ ul #qr-none-li,
 
 @media screen and (max-width: 768px) {
 
-    /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 480px;*/
+    /*Định dạng của các khối khi màn hình có chiều rộng nhỏ hơn 768px;*/
+
+    .grid-block,.image-grid, .grid , .rotate{
+    display: none;
+    }
    
 
     .setting {
