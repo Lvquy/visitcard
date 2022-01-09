@@ -58,7 +58,7 @@
                   </div>
                   
                   <div class="col-lg-12">
-                    <h2>VnCard - Thẻ cá nhân thông minh của người Việt</h2>
+                    <h2>VnCard - Thẻ cá nhân thông minh gắn chip</h2>
                   </div>
                   
                 </div>
@@ -74,6 +74,27 @@
       </div>
     </div>
   </div>
+
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-image wow fadeInLeft text-center" data-wow-duration="1s" data-wow-delay="0.5s">
+            <img class="img-gif"src="static/images/card.gif" height="auto" width="200px" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="section-heading">
+            <h2>CÁCH <em>HOẠT ĐỘNG</em> CỦA THẺ THÔNG MINH <span>01 CHẠM</span></h2>
+          </div>
+          <p>Thẻ được sử dụng công nghệ CẢM ỨNG TỪ TRƯỜNG. Chỉ cần CHẠM thẻ vào gần Smartphone là máy tự động nhận thẻ và hiển thị các thông tin của bạn lưu trên thẻ lên máy người chạm thẻ mà không cần cài thêm bất kỳ ứng dụng nào. Trong trường hợp máy không hỗ trợ cảm ứng từ trường thì bạn có thể dùng mã QR Code được in trên thẻ cũng có thể sử dụng bình thường.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>  
+
   <div id="features" class="features section">
     <div class="container">
       <div class="row">
@@ -85,10 +106,8 @@
           <br>
         </div>
         <div class="col-lg-12">
-
           <div class="features-content">
             <div class="row">
-              
               <div class="col-lg-3">
                 <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                   <div class="first-number number">
@@ -106,7 +125,7 @@
                     <h6>02</h6>
                   </div>
                   <div class="icon"></div>
-                  <h4>GỌI ĐIỆN & SMS</h4>
+                  <h4>GỌI ĐIỆN & GỬI SMS</h4>
                   <div class="line-dec"></div>
                   <p>Bạn bè có thể gọi/sms cho bạn nhanh hơn chỉ cần bấm và gọi, hoặc lưu danh bạ chỉ với 1 chạm mà không cần làm gì thêm.</p>
                 </div>
@@ -143,24 +162,7 @@
     </div>
   </div>
 
-  <div id="about" class="about-us section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="left-image wow fadeInLeft text-center" data-wow-duration="1s" data-wow-delay="0.5s">
-            <img class="img-gif"src="static/images/card.gif" height="auto" width="200px" alt="">
-          </div>
-        </div>
-        <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="section-heading">
-            <h2>CÁCH <em>HOẠT ĐỘNG</em> CỦA THẺ THÔNG MINH <span>01 CHẠM</span></h2>
-          </div>
-          <p>Thẻ được sử dụng công nghệ CẢM ỨNG TỪ TRƯỜNG. Chỉ cần CHẠM thẻ vào gần Smartphone là máy tự động nhận thẻ và hiển thị các thông tin của bạn lưu trên thẻ lên máy người chạm thẻ mà không cần cài thêm bất kỳ ứng dụng nào. Trong trường hợp máy không hỗ trợ cảm ứng từ trường thì bạn có thể dùng mã QR Code được in trên thẻ cũng có thể sử dụng bình thường.</p>
-          
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <div id="about" class="about-us section">
     <div class="container">
