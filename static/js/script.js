@@ -352,6 +352,7 @@ function change_username(value) {
 		};
 		if (data == 0){
 			trung_username = true
+
 			//
 			Toastify({
 			  text: "username này đã có người sử dụng",
@@ -372,6 +373,7 @@ function change_username(value) {
 			// $("#btn-order").css({"display":"none"})
 		};
 		if (data == 1){
+			error_slug = false
 			trung_username = false
 			$("#username").css({"color":"green"})
 		};
