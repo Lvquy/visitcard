@@ -367,7 +367,87 @@
   </div>
 </body>
 
+<div class="gallery">
+  <div class="container">
+    <div class="row">
+      
+<div class="col-12"><h2 class="rotate ">Mẫu Hot</h2> </div>
+      <!-- // -->
+      <div class="grid image-grid">
+          
 
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link" >
+                <img class="tile-img tile-img3" src="static/images/card/3.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link" >
+                <img class="tile-img tile-img4" src="static/images/card/4.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link" >
+                <img class="tile-img tile-img5" src="static/images/card/1.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link"  >
+                <img class="tile-img tile-img6" src="static/images/card/2.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link">
+                <img class="tile-img tile-img7" src="static/images/card/4.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link" >
+                <img class="tile-img tile-img8" src="static/images/card/1.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link"  >
+                <img class="tile-img tile-img9" src="static/images/card/2.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="tile">
+              <span class="tile-link" >
+                <img class="tile-img tile-img10" src="static/images/card/3.png" alt="Image">
+              </span>
+            </div>
+          </div>
+
+        </div>
+      <!-- // -->
+      
+    </div>
+  </div>
+  
+
+</div>
 <div id="hoidap" class="our-services section">
 
         <div class="col-lg-12 offset-lg-12">
