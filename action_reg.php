@@ -10,6 +10,13 @@ require('includes/db.php');
 		$reg_date = date("Y-m-d H:i:s");
 		$sql_check_unique = "SELECT slug FROM `users` WHERE slug = '$username'";
 		$result_check_unique = mysqli_query($con, $sql_check_unique);
+
+		if (!preg_match("/^[a-zA-Z0-9]{3,30}$/",$username)) {
+          echo 2;
+          exit();
+            //Lỗi, không đc chứa kí tự đặc biệt
+    }
+
 		$ip = 	getenv('HTTP_CLIENT_IP')?:
 			getenv('HTTP_X_FORWARDED_FOR')?:
 			getenv('HTTP_X_FORWARDED')?:
@@ -19,6 +26,7 @@ require('includes/db.php');
 		if (mysqli_num_rows($result_check_unique) > 0){
             // ID này đã có người dùng!
 			echo 0;
+			exit();
 		}
 		else {
 		    $query_user = "INSERT into `users`
@@ -28,6 +36,7 @@ require('includes/db.php');
              if($result_user){
                // Đăng ký thành công
                echo 1;
+               exit();
              }
 		}
 	}

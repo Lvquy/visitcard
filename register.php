@@ -85,11 +85,31 @@
         else{
             var slug = username;
             $.post("check_unique_slug.php",{slug:slug},function(data){
+                console.log(data)
                 if (data == 0){
                     // ok
                     REGISTER = true;
                 }
-                else{
+                if(data == 2){
+                    //chua ki tu dac biet
+                    //
+                    Toastify({
+                      text: "username không được chứa kí tự đặc biệt",
+                      duration: 3000,
+                      //destination: "#",
+                      newWindow: true,
+                      close: true,
+                      gravity: "top", // `top` or `bottom`
+                      position: "center", // `left`, `center` or `right`
+                      stopOnFocus: true, // Prevents dismissing of toast on hover
+                      style: {
+                        background: "linear-gradient(to right, #F70C17, #3DB0C9)",
+                      },
+                      //onClick: function(){} // Callback after click
+                    }).showToast();
+                    //
+                }
+                if(data == 1){
                     // trung username
                     REGISTER = false;
                     
