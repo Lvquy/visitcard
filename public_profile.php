@@ -80,38 +80,57 @@ require('includes/db.php');
 					</i>
 					&emsp;<i title="coppy link" class="bi bi-clipboard" onClick="coppy('url','cped_url','cp_url')" id="cp_url"></i>
 					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_url"></i>
-					
-					
 				</div>
 			</div>
 			<div class="col-12 intro" id="intro">
-				<p id='p_address'>
-					<i class="bi bi-pin-map"></i> <?php echo $address;?>
-					<a href="https://maps.google.com/?q=<?php echo $address;?>" target="_blank">
-						<i class="bi bi-geo-alt" title="Mở google map"></i>
-					</a>
-				</p>
-				<p id="p_email">
-					<i class="bi bi-envelope">
-						<a href="mailto:<?php echo $email?>" ><?php echo $email?></a>
-					</i>&emsp;<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('email','cped_mail','icon_cp_mail')"id="icon_cp_mail"></i>
-					<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mail"></i>
-					
-				</p>
-				<div id="p_bank_name">
-					<p>
-					<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span><?php echo $bank_num ?></span>
-					</p>
-					<i> &emsp;- Coppy số tài khoản: 
-						<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank')"></i>
-						<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i> <br>
-					</i>
-					<i> &emsp;- Chủ tài khoản: <?php echo $bank_user ?></i><br/>
-					<i> &emsp;- Chi nhánh: <?php echo $bank_sub ?></i><br/>
-					
-				<br/>
-				</div>
-			
+				<table class="table table-responsive">
+					<tr>
+						<td>
+							<p id='p_address'>
+							<i class="bi bi-pin-map"></i> <?php echo $address;?>
+							</p>
+						</td>
+						<td>
+							<a href="https://maps.google.com/?q=<?php echo $address;?>" target="_blank">
+								<i class="bi bi-geo-alt" title="Mở google map"></i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p id="p_email">
+								<i class="bi bi-envelope">
+									<a href="mailto:<?php echo $email?>" ><?php echo $email?></a>
+								</i>
+							</p>
+						</td>
+						<td>
+							<i title="coppy mail" class="bi bi-clipboard" onClick="coppy('email','cped_mail','icon_cp_mail')"id="icon_cp_mail"></i>
+							<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_mail"></i>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span><?php echo $bank_num ?></span>
+							</p>
+						</td>
+						<td>
+							<i title="coppy số tài khoản" class="bi bi-clipboard" id="icon_cp_bank" onclick="coppy('bank_num','cped_bank_num','icon_cp_bank')"></i>
+							<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<i> &emsp;- Chủ tài khoản: <?php echo $bank_user ?></i>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<i> &emsp;- Chi nhánh: <?php echo $bank_sub ?></i>
+						</td>
+					</tr>
+				</table>
 				<p id="p_intro">
 					<q><?php echo $intro?></q>
 				</p>
