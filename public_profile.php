@@ -83,14 +83,15 @@ require('includes/db.php');
 				</div>
 			</div>
 			<div class="col-12 intro" id="intro">
-				<table class="table table-responsive">
+				<table class="table table-responsive text-center">
 					<tr>
 						<td>
 							<p id='p_address'>
-							<i class="bi bi-pin-map"></i> <?php echo $address;?>
+								<i class="bi bi-pin-map"> Địa chỉ</i> <br>
+							 <?php echo $address;?>
 							</p>
 						</td>
-						<td>
+						<td >
 							<a href="https://maps.google.com/?q=<?php echo $address;?>" target="_blank">
 								<i class="bi bi-geo-alt" title="Mở google map"></i>
 							</a>
@@ -99,9 +100,9 @@ require('includes/db.php');
 					<tr>
 						<td>
 							<p id="p_email">
-								<i class="bi bi-envelope">
-									<a href="mailto:<?php echo $email?>" ><?php echo $email?></a>
-								</i>
+								<i class="bi bi-envelope"> Email
+								</i> <br>
+								<a href="mailto:<?php echo $email?>" ><?php echo $email?></a>
 							</p>
 						</td>
 						<td>
@@ -112,7 +113,10 @@ require('includes/db.php');
 					<tr>
 						<td>
 							<p>
-								<i class="bi bi-bank"> <?php echo $bank_name ?>: </i><span><?php echo $bank_num ?></span>
+								<i class="bi bi-bank"> STK <?php echo $bank_name ?> </i> <br>
+								<span><?php echo $bank_num ?></span> <br>
+								<i>Chủ tài khoản: <?php echo $bank_user ?></i> <br>
+								<i>Chi nhánh: <?php echo $bank_sub ?></i>
 							</p>
 						</td>
 						<td>
@@ -120,16 +124,7 @@ require('includes/db.php');
 							<i class="bi bi-clipboard-check" style="display: none;color:blue" id="cped_bank_num"></i>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="2">
-							<i> &emsp;- Chủ tài khoản: <?php echo $bank_user ?></i>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<i> &emsp;- Chi nhánh: <?php echo $bank_sub ?></i>
-						</td>
-					</tr>
+					
 				</table>
 				<p id="p_intro">
 					<q><?php echo $intro?></q>
