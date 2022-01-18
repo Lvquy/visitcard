@@ -179,7 +179,7 @@ require('includes/db.php');
 			</div>
 		</div>
 	</div>
-	<?php include('includes/footer.html'); ?>
+	<?php include('includes/footer1.html'); ?>
 	
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="static/js/public_profile.js"></script>
